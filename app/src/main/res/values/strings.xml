@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ZTMPK</string>
+    <string name="title_activity_find_stops">FindStopsActivity</string>
+    <string name="title_activity_go_to_stop">GoToStopActivity</string>
+    <string name="title_activity_stop">StopActivity</string>
+    <string name="title_activity_bus">BusActivity</string>
+    <string name="title_activity_notification">NotificationActivity</string>
+</resources>
