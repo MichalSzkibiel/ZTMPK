@@ -1,9 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".GoToStopActivity">
 
-</android.support.constraint.ConstraintLayout>
+
+    <EditText
+        android:id="@+id/route"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/goTo_stop_return"
+        android:layout_alignLeft="@+id/goTo_stop_map"
+        android:layout_alignStart="@+id/goTo_stop_map"
+        android:layout_marginBottom="29dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="textMultiLine" />
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/goTo_stop_map"
+        android:layout_width="wrap_content"
+        android:layout_height="333dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/goTo_stop_return"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/goTo_stop_map"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/goTo_stop_map"
+        android:layout_marginBottom="19dp"
+        android:layout_marginLeft="41dp"
+        android:layout_marginStart="41dp"
+        android:text="@string/stop_return" />
+
+</RelativeLayout>

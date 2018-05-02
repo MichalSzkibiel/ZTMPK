@@ -2,8 +2,46 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bus_cardView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".StopActivity">
 
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/stop_map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="195dp"
+        tools:layout_editor_absoluteY="98dp" />
+
+    <fragment
+        android:id="@+id/stop_fragment"
+        android:name="com.apackage.ztmpk.StopFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="163dp"
+        tools:layout_editor_absoluteY="197dp" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/stop_depatures"
+        android:layout_width="362dp"
+        android:layout_height="143dp"
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="270dp" />
+
+    <fragment
+        android:id="@+id/notification_fragment"
+        android:name="com.apackage.ztmpk.NotificationFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="93dp"
+        tools:layout_editor_absoluteY="434dp" />
+
+    <android.support.v7.widget.CardView
+        android:layout_width="133dp"
+        android:layout_height="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>
