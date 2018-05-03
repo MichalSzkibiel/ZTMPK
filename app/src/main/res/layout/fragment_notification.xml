@@ -10,7 +10,8 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="aktywne zgłoszenia:" />
+        android:text="aktywne zgłoszenia:"
+        android:textSize="24sp" />
 
     <Spinner
         android:id="@+id/bus_notification_spinner"
@@ -25,13 +26,16 @@
         android:id="@+id/bus_yes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/textView"
-        android:layout_alignRight="@+id/textView"
         android:layout_below="@+id/bus_notification_spinner"
-        android:layout_marginTop="55dp"
-        android:text="Button"
+        android:layout_marginEnd="18dp"
+        android:layout_marginRight="18dp"
+        android:layout_marginTop="52dp"
+        android:layout_toLeftOf="@+id/bus_no"
+        android:layout_toStartOf="@+id/bus_no"
         android:background="@color/Yes"
-        android:textColor="@color/textYes"/>
+        android:text="@string/Yes_text"
+        android:textSize="20dp"
+        android:textColor="@color/textYes" />
 
     <Button
         android:id="@+id/bus_no"
@@ -39,8 +43,9 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/bus_yes"
         android:layout_centerHorizontal="true"
-        android:text="Button"
+        android:text="@string/No_text"
         android:background="@color/No"
+        android:textSize="20dp"
         android:textColor="@color/textNo"/>
 
     <Button
@@ -54,18 +59,18 @@
 
     <EditText
         android:id="@+id/bus_yes_number"
-        android:layout_width="15dp"
-        android:layout_height="15dp"
-        android:layout_above="@+id/bus_no_number"
-        android:layout_toEndOf="@+id/bus_yes"
-        android:layout_toRightOf="@+id/bus_yes"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_above="@+id/bus_no"
+        android:layout_toLeftOf="@+id/bus_no"
+        android:layout_toStartOf="@+id/bus_no"
         android:ems="10"
         android:inputType="numberSigned" />
 
     <EditText
         android:id="@+id/bus_no_number"
-        android:layout_width="15dp"
-        android:layout_height="15dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
         android:layout_above="@+id/bus_no"
         android:layout_toEndOf="@+id/bus_no"
         android:layout_toRightOf="@+id/bus_no"

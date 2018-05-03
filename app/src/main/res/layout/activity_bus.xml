@@ -9,7 +9,7 @@
     <com.google.android.gms.maps.MapView
         android:id="@+id/bus_map"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
@@ -19,18 +19,18 @@
     <fragment
         android:id="@+id/bus_fragment"
         android:name="com.apackage.ztmpk.BusFragment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/bus_map"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="107dp" />
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:layout_alignLeft="@+id/notification_fragment"
+        android:layout_alignStart="@+id/notification_fragment"
+        android:layout_below="@+id/bus_map" />
 
     <fragment
         android:id="@+id/notification_fragment"
         android:name="com.apackage.ztmpk.NotificationFragment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
         android:layout_below="@+id/bus_fragment"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="144dp" />
+        android:layout_marginTop="11dp" />
 </RelativeLayout>

@@ -21,15 +21,21 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_find_stops" />
+    <include
+        layout="@layout/content_find_stops"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" />
 
     <EditText
         android:id="@+id/found_stops_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/find_stops_view"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/find_stops_view"
         android:layout_marginBottom="110dp"
         android:layout_marginLeft="24dp"
         android:layout_marginStart="24dp"
@@ -40,11 +46,10 @@
         android:id="@+id/search_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/found_stops_view"
         android:layout_alignLeft="@+id/found_stops_view"
         android:layout_alignStart="@+id/found_stops_view"
-        android:layout_marginBottom="99dp"
-        android:text="Button" />
+        android:layout_below="@+id/closest_stop_view"
+        android:text="Szukaj" />
 
     <AutoCompleteTextView
         android:id="@+id/find_stops_view"
@@ -53,17 +58,18 @@
         android:layout_alignBottom="@+id/search_button"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginEnd="14dp"
-        android:layout_marginRight="14dp"
-        android:text="AutoCompleteTextView" />
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:text="podaj nazwę przystanku" />
 
     <com.google.android.gms.maps.MapView
         android:id="@+id/closest_stop_view"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/search_button"
-        android:layout_alignRight="@+id/search_button"
-        android:layout_below="@+id/appBarLayout"
-        android:layout_marginTop="20dp" />
+        android:layout_height="215dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/appBarLayout" />
 
 </RelativeLayout>

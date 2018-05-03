@@ -13,4 +13,10 @@
     <string name="stop_return">Powrót do mapy</string>
     <string name="Yes_text">TAK</string>
     <string name="No_text">NIE</string>
+    <string name= "line">linia:</string>
+    <string name="name_stop">nazwa:</string>
+    <string name="delay">spóźnienie:</string>
+    <string name="brigade_nr">brygada:</string>
+    <string name="direct_stop">kierunek:</string>
+    <string name="bus_stop">słupek Przystankowy:</string>
 </resources>

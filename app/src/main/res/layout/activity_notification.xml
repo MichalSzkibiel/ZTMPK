@@ -11,13 +11,12 @@
         android:id="@+id/info_fragment"
         android:name="com.apackage.ztmpk.NotificationFragment"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="225dp"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="95dp"
-        android:layout_marginStart="95dp"
-        android:layout_marginTop="109dp" />
+        android:layout_alignParentTop="true" />
 
     <Spinner
         android:id="@+id/notification_spinner"
@@ -32,13 +31,13 @@
     <EditText
         android:id="@+id/extra_edit"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:layout_alignLeft="@+id/notification_spinner"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:layout_alignStart="@+id/notification_spinner"
         android:layout_below="@+id/notification_spinner"
-        android:layout_marginLeft="39dp"
-        android:layout_marginStart="39dp"
-        android:layout_marginTop="67dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:inputType="textMultiLine" />
 
@@ -46,9 +45,8 @@
         android:id="@+id/send_notification"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/info_fragment"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/info_fragment"
-        android:layout_marginBottom="39dp"
-        android:text="Button" />
+        android:layout_below="@+id/extra_edit"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="28dp"
+        android:text="@string/send" />
 </RelativeLayout>
