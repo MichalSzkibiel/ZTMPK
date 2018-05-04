@@ -8,4 +8,15 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="find_stop_text">Znajdź Przystanek</string>
+    <string name="send">Zgłoś</string>
+    <string name="stop_return">Powrót do mapy</string>
+    <string name="Yes_text">TAK</string>
+    <string name="No_text">NIE</string>
+    <string name= "line">linia:</string>
+    <string name="name_stop">nazwa:</string>
+    <string name="delay">spóźnienie:</string>
+    <string name="brigade_nr">brygada:</string>
+    <string name="direct_stop">kierunek:</string>
+    <string name="bus_stop">słupek Przystankowy:</string>
 </resources>
