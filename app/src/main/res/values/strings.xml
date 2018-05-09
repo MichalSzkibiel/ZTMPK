@@ -19,4 +19,5 @@
     <string name="brigade_nr">brygada:</string>
     <string name="direct_stop">kierunek:</string>
     <string name="bus_stop">słupek Przystankowy:</string>
+    <string name="return">Powrót do głównego menu</string>
 </resources>
