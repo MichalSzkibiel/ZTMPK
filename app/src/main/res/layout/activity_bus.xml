@@ -41,6 +41,6 @@
         android:layout_alignEnd="@+id/notification_fragment"
         android:layout_alignRight="@+id/notification_fragment"
         android:layout_below="@+id/notification_fragment"
-        android:text="@string/return" />
+        android:text="@string/ret_but" />
 
 </RelativeLayout>
