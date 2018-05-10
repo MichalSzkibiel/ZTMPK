@@ -29,12 +29,13 @@
         android:id="@+id/goTo_location"
         android:layout_width="80dp"
         android:layout_height="70dp"
+        android:layout_alignBaseline="@+id/find_stop"
         android:layout_alignBottom="@+id/find_stop"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginEnd="59dp"
-        android:layout_marginRight="59dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginStart="60dp"
+        android:layout_toEndOf="@+id/find_stop"
+        android:layout_toRightOf="@+id/find_stop"
         android:layout_weight="1"
-        android:text="lokal" />
+        android:text="Szukaj po lokalizacji" />
 
 </RelativeLayout>

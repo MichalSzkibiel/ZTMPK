@@ -1,8 +1,20 @@
 package com.apackage.ztmpk;
 
+import android.app.Activity;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
+import android.support.annotation.DrawableRes;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
@@ -40,18 +52,45 @@ public class SuperStop {
         }
     }
 
-    public void draw(GoogleMap mMap, int idx){
+    public void draw(GoogleMap mMap, Activity activity, int idx){
+        //zespoly
         MarkerOptions superMarker = new MarkerOptions();
         superMarker.position(position);
         superMarker.draggable(false);
         superMarker.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
         superMarker.title(String.valueOf(idx));
         for (int i = 0; i < underStops.size(); ++i){
-            underStops.get(i).draw(mMap, idx, i);
+            underStops.get(i).draw(mMap, activity, idx,  i);
         }
-        stopMarker = mMap.addMarker(superMarker);
+        stopMarker = mMap.addMarker(new MarkerOptions()
+        .position(position)
+        .draggable(false)
+        .title(String.valueOf(idx))
+                .icon(BitmapDescriptorFactory.fromBitmap(getMarkerBitmapFromView(R.drawable.bus_stop, activity)))
+        );
+
+
         Log.d(TAG, "Przystanek");
 
+    }
+
+    private Bitmap getMarkerBitmapFromView(@DrawableRes int resId, Activity activity) {
+
+        View customMarkerView = ((LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.activity_stop, null);
+        ImageView markerImageView = (ImageView) customMarkerView.findViewById(R.id.profile_image);
+        markerImageView.setImageResource(resId);
+        customMarkerView.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
+        customMarkerView.layout(0, 0, customMarkerView.getMeasuredWidth(), customMarkerView.getMeasuredHeight());
+        customMarkerView.buildDrawingCache();
+        Bitmap returnedBitmap = Bitmap.createBitmap(customMarkerView.getMeasuredWidth(), customMarkerView.getMeasuredHeight(),
+                Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(returnedBitmap);
+        canvas.drawColor(Color.WHITE, PorterDuff.Mode.SRC_IN);
+        Drawable drawable = customMarkerView.getBackground();
+        if (drawable != null)
+            drawable.draw(canvas);
+        customMarkerView.draw(canvas);
+        return returnedBitmap;
     }
 
     public Marker getStopMarker() {

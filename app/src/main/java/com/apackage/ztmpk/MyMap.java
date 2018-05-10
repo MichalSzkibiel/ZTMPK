@@ -73,4 +73,8 @@ public class MyMap implements OnMapReadyCallback {
     public String toString(){
         return String.valueOf(position.latitude) +  " " + String.valueOf(position.longitude);
     }
+
+    public Activity getCurrent_activity(){
+        return current_activity;
+    }
 }

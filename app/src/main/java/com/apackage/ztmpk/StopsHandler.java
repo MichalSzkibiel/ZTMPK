@@ -57,7 +57,7 @@ public class StopsHandler {
     public void draw(){
         GoogleMap mMap = caller.getMap();
         for (int i = 0; i < stops.size(); ++i){
-            stops.get(i).draw(mMap, i);
+            stops.get(i).draw(mMap,caller.getCurrent_activity(), i);
         }
     }
 }
