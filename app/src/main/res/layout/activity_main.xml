@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <com.google.android.gms.maps.MapView
+    <fragment
+        class = "com.google.android.gms.maps.MapFragment"
         android:id="@+id/mainMap"
         android:layout_width="match_parent"
         android:layout_height="370dp"
