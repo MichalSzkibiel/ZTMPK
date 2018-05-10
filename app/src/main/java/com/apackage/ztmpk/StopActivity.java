@@ -15,7 +15,7 @@ public class StopActivity extends Activity {
         super.onCreate(savedInstanceState);
         if (savedInstanceState == null) {
             StopFragment stopFragment = StopFragment.newInstance();
-            getFragmentManager().beginTransaction().replace(R.id.stop_fragment, stopFragment).commit();
+            //getFragmentManager().beginTransaction().replace(R.id.stop_fragment, stopFragment).commit();
         }
         setContentView(R.layout.activity_stop);
         getActionBar().setDisplayHomeAsUpEnabled(true);
