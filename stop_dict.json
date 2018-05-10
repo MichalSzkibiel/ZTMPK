@@ -452,8 +452,8 @@
 		"request": ["N14", "N64"]
 	}, {
 		"id": "02",
-		"lat": "",
-		"lon": "",
+		"lat": 0.0,
+		"lon": 0.0,
 		"constant": ["Z20"],
 		"sit_in": [],
 		"sit_out": [],
@@ -4577,8 +4577,8 @@
 		"request": []
 	}, {
 		"id": "54",
-		"lat": "",
-		"lon": "",
+		"lat": 0.0,
+		"lon": 0.0,
 		"constant": [],
 		"sit_in": [],
 		"sit_out": [],
@@ -5689,16 +5689,16 @@
 	"borough": "WARSZAWA",
 	"under_stops": [{
 		"id": "51",
-		"lat": "",
-		"lon": "",
+		"lat": 0.0,
+		"lon": 0.0,
 		"constant": ["120", "240", "332", "527", "E-7", "E-9"],
 		"sit_in": [],
 		"sit_out": [],
 		"end": [],
 		"request": ["N11"]
 	}],
-	"lat": "",
-	"lon": ""
+	"lat": 0.0,
+	"lon": 0.0
 }, {
 	"id": "1179",
 	"name": "CH_Targówek",
@@ -5766,8 +5766,8 @@
 		"request": ["N11"]
 	}, {
 		"id": "51",
-		"lat": "",
-		"lon": "",
+		"lat": 0.0,
+		"lon": 0.0,
 		"constant": [],
 		"sit_in": [],
 		"sit_out": [],
@@ -6295,8 +6295,8 @@
 		"request": ["120", "132", "214", "240", "304"]
 	}, {
 		"id": "52",
-		"lat": "",
-		"lon": "",
+		"lat": 0.0,
+		"lon": 0.0,
 		"constant": [],
 		"sit_in": [],
 		"sit_out": [],
@@ -9852,8 +9852,8 @@
 	"borough": "ZIELONKA",
 	"under_stops": [{
 		"id": "01",
-		"lat": "",
-		"lon": "",
+		"lat": 0.0,
+		"lon": 0.0,
 		"constant": ["L43", "L44"],
 		"sit_in": [],
 		"sit_out": [],
@@ -10488,16 +10488,16 @@
 	"borough": "LEGIONOWO",
 	"under_stops": [{
 		"id": "01",
-		"lat": "",
-		"lon": "",
+		"lat": 0.0,
+		"lon": 0.0,
 		"constant": [],
 		"sit_in": [],
 		"sit_out": [],
 		"end": ["L34", "L41"],
 		"request": []
 	}],
-	"lat": "",
-	"lon": ""
+	"lat": 0.0,
+	"lon": 0.0
 }, {
 	"id": "1371",
 	"name": "Zegrzyńska",
@@ -13332,16 +13332,16 @@
 	"borough": "WARSZAWA",
 	"under_stops": [{
 		"id": "51",
-		"lat": "",
-		"lon": "",
+		"lat": 0.0,
+		"lon": 0.0,
 		"constant": [],
 		"sit_in": [],
 		"sit_out": [],
 		"end": [],
 		"request": ["120", "240", "332", "N11"]
 	}],
-	"lat": "",
-	"lon": ""
+	"lat": 0.0,
+	"lon": 0.0
 }, {
 	"id": "1703",
 	"name": "rondo_Cudu_Nad_Wisłą",
@@ -20776,8 +20776,8 @@
 		"request": ["N72"]
 	}, {
 		"id": "53",
-		"lat": "",
-		"lon": "",
+		"lat": 0.0,
+		"lon": 0.0,
 		"constant": ["115", "142", "213"],
 		"sit_in": [],
 		"sit_out": [],
@@ -20785,8 +20785,8 @@
 		"request": ["N22"]
 	}, {
 		"id": "56",
-		"lat": "",
-		"lon": "",
+		"lat": 0.0,
+		"lon": 0.0,
 		"constant": ["Z15"],
 		"sit_in": [],
 		"sit_out": [],
@@ -30311,32 +30311,32 @@
 	"borough": "WARSZAWA",
 	"under_stops": [{
 		"id": "52",
-		"lat": "",
-		"lon": "",
+		"lat": 0.0,
+		"lon": 0.0,
 		"constant": [],
 		"sit_in": [],
 		"sit_out": [],
 		"end": [],
 		"request": ["Z15"]
 	}],
-	"lat": "",
-	"lon": ""
+	"lat": 0.0,
+	"lon": 0.0
 }, {
 	"id": "2446",
 	"name": "Lokalna",
 	"borough": "WARSZAWA",
 	"under_stops": [{
 		"id": "51",
-		"lat": "",
-		"lon": "",
+		"lat": 0.0,
+		"lon": 0.0,
 		"constant": [],
 		"sit_in": [],
 		"sit_out": [],
 		"end": ["Z15"],
 		"request": []
 	}],
-	"lat": "",
-	"lon": ""
+	"lat": 0.0,
+	"lon": 0.0
 }, {
 	"id": "2502",
 	"name": "Rechniewskiego",
@@ -30525,16 +30525,16 @@
 	"borough": "WARSZAWA",
 	"under_stops": [{
 		"id": "52",
-		"lat": "",
-		"lon": "",
+		"lat": 0.0,
+		"lon": 0.0,
 		"constant": [],
 		"sit_in": [],
 		"sit_out": [],
 		"end": [],
 		"request": ["Z15"]
 	}],
-	"lat": "",
-	"lon": ""
+	"lat": 0.0,
+	"lon": 0.0
 }, {
 	"id": "2810",
 	"name": "Górecka",
@@ -36267,8 +36267,8 @@
 		"request": []
 	}, {
 		"id": "53",
-		"lat": "",
-		"lon": "",
+		"lat": 0.0,
+		"lon": 0.0,
 		"constant": ["192", "503", "504"],
 		"sit_in": [],
 		"sit_out": [],
@@ -36335,8 +36335,8 @@
 		"request": ["N37"]
 	}, {
 		"id": "52",
-		"lat": "",
-		"lon": "",
+		"lat": 0.0,
+		"lon": 0.0,
 		"constant": [],
 		"sit_in": [],
 		"sit_out": [],
@@ -36478,8 +36478,8 @@
 		"request": ["195", "503"]
 	}, {
 		"id": "51",
-		"lat": "",
-		"lon": "",
+		"lat": 0.0,
+		"lon": 0.0,
 		"constant": ["136", "192"],
 		"sit_in": [],
 		"sit_out": [],
@@ -38083,8 +38083,8 @@
 		"request": []
 	}, {
 		"id": "04",
-		"lat": "",
-		"lon": "",
+		"lat": 0.0,
+		"lon": 0.0,
 		"constant": ["136"],
 		"sit_in": [],
 		"sit_out": [],
@@ -39831,8 +39831,8 @@
 		"request": []
 	}, {
 		"id": "53",
-		"lat": "",
-		"lon": "",
+		"lat": 0.0,
+		"lon": 0.0,
 		"constant": ["L39"],
 		"sit_in": [],
 		"sit_out": [],
@@ -41307,8 +41307,8 @@
 		"request": ["N34"]
 	}, {
 		"id": "52",
-		"lat": "",
-		"lon": "",
+		"lat": 0.0,
+		"lon": 0.0,
 		"constant": [],
 		"sit_in": [],
 		"sit_out": [],
@@ -42283,8 +42283,8 @@
 		"request": ["L39"]
 	}, {
 		"id": "52",
-		"lat": "",
-		"lon": "",
+		"lat": 0.0,
+		"lon": 0.0,
 		"constant": [],
 		"sit_in": [],
 		"sit_out": [],
@@ -53303,8 +53303,8 @@
 		"request": []
 	}, {
 		"id": "02",
-		"lat": "",
-		"lon": "",
+		"lat": 0.0,
+		"lon": 0.0,
 		"constant": [],
 		"sit_in": [],
 		"sit_out": [],
@@ -56317,8 +56317,8 @@
 	"borough": "PRUSZKÓW",
 	"under_stops": [{
 		"id": "01",
-		"lat": "",
-		"lon": "",
+		"lat": 0.0,
+		"lon": 0.0,
 		"constant": [],
 		"sit_in": [],
 		"sit_out": [],
@@ -56326,16 +56326,16 @@
 		"request": ["L23", "ZG", "ZP"]
 	}, {
 		"id": "02",
-		"lat": "",
-		"lon": "",
+		"lat": 0.0,
+		"lon": 0.0,
 		"constant": [],
 		"sit_in": [],
 		"sit_out": [],
 		"end": [],
 		"request": ["ZG", "ZP"]
 	}],
-	"lat": "",
-	"lon": ""
+	"lat": 0.0,
+	"lon": 0.0
 }, {
 	"id": "4803",
 	"name": "Olszynowa",
@@ -56826,16 +56826,16 @@
 	"borough": "PRUSZKÓW",
 	"under_stops": [{
 		"id": "01",
-		"lat": "",
-		"lon": "",
+		"lat": 0.0,
+		"lon": 0.0,
 		"constant": [],
 		"sit_in": [],
 		"sit_out": [],
 		"end": [],
 		"request": ["L23", "ZP"]
 	}],
-	"lat": "",
-	"lon": ""
+	"lat": 0.0,
+	"lon": 0.0
 }, {
 	"id": "4838",
 	"name": "Studzienna",
@@ -56917,8 +56917,8 @@
 	"borough": "PRUSZKÓW",
 	"under_stops": [{
 		"id": "03",
-		"lat": "",
-		"lon": "",
+		"lat": 0.0,
+		"lon": 0.0,
 		"constant": [],
 		"sit_in": [],
 		"sit_out": [],
@@ -56926,8 +56926,8 @@
 		"request": ["ZW"]
 	}, {
 		"id": "04",
-		"lat": "",
-		"lon": "",
+		"lat": 0.0,
+		"lon": 0.0,
 		"constant": [],
 		"sit_in": [],
 		"sit_out": [],
@@ -56935,8 +56935,8 @@
 		"request": ["ZW"]
 	}, {
 		"id": "05",
-		"lat": "",
-		"lon": "",
+		"lat": 0.0,
+		"lon": 0.0,
 		"constant": [],
 		"sit_in": [],
 		"sit_out": [],
@@ -56944,40 +56944,40 @@
 		"request": ["ZW"]
 	}, {
 		"id": "06",
-		"lat": "",
-		"lon": "",
+		"lat": 0.0,
+		"lon": 0.0,
 		"constant": [],
 		"sit_in": [],
 		"sit_out": [],
 		"end": [],
 		"request": ["ZW"]
 	}],
-	"lat": "",
-	"lon": ""
+	"lat": 0.0,
+	"lon": 0.0
 }, {
 	"id": "4842",
 	"name": "3_Maja",
 	"borough": "PRUSZKÓW",
 	"under_stops": [{
 		"id": "08",
-		"lat": "",
-		"lon": "",
+		"lat": 0.0,
+		"lon": 0.0,
 		"constant": [],
 		"sit_in": [],
 		"sit_out": [],
 		"end": [],
 		"request": ["ZW"]
 	}],
-	"lat": "",
-	"lon": ""
+	"lat": 0.0,
+	"lon": 0.0
 }, {
 	"id": "4839",
 	"name": "Kolejowa",
 	"borough": "PRUSZKÓW",
 	"under_stops": [{
 		"id": "01",
-		"lat": "",
-		"lon": "",
+		"lat": 0.0,
+		"lon": 0.0,
 		"constant": [],
 		"sit_in": [],
 		"sit_out": [],
@@ -56985,32 +56985,32 @@
 		"request": ["ZW"]
 	}, {
 		"id": "02",
-		"lat": "",
-		"lon": "",
+		"lat": 0.0,
+		"lon": 0.0,
 		"constant": [],
 		"sit_in": [],
 		"sit_out": [],
 		"end": [],
 		"request": ["ZW"]
 	}],
-	"lat": "",
-	"lon": ""
+	"lat": 0.0,
+	"lon": 0.0
 }, {
 	"id": "4843",
 	"name": "Granitowa",
 	"borough": "PRUSZKÓW",
 	"under_stops": [{
 		"id": "02",
-		"lat": "",
-		"lon": "",
+		"lat": 0.0,
+		"lon": 0.0,
 		"constant": [],
 		"sit_in": [],
 		"sit_out": [],
 		"end": [],
 		"request": ["ZW"]
 	}],
-	"lat": "",
-	"lon": ""
+	"lat": 0.0,
+	"lon": 0.0
 }, {
 	"id": "4852",
 	"name": "Dzikiej_Róży",
@@ -57409,16 +57409,16 @@
 	"borough": "PRUSZKÓW",
 	"under_stops": [{
 		"id": "01",
-		"lat": "",
-		"lon": "",
+		"lat": 0.0,
+		"lon": 0.0,
 		"constant": [],
 		"sit_in": [],
 		"sit_out": [],
 		"end": [],
 		"request": ["ZW"]
 	}],
-	"lat": "",
-	"lon": ""
+	"lat": 0.0,
+	"lon": 0.0
 }, {
 	"id": "4877",
 	"name": "Hala_Znicz",
@@ -57769,8 +57769,8 @@
 	"borough": "PRUSZKÓW",
 	"under_stops": [{
 		"id": "01",
-		"lat": "",
-		"lon": "",
+		"lat": 0.0,
+		"lon": 0.0,
 		"constant": [],
 		"sit_in": [],
 		"sit_out": [],
@@ -57778,16 +57778,16 @@
 		"request": ["ZW"]
 	}, {
 		"id": "02",
-		"lat": "",
-		"lon": "",
+		"lat": 0.0,
+		"lon": 0.0,
 		"constant": [],
 		"sit_in": [],
 		"sit_out": [],
 		"end": [],
 		"request": ["ZW"]
 	}],
-	"lat": "",
-	"lon": ""
+	"lat": 0.0,
+	"lon": 0.0
 }, {
 	"id": "4882",
 	"name": "Sportowa",
@@ -58228,8 +58228,8 @@
 		"request": []
 	}, {
 		"id": "02",
-		"lat": "",
-		"lon": "",
+		"lat": 0.0,
+		"lon": 0.0,
 		"constant": ["ZG", "ZM"],
 		"sit_in": [],
 		"sit_out": [],
@@ -67197,8 +67197,8 @@
 		"request": []
 	}, {
 		"id": "05",
-		"lat": "",
-		"lon": "",
+		"lat": 0.0,
+		"lon": 0.0,
 		"constant": ["184", "303"],
 		"sit_in": [],
 		"sit_out": [],
@@ -67882,8 +67882,8 @@
 		"request": ["N01", "N02", "N44", "N46", "N56", "N58"]
 	}, {
 		"id": "04",
-		"lat": "",
-		"lon": "",
+		"lat": 0.0,
+		"lon": 0.0,
 		"constant": [],
 		"sit_in": [],
 		"sit_out": [],
@@ -71364,8 +71364,8 @@
 		"request": ["N56"]
 	}, {
 		"id": "03",
-		"lat": "",
-		"lon": "",
+		"lat": 0.0,
+		"lon": 0.0,
 		"constant": ["150", "750"],
 		"sit_in": [],
 		"sit_out": [],
@@ -73296,8 +73296,8 @@
 		"request": []
 	}, {
 		"id": "52",
-		"lat": "",
-		"lon": "",
+		"lat": 0.0,
+		"lon": 0.0,
 		"constant": ["518"],
 		"sit_in": [],
 		"sit_out": [],
@@ -74067,8 +74067,8 @@
 		"request": []
 	}, {
 		"id": "51",
-		"lat": "",
-		"lon": "",
+		"lat": 0.0,
+		"lon": 0.0,
 		"constant": ["518"],
 		"sit_in": [],
 		"sit_out": [],

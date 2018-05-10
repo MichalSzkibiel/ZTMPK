@@ -13,8 +13,8 @@ public class StopActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (savedInstanceState == null) {
-            Fragment fragment = new ContentFragment();
-            getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
+            //Fragment fragment = new ContentFragment();
+            //getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
         }
         setContentView(R.layout.activity_stop);
         getActionBar().setDisplayHomeAsUpEnabled(true);
@@ -24,11 +24,11 @@ public class StopActivity extends Activity {
         MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.mainMap);
         LatLng position = new LatLng(0.0, 0.0);
         if (underId != -1){
-            UnderStop stop = MainActivity.sh.stops.get(superId).underStops.get(underId);
+            UnderStop stop = MyMap.sh.stops.get(superId).underStops.get(underId);
             position = stop.position;
         }
         else{
-            SuperStop stop = MainActivity.sh.stops.get(superId);
+            SuperStop stop = MyMap.sh.stops.get(superId);
             position = stop.position;
         }
         MainActivity.map_reference.move(position, 15);

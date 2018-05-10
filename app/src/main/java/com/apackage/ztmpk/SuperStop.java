@@ -1,5 +1,7 @@
 package com.apackage.ztmpk;
 
+import android.util.Log;
+
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
@@ -18,6 +20,7 @@ public class SuperStop {
     public LatLng position;
     public ArrayList<UnderStop> underStops;
     private Marker stopMarker;
+    private static String TAG = "SuperStop";
 
     public SuperStop(JSONObject json) throws JSONException {
         id = json.getString("id");
@@ -32,7 +35,7 @@ public class SuperStop {
                 UnderStop element = new UnderStop(us.getJSONObject(i));
                 underStops.add(element);
             } catch(JSONException e) {
-
+                Log.d(TAG, "Coś poszło nie tak");
             }
         }
     }
@@ -47,6 +50,8 @@ public class SuperStop {
             underStops.get(i).draw(mMap, idx, i);
         }
         stopMarker = mMap.addMarker(superMarker);
+        Log.d(TAG, "Przystanek");
+
     }
 
     public Marker getStopMarker() {
