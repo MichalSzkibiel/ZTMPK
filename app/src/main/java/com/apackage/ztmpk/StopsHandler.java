@@ -31,15 +31,15 @@ public class StopsHandler {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String list = dataSnapshot.getValue().toString();
-                Log.d(TAG, list.substring(36300, 36350));
                 try {
                     stops = new ArrayList<>();
-                    //JSONObject jsono = new JSONObject(list);
                     JSONArray json = new JSONArray(list);
+                    Log.d(TAG, String.valueOf(json.length()));
                     for (int i = 0; i < json.length(); ++i){
                         try {
                             stops.add(new SuperStop(json.getJSONObject(i)));
-                        } catch (JSONException e){}
+                        } catch (JSONException e){
+                        }
                     }
                 } catch (JSONException e) {
                     Log.d(TAG, "Coś nie tak");
