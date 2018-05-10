@@ -31,7 +31,7 @@ public class StopsHandler {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String list = dataSnapshot.getValue().toString();
-                Log.d(TAG, list.substring(36310, 36320));
+                Log.d(TAG, list.substring(36300, 36350));
                 try {
                     stops = new ArrayList<>();
                     //JSONObject jsono = new JSONObject(list);
