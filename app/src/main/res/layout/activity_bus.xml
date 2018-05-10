@@ -20,7 +20,7 @@
         android:id="@+id/bus_fragment"
         android:name="com.apackage.ztmpk.BusFragment"
         android:layout_width="300dp"
-        android:layout_height="150dp"
+        android:layout_height="125dp"
         android:layout_alignLeft="@+id/notification_fragment"
         android:layout_alignStart="@+id/notification_fragment"
         android:layout_below="@+id/bus_map" />
@@ -29,8 +29,18 @@
         android:id="@+id/notification_fragment"
         android:name="com.apackage.ztmpk.NotificationFragment"
         android:layout_width="300dp"
-        android:layout_height="150dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_height="125dp"
+        android:layout_below="@+id/bus_fragment"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="11dp" />
+
+    <Button
+        android:id="@+id/return_bus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/notification_fragment"
+        android:layout_alignRight="@+id/notification_fragment"
+        android:layout_below="@+id/notification_fragment"
+        android:text="@string/return" />
 
 </RelativeLayout>
