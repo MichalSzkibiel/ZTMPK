@@ -4000,7 +4000,7 @@
 }, {
 	"id": "1123",
 	"name": "Stanisławów",
-	"borough": "STANISŁAWÓW PIERWSZY",
+	"borough": "STANISŁAWÓW_PIERWSZY",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.39348,
@@ -7851,7 +7851,7 @@
 }, {
 	"id": "1267",
 	"name": "Aleksandrów",
-	"borough": "STANISŁAWÓW PIERWSZY",
+	"borough": "STANISŁAWÓW_PIERWSZY",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.39697,
@@ -8754,7 +8754,7 @@
 }, {
 	"id": "1297",
 	"name": "Przyleśna",
-	"borough": "STANISŁAWÓW PIERWSZY",
+	"borough": "STANISŁAWÓW_PIERWSZY",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.3848,
@@ -9424,7 +9424,7 @@
 }, {
 	"id": "1323",
 	"name": "Zegrze_Płd.",
-	"borough": "ZEGRZE PŁD.",
+	"borough": "ZEGRZE_PŁD.",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.45227,
@@ -11271,7 +11271,7 @@
 }, {
 	"id": "1413",
 	"name": "Objazdowa",
-	"borough": "JÓZEFÓW k. LEGIONOWA",
+	"borough": "JÓZEFÓW_k._LEGIONOWA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.39109,
@@ -11296,7 +11296,7 @@
 }, {
 	"id": "1414",
 	"name": "Szkolna",
-	"borough": "JÓZEFÓW k. LEGIONOWA",
+	"borough": "JÓZEFÓW_k._LEGIONOWA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.38443,
@@ -11321,7 +11321,7 @@
 }, {
 	"id": "1415",
 	"name": "Kościelna",
-	"borough": "KĄTY WĘGIERSKIE",
+	"borough": "KĄTY_WĘGIERSKIE",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.3878,
@@ -11346,7 +11346,7 @@
 }, {
 	"id": "1416",
 	"name": "Anusinek",
-	"borough": "KĄTY WĘGIERSKIE",
+	"borough": "KĄTY_WĘGIERSKIE",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.382,
@@ -11851,7 +11851,7 @@
 }, {
 	"id": "1440",
 	"name": "Wolica",
-	"borough": "STARE ZAŁUBICE",
+	"borough": "STARE_ZAŁUBICE",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.47914,
@@ -11876,7 +11876,7 @@
 }, {
 	"id": "1441",
 	"name": "Zegrzyńska",
-	"borough": "STARE ZAŁUBICE",
+	"borough": "STARE_ZAŁUBICE",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.4797,
@@ -11901,7 +11901,7 @@
 }, {
 	"id": "1442",
 	"name": "Marcinki",
-	"borough": "STARE ZAŁUBICE",
+	"borough": "STARE_ZAŁUBICE",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.48012,
@@ -11926,7 +11926,7 @@
 }, {
 	"id": "1444",
 	"name": "Nowe_Załubice",
-	"borough": "NOWE ZAŁUBICE",
+	"borough": "NOWE_ZAŁUBICE",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.48211,
@@ -11942,7 +11942,7 @@
 }, {
 	"id": "1445",
 	"name": "Opolska",
-	"borough": "STARE ZAŁUBICE",
+	"borough": "STARE_ZAŁUBICE",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.48156,
@@ -11967,7 +11967,7 @@
 }, {
 	"id": "1446",
 	"name": "Załubice-Poczta",
-	"borough": "STARE ZAŁUBICE",
+	"borough": "STARE_ZAŁUBICE",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.48062,
@@ -12017,7 +12017,7 @@
 }, {
 	"id": "1443",
 	"name": "Załubice-Szkoła",
-	"borough": "STARE ZAŁUBICE",
+	"borough": "STARE_ZAŁUBICE",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.48109,
@@ -14064,7 +14064,7 @@
 }, {
 	"id": "1730",
 	"name": "Sobieskiego",
-	"borough": "SIERAKÓW k. RADZYMINA",
+	"borough": "SIERAKÓW_k._RADZYMINA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.405074,
@@ -14164,7 +14164,7 @@
 }, {
 	"id": "1729",
 	"name": "Podbipięty",
-	"borough": "SIERAKÓW k. RADZYMINA",
+	"borough": "SIERAKÓW_k._RADZYMINA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.402428,
@@ -14189,7 +14189,7 @@
 }, {
 	"id": "1742",
 	"name": "Stare_Grabie-Szkoła",
-	"borough": "STARE GRABIE",
+	"borough": "STARE_GRABIE",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.370881,
@@ -14257,7 +14257,7 @@
 }, {
 	"id": "1744",
 	"name": "Majdan",
-	"borough": "MAJDAN k. WOŁOMINA",
+	"borough": "MAJDAN_k._WOŁOMINA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.324171,
@@ -14780,7 +14780,7 @@
 }, {
 	"id": "1769",
 	"name": "Helenów",
-	"borough": "HELENÓW k. WOŁOMINA",
+	"borough": "HELENÓW_k._WOŁOMINA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.374583,
@@ -14805,7 +14805,7 @@
 }, {
 	"id": "1776",
 	"name": "Nowe_Grabie_I",
-	"borough": "NOWE GRABIE",
+	"borough": "NOWE_GRABIE",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.356578,
@@ -14821,7 +14821,7 @@
 }, {
 	"id": "1777",
 	"name": "Nowe_Grabie_II",
-	"borough": "NOWE GRABIE",
+	"borough": "NOWE_GRABIE",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.352903,
@@ -14887,7 +14887,7 @@
 }, {
 	"id": "1775",
 	"name": "Stare_Grabie",
-	"borough": "STARE GRABIE",
+	"borough": "STARE_GRABIE",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.363597,
@@ -14903,7 +14903,7 @@
 }, {
 	"id": "1782",
 	"name": "Stare_Lipiny",
-	"borough": "STARE LIPINY",
+	"borough": "STARE_LIPINY",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.338309,
@@ -14985,7 +14985,7 @@
 }, {
 	"id": "1786",
 	"name": "Stare_Grabie_II",
-	"borough": "STARE GRABIE",
+	"borough": "STARE_GRABIE",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.367059,
@@ -15276,7 +15276,7 @@
 }, {
 	"id": "1797",
 	"name": "Dębowa",
-	"borough": "BOŻA WOLA",
+	"borough": "BOŻA_WOLA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.414764,
@@ -15326,7 +15326,7 @@
 }, {
 	"id": "1798",
 	"name": "os.Młodych",
-	"borough": "NOWY DWÓR MAZ.",
+	"borough": "NOWY_DWÓR_MAZ.",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.416932,
@@ -15478,7 +15478,7 @@
 }, {
 	"id": "1780",
 	"name": "Nowe_Lipiny",
-	"borough": "NOWE LIPINY",
+	"borough": "NOWE_LIPINY",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.356217,
@@ -15503,7 +15503,7 @@
 }, {
 	"id": "1799",
 	"name": "Leśna",
-	"borough": "NOWY DWÓR MAZ.",
+	"borough": "NOWY_DWÓR_MAZ.",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.418511,
@@ -16074,7 +16074,7 @@
 }, {
 	"id": "1841",
 	"name": "Olszewnica_Stara",
-	"borough": "OLSZEWNICA STARA",
+	"borough": "OLSZEWNICA_STARA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.44145,
@@ -16174,7 +16174,7 @@
 }, {
 	"id": "1828",
 	"name": "Spacerowa",
-	"borough": "OLSZEWNICA NOWA",
+	"borough": "OLSZEWNICA_NOWA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.44124,
@@ -16224,7 +16224,7 @@
 }, {
 	"id": "1830",
 	"name": "Kwiatowa",
-	"borough": "JANÓWEK PIERWSZY",
+	"borough": "JANÓWEK_PIERWSZY",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.44215,
@@ -16290,7 +16290,7 @@
 }, {
 	"id": "1826",
 	"name": "Warszawska",
-	"borough": "OLSZEWNICA STARA",
+	"borough": "OLSZEWNICA_STARA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.44854,
@@ -16847,7 +16847,7 @@
 }, {
 	"id": "1869",
 	"name": "Majowa",
-	"borough": "WÓLKA RADZYMIŃSKA",
+	"borough": "WÓLKA_RADZYMIŃSKA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.414214,
@@ -16872,7 +16872,7 @@
 }, {
 	"id": "1870",
 	"name": "Wirażowa",
-	"borough": "WÓLKA RADZYMIŃSKA",
+	"borough": "WÓLKA_RADZYMIŃSKA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.409517,
@@ -16897,7 +16897,7 @@
 }, {
 	"id": "1871",
 	"name": "GOK",
-	"borough": "STANISŁAWÓW DRUGI",
+	"borough": "STANISŁAWÓW_DRUGI",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.408295,
@@ -16922,7 +16922,7 @@
 }, {
 	"id": "1872",
 	"name": "Wiśniowa",
-	"borough": "STANISŁAWÓW DRUGI",
+	"borough": "STANISŁAWÓW_DRUGI",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.410462,
@@ -16947,7 +16947,7 @@
 }, {
 	"id": "1873",
 	"name": "Przyszłość",
-	"borough": "STANISŁAWÓW PIERWSZY",
+	"borough": "STANISŁAWÓW_PIERWSZY",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.39408,
@@ -17047,7 +17047,7 @@
 }, {
 	"id": "1881",
 	"name": "Zdobywców_Kosmosu",
-	"borough": "NOWY DWÓR MAZ.",
+	"borough": "NOWY_DWÓR_MAZ.",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.430917,
@@ -17072,7 +17072,7 @@
 }, {
 	"id": "1880",
 	"name": "Księcia_Ziemowita",
-	"borough": "NOWY DWÓR MAZ.",
+	"borough": "NOWY_DWÓR_MAZ.",
 	"under_stops": [{
 		"id": "02",
 		"lat": 52.430817,
@@ -17088,7 +17088,7 @@
 }, {
 	"id": "1877",
 	"name": "Sielska",
-	"borough": "STANISŁAWÓW PIERWSZY",
+	"borough": "STANISŁAWÓW_PIERWSZY",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.380293,
@@ -17113,7 +17113,7 @@
 }, {
 	"id": "1882",
 	"name": "Urząd_Miasta",
-	"borough": "NOWY DWÓR MAZ.",
+	"borough": "NOWY_DWÓR_MAZ.",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.430733,
@@ -17129,7 +17129,7 @@
 }, {
 	"id": "1874",
 	"name": "Rodzinna",
-	"borough": "STANISŁAWÓW PIERWSZY",
+	"borough": "STANISŁAWÓW_PIERWSZY",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.38725,
@@ -17154,7 +17154,7 @@
 }, {
 	"id": "1875",
 	"name": "Księżycowa",
-	"borough": "STANISŁAWÓW PIERWSZY",
+	"borough": "STANISŁAWÓW_PIERWSZY",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.37644,
@@ -17204,7 +17204,7 @@
 }, {
 	"id": "1888",
 	"name": "Beniaminówka",
-	"borough": "WÓLKA RADZYMIŃSKA",
+	"borough": "WÓLKA_RADZYMIŃSKA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.418225,
@@ -17254,7 +17254,7 @@
 }, {
 	"id": "1891",
 	"name": "Izabelińska",
-	"borough": "IZABELIN k. NIEPORĘTU",
+	"borough": "IZABELIN_k._NIEPORĘTU",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.396515,
@@ -17304,7 +17304,7 @@
 }, {
 	"id": "1892",
 	"name": "Szkolna",
-	"borough": "IZABELIN k. NIEPORĘTU",
+	"borough": "IZABELIN_k._NIEPORĘTU",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.392384,
@@ -17345,7 +17345,7 @@
 }, {
 	"id": "1894",
 	"name": "Akacjowa",
-	"borough": "KĄTY WĘGIERSKIE",
+	"borough": "KĄTY_WĘGIERSKIE",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.39091,
@@ -17370,7 +17370,7 @@
 }, {
 	"id": "1893",
 	"name": "Koncertowa",
-	"borough": "STANISŁAWÓW PIERWSZY",
+	"borough": "STANISŁAWÓW_PIERWSZY",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.397085,
@@ -17386,7 +17386,7 @@
 }, {
 	"id": "1898",
 	"name": "Wolska_I",
-	"borough": "WOLA ALEKSANDRA",
+	"borough": "WOLA_ALEKSANDRA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.403733,
@@ -17411,7 +17411,7 @@
 }, {
 	"id": "1899",
 	"name": "Wolska_II",
-	"borough": "STANISŁAWÓW DRUGI",
+	"borough": "STANISŁAWÓW_DRUGI",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.407143,
@@ -17436,7 +17436,7 @@
 }, {
 	"id": "1897",
 	"name": "Gajowa",
-	"borough": "WOLA ALEKSANDRA",
+	"borough": "WOLA_ALEKSANDRA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.402148,
@@ -17686,7 +17686,7 @@
 }, {
 	"id": "1896",
 	"name": "Marzycieli",
-	"borough": "KĄTY WĘGIERSKIE",
+	"borough": "KĄTY_WĘGIERSKIE",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.396408,
@@ -17977,7 +17977,7 @@
 }, {
 	"id": "1950",
 	"name": "Morawicza",
-	"borough": "NOWY DWÓR MAZ.",
+	"borough": "NOWY_DWÓR_MAZ.",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.419245,
@@ -18002,7 +18002,7 @@
 }, {
 	"id": "1951",
 	"name": "Akacjowa",
-	"borough": "NOWY DWÓR MAZ.",
+	"borough": "NOWY_DWÓR_MAZ.",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.42283,
@@ -18027,7 +18027,7 @@
 }, {
 	"id": "1952",
 	"name": "Paderewskiego",
-	"borough": "NOWY DWÓR MAZ.",
+	"borough": "NOWY_DWÓR_MAZ.",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.428073,
@@ -18052,7 +18052,7 @@
 }, {
 	"id": "1953",
 	"name": "Wypoczynkowa",
-	"borough": "DĄBROWA CHOTOMOWSKA",
+	"borough": "DĄBROWA_CHOTOMOWSKA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.418348,
@@ -18102,7 +18102,7 @@
 }, {
 	"id": "1955",
 	"name": "Brzozowa",
-	"borough": "OLSZEWNICA STARA",
+	"borough": "OLSZEWNICA_STARA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.430233,
@@ -18127,7 +18127,7 @@
 }, {
 	"id": "1954",
 	"name": "Lipowa",
-	"borough": "DĄBROWA CHOTOMOWSKA",
+	"borough": "DĄBROWA_CHOTOMOWSKA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.422933,
@@ -18168,7 +18168,7 @@
 }, {
 	"id": "1956",
 	"name": "Polna",
-	"borough": "OLSZEWNICA STARA",
+	"borough": "OLSZEWNICA_STARA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.433325,
@@ -18712,7 +18712,7 @@
 }, {
 	"id": "1984",
 	"name": "Strużańska-Fabryki",
-	"borough": "STANISŁAWÓW PIERWSZY",
+	"borough": "STANISŁAWÓW_PIERWSZY",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.375179,
@@ -27487,7 +27487,7 @@
 }, {
 	"id": "2303",
 	"name": "Hipolitowska",
-	"borough": "KONIK NOWY",
+	"borough": "KONIK_NOWY",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.21606,
@@ -27587,7 +27587,7 @@
 }, {
 	"id": "2308",
 	"name": "Terespolska",
-	"borough": "KONIK NOWY",
+	"borough": "KONIK_NOWY",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.21937,
@@ -27612,7 +27612,7 @@
 }, {
 	"id": "2309",
 	"name": "Konik_Nowy",
-	"borough": "KONIK NOWY",
+	"borough": "KONIK_NOWY",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.2178,
@@ -27637,7 +27637,7 @@
 }, {
 	"id": "2310",
 	"name": "Warszawska",
-	"borough": "KONIK STARY",
+	"borough": "KONIK_STARY",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.21309,
@@ -27687,7 +27687,7 @@
 }, {
 	"id": "2307",
 	"name": "Podgórna",
-	"borough": "KONIK NOWY",
+	"borough": "KONIK_NOWY",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.22079,
@@ -28121,7 +28121,7 @@
 }, {
 	"id": "2331",
 	"name": "Pęclińska",
-	"borough": "WIĄZOWNA KOŚCIELNA",
+	"borough": "WIĄZOWNA_KOŚCIELNA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.17172,
@@ -28378,7 +28378,7 @@
 }, {
 	"id": "2342",
 	"name": "Projektowana",
-	"borough": "WIĄZOWNA KOŚCIELNA",
+	"borough": "WIĄZOWNA_KOŚCIELNA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.16434,
@@ -29694,7 +29694,7 @@
 }, {
 	"id": "2407",
 	"name": "Teofilów",
-	"borough": "WOLA DUCKA",
+	"borough": "WOLA_DUCKA",
 	"under_stops": [{
 		"id": "02",
 		"lat": 52.12007,
@@ -29753,7 +29753,7 @@
 }, {
 	"id": "2408",
 	"name": "os.Wedel",
-	"borough": "WOLA DUCKA",
+	"borough": "WOLA_DUCKA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.12446,
@@ -29778,7 +29778,7 @@
 }, {
 	"id": "2410",
 	"name": "Wola_Karczewska",
-	"borough": "WOLA KARCZEWSKA",
+	"borough": "WOLA_KARCZEWSKA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.12713,
@@ -29794,7 +29794,7 @@
 }, {
 	"id": "2409",
 	"name": "Nad_Świdrem",
-	"borough": "WOLA KARCZEWSKA",
+	"borough": "WOLA_KARCZEWSKA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.1272,
@@ -40745,7 +40745,7 @@
 }, {
 	"id": "3312",
 	"name": "Kępa_Okrzewska",
-	"borough": "KĘPA OKRZEWSKA",
+	"borough": "KĘPA_OKRZEWSKA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.13199,
@@ -40795,7 +40795,7 @@
 }, {
 	"id": "3313",
 	"name": "Kępa_Okrzewska-Cmentarz",
-	"borough": "KĘPA OKRZEWSKA",
+	"borough": "KĘPA_OKRZEWSKA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.135,
@@ -41186,7 +41186,7 @@
 }, {
 	"id": "3331",
 	"name": "Rybna",
-	"borough": "WOLA GOŁKOWSKA",
+	"borough": "WOLA_GOŁKOWSKA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.04871,
@@ -41211,7 +41211,7 @@
 }, {
 	"id": "3330",
 	"name": "Orzechowa",
-	"borough": "WOLA GOŁKOWSKA",
+	"borough": "WOLA_GOŁKOWSKA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.05491,
@@ -41964,7 +41964,7 @@
 }, {
 	"id": "3364",
 	"name": "Wólka_Załęska",
-	"borough": "WÓLKA DWORSKA",
+	"borough": "WÓLKA_DWORSKA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.01163,
@@ -42039,7 +42039,7 @@
 }, {
 	"id": "3367",
 	"name": "Wyszyńskiego",
-	"borough": "GÓRA KALWARIA",
+	"borough": "GÓRA_KALWARIA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 51.99399,
@@ -42064,7 +42064,7 @@
 }, {
 	"id": "3368",
 	"name": "Rynek",
-	"borough": "GÓRA KALWARIA",
+	"borough": "GÓRA_KALWARIA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 51.981612,
@@ -42105,7 +42105,7 @@
 }, {
 	"id": "3369",
 	"name": "Pijarska",
-	"borough": "GÓRA KALWARIA",
+	"borough": "GÓRA_KALWARIA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 51.986834,
@@ -42958,7 +42958,7 @@
 }, {
 	"id": "3704",
 	"name": "Biały_Ług",
-	"borough": "BIAŁY ŁUG",
+	"borough": "BIAŁY_ŁUG",
 	"under_stops": [{
 		"id": "01",
 		"lat": 51.948479,
@@ -43047,7 +43047,7 @@
 }, {
 	"id": "3709",
 	"name": "Czarnej_Olchy",
-	"borough": "WOLA PRAŻMOWSKA",
+	"borough": "WOLA_PRAŻMOWSKA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 51.942826,
@@ -43313,7 +43313,7 @@
 }, {
 	"id": "3720",
 	"name": "Wólka_Dworska",
-	"borough": "WÓLKA DWORSKA",
+	"borough": "WÓLKA_DWORSKA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.01509,
@@ -43338,7 +43338,7 @@
 }, {
 	"id": "3721",
 	"name": "Wólka_Dworska-Wisła",
-	"borough": "WÓLKA DWORSKA",
+	"borough": "WÓLKA_DWORSKA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.01795,
@@ -44048,7 +44048,7 @@
 }, {
 	"id": "3753",
 	"name": "Pęchery",
-	"borough": "GROCHOWA PĘCHERY",
+	"borough": "GROCHOWA_PĘCHERY",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.008576,
@@ -44105,7 +44105,7 @@
 }, {
 	"id": "3757",
 	"name": "Nowinek",
-	"borough": "ZALESIE GÓRNE",
+	"borough": "ZALESIE_GÓRNE",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.015965,
@@ -44130,7 +44130,7 @@
 }, {
 	"id": "3759",
 	"name": "Julianów",
-	"borough": "JULIANÓW k. CZACHÓWKA",
+	"borough": "JULIANÓW_k._CZACHÓWKA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 51.953631,
@@ -44221,7 +44221,7 @@
 }, {
 	"id": "3763",
 	"name": "Krzaki_Czaplinkowskie",
-	"borough": "KRZAKI CZAPLINKOWSKIE",
+	"borough": "KRZAKI_CZAPLINKOWSKIE",
 	"under_stops": [{
 		"id": "01",
 		"lat": 51.974582,
@@ -44246,7 +44246,7 @@
 }, {
 	"id": "3764",
 	"name": "Marianki",
-	"borough": "GÓRA KALWARIA",
+	"borough": "GÓRA_KALWARIA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 51.980979,
@@ -44271,7 +44271,7 @@
 }, {
 	"id": "3765",
 	"name": "Cmentarz",
-	"borough": "GÓRA KALWARIA",
+	"borough": "GÓRA_KALWARIA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 51.98458,
@@ -44419,7 +44419,7 @@
 }, {
 	"id": "3772",
 	"name": "Stadion",
-	"borough": "GÓRA KALWARIA",
+	"borough": "GÓRA_KALWARIA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 51.970152,
@@ -44719,7 +44719,7 @@
 }, {
 	"id": "3784",
 	"name": "Czarny_Las",
-	"borough": "CZARNY LAS",
+	"borough": "CZARNY_LAS",
 	"under_stops": [{
 		"id": "01",
 		"lat": 51.974565,
@@ -44851,7 +44851,7 @@
 }, {
 	"id": "3790",
 	"name": "Kępa_Oborska_I",
-	"borough": "KĘPA OBORSKA",
+	"borough": "KĘPA_OBORSKA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.128489,
@@ -44867,7 +44867,7 @@
 }, {
 	"id": "3791",
 	"name": "Kępa_Oborska_II",
-	"borough": "KĘPA OBORSKA",
+	"borough": "KĘPA_OBORSKA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.125009,
@@ -45279,7 +45279,7 @@
 }, {
 	"id": "3814",
 	"name": "Przebudzenia_Wiosny",
-	"borough": "ZALESIE GÓRNE",
+	"borough": "ZALESIE_GÓRNE",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.03194,
@@ -45304,7 +45304,7 @@
 }, {
 	"id": "3815",
 	"name": "Koralowych_Dębów",
-	"borough": "ZALESIE GÓRNE",
+	"borough": "ZALESIE_GÓRNE",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.02822,
@@ -45329,7 +45329,7 @@
 }, {
 	"id": "3816",
 	"name": "Wiekowej_Sosny",
-	"borough": "ZALESIE GÓRNE",
+	"borough": "ZALESIE_GÓRNE",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.02731,
@@ -45379,7 +45379,7 @@
 }, {
 	"id": "3819",
 	"name": "Cmentarz",
-	"borough": "WÓLKA KOZODAWSKA",
+	"borough": "WÓLKA_KOZODAWSKA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.04051,
@@ -45529,7 +45529,7 @@
 }, {
 	"id": "3825",
 	"name": "Ogrodowa",
-	"borough": "WÓLKA PRACKA",
+	"borough": "WÓLKA_PRACKA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.02336,
@@ -45629,7 +45629,7 @@
 }, {
 	"id": "3829",
 	"name": "Graniczna",
-	"borough": "NOWA IWICZNA",
+	"borough": "NOWA_IWICZNA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.09662,
@@ -45654,7 +45654,7 @@
 }, {
 	"id": "3830",
 	"name": "os.Kwiatowa",
-	"borough": "NOWA IWICZNA",
+	"borough": "NOWA_IWICZNA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.09637,
@@ -45679,7 +45679,7 @@
 }, {
 	"id": "3831",
 	"name": "Przebiśniegów",
-	"borough": "NOWA IWICZNA",
+	"borough": "NOWA_IWICZNA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.09482,
@@ -45704,7 +45704,7 @@
 }, {
 	"id": "3833",
 	"name": "Szkoła",
-	"borough": "NOWA IWICZNA",
+	"borough": "NOWA_IWICZNA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.09222,
@@ -45729,7 +45729,7 @@
 }, {
 	"id": "3834",
 	"name": "PKP_Nowa_Iwiczna",
-	"borough": "NOWA IWICZNA",
+	"borough": "NOWA_IWICZNA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.09032,
@@ -45895,7 +45895,7 @@
 }, {
 	"id": "3841",
 	"name": "Okrąg",
-	"borough": "NOWA IWICZNA",
+	"borough": "NOWA_IWICZNA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.09638,
@@ -45911,7 +45911,7 @@
 }, {
 	"id": "3842",
 	"name": "PKP_Zalesie_Górne",
-	"borough": "ZALESIE GÓRNE",
+	"borough": "ZALESIE_GÓRNE",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.02707,
@@ -46895,7 +46895,7 @@
 }, {
 	"id": "3883",
 	"name": "Leśnych_Boginek",
-	"borough": "ZALESIE GÓRNE",
+	"borough": "ZALESIE_GÓRNE",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.021806,
@@ -46970,7 +46970,7 @@
 }, {
 	"id": "3886",
 	"name": "Słoneczna",
-	"borough": "KRUPIA WÓLKA",
+	"borough": "KRUPIA_WÓLKA",
 	"under_stops": [{
 		"id": "03",
 		"lat": 51.987836,
@@ -47020,7 +47020,7 @@
 }, {
 	"id": "3888",
 	"name": "Leśna",
-	"borough": "JAROSZOWA WOLA",
+	"borough": "JAROSZOWA_WOLA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 51.976383,
@@ -47079,7 +47079,7 @@
 }, {
 	"id": "3890",
 	"name": "Ogrodowa",
-	"borough": "WOLA WĄGRODZKA",
+	"borough": "WOLA_WĄGRODZKA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 51.949424,
@@ -47104,7 +47104,7 @@
 }, {
 	"id": "3892",
 	"name": "Działkowa",
-	"borough": "WOLA PRAŻMOWSKA",
+	"borough": "WOLA_PRAŻMOWSKA",
 	"under_stops": [{
 		"id": "02",
 		"lat": 51.943853,
@@ -47120,7 +47120,7 @@
 }, {
 	"id": "3891",
 	"name": "Północna",
-	"borough": "WOLA PRAŻMOWSKA",
+	"borough": "WOLA_PRAŻMOWSKA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 51.945927,
@@ -47368,7 +47368,7 @@
 }, {
 	"id": "3904",
 	"name": "Nowa_Iwiczna",
-	"borough": "NOWA IWICZNA",
+	"borough": "NOWA_IWICZNA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.089649,
@@ -47418,7 +47418,7 @@
 }, {
 	"id": "3950",
 	"name": "Grochowa",
-	"borough": "GROCHOWA PĘCHERY",
+	"borough": "GROCHOWA_PĘCHERY",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.003911,
@@ -47434,7 +47434,7 @@
 }, {
 	"id": "3906",
 	"name": "Zalesie_Górne",
-	"borough": "ZALESIE GÓRNE",
+	"borough": "ZALESIE_GÓRNE",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.026904,
@@ -47721,7 +47721,7 @@
 }, {
 	"id": "3965",
 	"name": "Prosta",
-	"borough": "DĘBÓWKA k. GÓRY KALWARII",
+	"borough": "DĘBÓWKA_k._GÓRY_KALWARII",
 	"under_stops": [{
 		"id": "01",
 		"lat": 51.957069,
@@ -47771,7 +47771,7 @@
 }, {
 	"id": "3966",
 	"name": "Dębówka",
-	"borough": "DĘBÓWKA k. GÓRY KALWARII",
+	"borough": "DĘBÓWKA_k._GÓRY_KALWARII",
 	"under_stops": [{
 		"id": "01",
 		"lat": 51.960014,
@@ -50131,7 +50131,7 @@
 }, {
 	"id": "4067",
 	"name": "Stary_Sękocin",
-	"borough": "STARY SĘKOCIN",
+	"borough": "STARY_SĘKOCIN",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.111111,
@@ -50156,7 +50156,7 @@
 }, {
 	"id": "4066",
 	"name": "Nowy_Sękocin",
-	"borough": "NOWY SĘKOCIN",
+	"borough": "NOWY_SĘKOCIN",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.12485,
@@ -50224,7 +50224,7 @@
 }, {
 	"id": "4068",
 	"name": "Sękocin_Las",
-	"borough": "SĘKOCIN LAS",
+	"borough": "SĘKOCIN_LAS",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.104335,
@@ -50376,7 +50376,7 @@
 }, {
 	"id": "4073",
 	"name": "Wygoda",
-	"borough": "WÓLKA KOSOWSKA",
+	"borough": "WÓLKA_KOSOWSKA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.0597,
@@ -50410,7 +50410,7 @@
 }, {
 	"id": "4074",
 	"name": "Kolonia_Warszawska",
-	"borough": "KOLONIA WARSZAWSKA",
+	"borough": "KOLONIA_WARSZAWSKA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.05281,
@@ -52832,7 +52832,7 @@
 }, {
 	"id": "4173",
 	"name": "Łady-Szkoła",
-	"borough": "DAWIDY BANKOWE",
+	"borough": "DAWIDY_BANKOWE",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.12733,
@@ -52857,7 +52857,7 @@
 }, {
 	"id": "4175",
 	"name": "Nowy_Podolszyn",
-	"borough": "NOWY PODOLSZYN",
+	"borough": "NOWY_PODOLSZYN",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.12181,
@@ -52898,7 +52898,7 @@
 }, {
 	"id": "4177",
 	"name": "Kwiatów_Polnych",
-	"borough": "DAWIDY BANKOWE",
+	"borough": "DAWIDY_BANKOWE",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.12986,
@@ -52923,7 +52923,7 @@
 }, {
 	"id": "4178",
 	"name": "Boryny",
-	"borough": "DAWIDY BANKOWE",
+	"borough": "DAWIDY_BANKOWE",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.12425,
@@ -52948,7 +52948,7 @@
 }, {
 	"id": "4179",
 	"name": "Miklaszewskiego",
-	"borough": "DAWIDY BANKOWE",
+	"borough": "DAWIDY_BANKOWE",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.12115,
@@ -52973,7 +52973,7 @@
 }, {
 	"id": "4180",
 	"name": "Starzyńskiego",
-	"borough": "DAWIDY BANKOWE",
+	"borough": "DAWIDY_BANKOWE",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.11708,
@@ -53290,7 +53290,7 @@
 	"lon": 20.793345000000002
 }, {
 	"id": "4195",
-	"name": "Os.Staszica/Pętla",
+	"name": "Os.Staszica^Pętla",
 	"borough": "PRUSZKÓW",
 	"under_stops": [{
 		"id": "01",
@@ -54662,7 +54662,7 @@
 }, {
 	"id": "4253",
 	"name": "Wilcza_Góra",
-	"borough": "WILCZA GÓRA",
+	"borough": "WILCZA_GÓRA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.06884,
@@ -54844,7 +54844,7 @@
 }, {
 	"id": "4264",
 	"name": "Brzozowa",
-	"borough": "WOLA MROKOWSKA",
+	"borough": "WOLA_MROKOWSKA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.0322,
@@ -54910,7 +54910,7 @@
 }, {
 	"id": "4267",
 	"name": "Wólka_Kosowska",
-	"borough": "WÓLKA KOSOWSKA",
+	"borough": "WÓLKA_KOSOWSKA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.05738,
@@ -54935,7 +54935,7 @@
 }, {
 	"id": "4268",
 	"name": "Parlamentarna",
-	"borough": "DAWIDY BANKOWE",
+	"borough": "DAWIDY_BANKOWE",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.12744,
@@ -55044,7 +55044,7 @@
 }, {
 	"id": "4271",
 	"name": "Kolonia_Lesznowola",
-	"borough": "KOLONIA LESZNOWOLA",
+	"borough": "KOLONIA_LESZNOWOLA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.07558,
@@ -55128,7 +55128,7 @@
 }, {
 	"id": "4275",
 	"name": "Krótka",
-	"borough": "STARA IWICZNA",
+	"borough": "STARA_IWICZNA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.0808,
@@ -55153,7 +55153,7 @@
 }, {
 	"id": "4277",
 	"name": "Nowa",
-	"borough": "STARA IWICZNA",
+	"borough": "STARA_IWICZNA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.08281,
@@ -55178,7 +55178,7 @@
 }, {
 	"id": "4276",
 	"name": "Kielecka",
-	"borough": "STARA IWICZNA",
+	"borough": "STARA_IWICZNA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.08224,
@@ -55203,7 +55203,7 @@
 }, {
 	"id": "4278",
 	"name": "CH_Wólka_Kosowska",
-	"borough": "WÓLKA KOSOWSKA",
+	"borough": "WÓLKA_KOSOWSKA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.05763,
@@ -55394,7 +55394,7 @@
 }, {
 	"id": "4287",
 	"name": "Stara_Wieś",
-	"borough": "STARA WIEŚ",
+	"borough": "STARA_WIEŚ",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.08205,
@@ -55620,7 +55620,7 @@
 }, {
 	"id": "4299",
 	"name": "Wola_Krakowiańska",
-	"borough": "WOLA KRAKOWIAŃSKA",
+	"borough": "WOLA_KRAKOWIAŃSKA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.02983,
@@ -56007,7 +56007,7 @@
 }, {
 	"id": "4330",
 	"name": "Przepiórki",
-	"borough": "NOWA WOLA",
+	"borough": "NOWA_WOLA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.102145,
@@ -56048,7 +56048,7 @@
 }, {
 	"id": "4331",
 	"name": "Kameliowa",
-	"borough": "NOWA WOLA",
+	"borough": "NOWA_WOLA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.096646,
@@ -56339,7 +56339,7 @@
 }, {
 	"id": "4803",
 	"name": "Olszynowa",
-	"borough": "NOWY PODOLSZYN",
+	"borough": "NOWY_PODOLSZYN",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.12197,
@@ -56364,7 +56364,7 @@
 }, {
 	"id": "4802",
 	"name": "Willowa",
-	"borough": "NOWY PODOLSZYN",
+	"borough": "NOWY_PODOLSZYN",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.12882,
@@ -56655,7 +56655,7 @@
 }, {
 	"id": "4814",
 	"name": "Wola_Mrokowska",
-	"borough": "WOLA MROKOWSKA",
+	"borough": "WOLA_MROKOWSKA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.03009,
@@ -56714,7 +56714,7 @@
 }, {
 	"id": "4817",
 	"name": "Krasickiego",
-	"borough": "NOWA WOLA",
+	"borough": "NOWA_WOLA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.09038,
@@ -56739,7 +56739,7 @@
 }, {
 	"id": "4818",
 	"name": "Postępu",
-	"borough": "NOWA WOLA",
+	"borough": "NOWA_WOLA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.09286,
@@ -56782,7 +56782,7 @@
 }, {
 	"id": "4819",
 	"name": "Nowa_Wola",
-	"borough": "NOWA WOLA",
+	"borough": "NOWA_WOLA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.09514,
@@ -57014,7 +57014,7 @@
 }, {
 	"id": "4852",
 	"name": "Dzikiej_Róży",
-	"borough": "NOWA WOLA",
+	"borough": "NOWA_WOLA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.091586,
@@ -57638,7 +57638,7 @@
 }, {
 	"id": "4889",
 	"name": "Teligi",
-	"borough": "GRODZISK MAZOWIECKI",
+	"borough": "GRODZISK_MAZOWIECKI",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.110447,
@@ -57654,7 +57654,7 @@
 }, {
 	"id": "4890",
 	"name": "Park_Skarbków",
-	"borough": "GRODZISK MAZOWIECKI",
+	"borough": "GRODZISK_MAZOWIECKI",
 	"under_stops": [{
 		"id": "02",
 		"lat": 52.109525,
@@ -57670,7 +57670,7 @@
 }, {
 	"id": "4891",
 	"name": "PKP_Grodzisk_Mazowiecki",
-	"borough": "GRODZISK MAZOWIECKI",
+	"borough": "GRODZISK_MAZOWIECKI",
 	"under_stops": [{
 		"id": "02",
 		"lat": 52.109686,
@@ -57686,7 +57686,7 @@
 }, {
 	"id": "4892",
 	"name": "Zondka",
-	"borough": "GRODZISK MAZOWIECKI",
+	"borough": "GRODZISK_MAZOWIECKI",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.107656,
@@ -57702,7 +57702,7 @@
 }, {
 	"id": "4893",
 	"name": "Sienkiewicza",
-	"borough": "GRODZISK MAZOWIECKI",
+	"borough": "GRODZISK_MAZOWIECKI",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.103202,
@@ -57734,7 +57734,7 @@
 }, {
 	"id": "4895",
 	"name": "3_Maja",
-	"borough": "GRODZISK MAZOWIECKI",
+	"borough": "GRODZISK_MAZOWIECKI",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.109052,
@@ -57750,7 +57750,7 @@
 }, {
 	"id": "4896",
 	"name": "Ruczaj",
-	"borough": "GRODZISK MAZOWIECKI",
+	"borough": "GRODZISK_MAZOWIECKI",
 	"under_stops": [{
 		"id": "02",
 		"lat": 52.114986,
@@ -58823,7 +58823,7 @@
 }, {
 	"id": "5017",
 	"name": "Niska",
-	"borough": "BLIZNE ŁASZCZYŃSKIEGO",
+	"borough": "BLIZNE_ŁASZCZYŃSKIEGO",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.24327,
@@ -59133,7 +59133,7 @@
 }, {
 	"id": "5018",
 	"name": "Fortowa",
-	"borough": "BLIZNE ŁASZCZYŃSKIEGO",
+	"borough": "BLIZNE_ŁASZCZYŃSKIEGO",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.24691,
@@ -62890,7 +62890,7 @@
 }, {
 	"id": "5129",
 	"name": "Starostwo",
-	"borough": "OŻARÓW MAZOWIECKI",
+	"borough": "OŻARÓW_MAZOWIECKI",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.21127,
@@ -62924,7 +62924,7 @@
 }, {
 	"id": "5130",
 	"name": "Sanktuarium",
-	"borough": "OŻARÓW MAZOWIECKI",
+	"borough": "OŻARÓW_MAZOWIECKI",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.21013,
@@ -62949,7 +62949,7 @@
 }, {
 	"id": "5131",
 	"name": "3_Maja",
-	"borough": "OŻARÓW MAZOWIECKI",
+	"borough": "OŻARÓW_MAZOWIECKI",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.21044,
@@ -62974,7 +62974,7 @@
 }, {
 	"id": "5132",
 	"name": "Kierbedzia",
-	"borough": "OŻARÓW MAZOWIECKI",
+	"borough": "OŻARÓW_MAZOWIECKI",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.21082,
@@ -62999,7 +62999,7 @@
 }, {
 	"id": "5133",
 	"name": "Umiastowska",
-	"borough": "OŻARÓW MAZOWIECKI",
+	"borough": "OŻARÓW_MAZOWIECKI",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.21104,
@@ -63024,7 +63024,7 @@
 }, {
 	"id": "5134",
 	"name": "Parkowa",
-	"borough": "OŻARÓW MAZOWIECKI",
+	"borough": "OŻARÓW_MAZOWIECKI",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.21494,
@@ -63197,7 +63197,7 @@
 }, {
 	"id": "5143",
 	"name": "Blizne_Jasińskiego",
-	"borough": "BLIZNE JASIŃSKIEGO",
+	"borough": "BLIZNE_JASIŃSKIEGO",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.24213,
@@ -63222,7 +63222,7 @@
 }, {
 	"id": "5142",
 	"name": "Blizne_Łaszczyńskiego",
-	"borough": "BLIZNE ŁASZCZYŃSKIEGO",
+	"borough": "BLIZNE_ŁASZCZYŃSKIEGO",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.2403,
@@ -63880,7 +63880,7 @@
 }, {
 	"id": "5169",
 	"name": "Wolica_k.Płochocina",
-	"borough": "WOLICA k. PŁOCHOCINA",
+	"borough": "WOLICA_k._PŁOCHOCINA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.19339,
@@ -64277,7 +64277,7 @@
 }, {
 	"id": "5186",
 	"name": "Poniatowskiego",
-	"borough": "OŻARÓW MAZOWIECKI",
+	"borough": "OŻARÓW_MAZOWIECKI",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.211102,
@@ -64293,7 +64293,7 @@
 }, {
 	"id": "5187",
 	"name": "Obrońców_Warszawy",
-	"borough": "OŻARÓW MAZOWIECKI",
+	"borough": "OŻARÓW_MAZOWIECKI",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.214064,
@@ -64318,7 +64318,7 @@
 }, {
 	"id": "5188",
 	"name": "Kossaka",
-	"borough": "OŻARÓW MAZOWIECKI",
+	"borough": "OŻARÓW_MAZOWIECKI",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.222324,
@@ -64368,7 +64368,7 @@
 }, {
 	"id": "5190",
 	"name": "Robotnicza",
-	"borough": "OŻARÓW MAZOWIECKI",
+	"borough": "OŻARÓW_MAZOWIECKI",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.217969,
@@ -64527,7 +64527,7 @@
 }, {
 	"id": "5197",
 	"name": "Partyzantów",
-	"borough": "OŻARÓW MAZOWIECKI",
+	"borough": "OŻARÓW_MAZOWIECKI",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.212937,
@@ -64577,7 +64577,7 @@
 }, {
 	"id": "5199",
 	"name": "Górna",
-	"borough": "POGROSZEW KOLONIA",
+	"borough": "POGROSZEW_KOLONIA",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.223738,
@@ -64736,7 +64736,7 @@
 }, {
 	"id": "5803",
 	"name": "PKP_Ożarów_Mazowiecki",
-	"borough": "OŻARÓW MAZOWIECKI",
+	"borough": "OŻARÓW_MAZOWIECKI",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.207967,
@@ -64752,7 +64752,7 @@
 }, {
 	"id": "5802",
 	"name": "Piotrkówek_Mały",
-	"borough": "PIOTRKÓWEK MAŁY",
+	"borough": "PIOTRKÓWEK_MAŁY",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.224586,
@@ -64777,7 +64777,7 @@
 }, {
 	"id": "5905",
 	"name": "Ożarów_Maz.",
-	"borough": "OŻARÓW MAZOWIECKI",
+	"borough": "OŻARÓW_MAZOWIECKI",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.207352,
@@ -68917,7 +68917,7 @@
 }, {
 	"id": "6111",
 	"name": "Borzęcin_Duży",
-	"borough": "BORZĘCIN DUŻY",
+	"borough": "BORZĘCIN_DUŻY",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.25274,
@@ -69035,7 +69035,7 @@
 }, {
 	"id": "6115",
 	"name": "Rynek",
-	"borough": "STARE BABICE",
+	"borough": "STARE_BABICE",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.25069,
@@ -69837,7 +69837,7 @@
 }, {
 	"id": "6148",
 	"name": "Osiedlowa",
-	"borough": "STARE BABICE",
+	"borough": "STARE_BABICE",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.26397,
@@ -69853,7 +69853,7 @@
 }, {
 	"id": "6147",
 	"name": "Wołodyjowskiego",
-	"borough": "STARE BABICE",
+	"borough": "STARE_BABICE",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.25601,
@@ -69903,7 +69903,7 @@
 }, {
 	"id": "6150",
 	"name": "Wieruchowska",
-	"borough": "STARE BABICE",
+	"borough": "STARE_BABICE",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.24888,
@@ -69962,7 +69962,7 @@
 }, {
 	"id": "6152",
 	"name": "Koczargi_Stare",
-	"borough": "KOCZARGI STARE",
+	"borough": "KOCZARGI_STARE",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.26379,
@@ -69987,7 +69987,7 @@
 }, {
 	"id": "6153",
 	"name": "Akacjowa",
-	"borough": "KOCZARGI STARE",
+	"borough": "KOCZARGI_STARE",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.27359,
@@ -70087,7 +70087,7 @@
 }, {
 	"id": "6157",
 	"name": "Borzęcin_Duży-Wieś",
-	"borough": "BORZĘCIN DUŻY",
+	"borough": "BORZĘCIN_DUŻY",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.25621,
@@ -70303,7 +70303,7 @@
 }, {
 	"id": "6168",
 	"name": "Dziekanów_Leśny",
-	"borough": "DZIEKANÓW LEŚNY",
+	"borough": "DZIEKANÓW_LEŚNY",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.341466,
@@ -70319,7 +70319,7 @@
 }, {
 	"id": "6169",
 	"name": "Prusa",
-	"borough": "BLIZNE JASIŃSKIEGO",
+	"borough": "BLIZNE_JASIŃSKIEGO",
 	"under_stops": [{
 		"id": "02",
 		"lat": 52.24974,
@@ -70376,7 +70376,7 @@
 }, {
 	"id": "6171",
 	"name": "Cmentarz",
-	"borough": "STARE BABICE",
+	"borough": "STARE_BABICE",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.25106,
@@ -70401,7 +70401,7 @@
 }, {
 	"id": "6173",
 	"name": "Trakt_Królewski",
-	"borough": "BORZĘCIN DUŻY",
+	"borough": "BORZĘCIN_DUŻY",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.26122,
@@ -70417,7 +70417,7 @@
 }, {
 	"id": "6174",
 	"name": "Borki",
-	"borough": "BORZĘCIN DUŻY",
+	"borough": "BORZĘCIN_DUŻY",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.27469,
@@ -70513,7 +70513,7 @@
 }, {
 	"id": "6180",
 	"name": "Wrzosowa",
-	"borough": "KOCZARGI STARE",
+	"borough": "KOCZARGI_STARE",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.26473,
@@ -70538,7 +70538,7 @@
 }, {
 	"id": "6183",
 	"name": "Klonowa",
-	"borough": "KOCZARGI STARE",
+	"borough": "KOCZARGI_STARE",
 	"under_stops": [{
 		"id": "02",
 		"lat": 52.26592,
@@ -70604,7 +70604,7 @@
 }, {
 	"id": "6185",
 	"name": "gen.Kutrzeby",
-	"borough": "STARE BABICE",
+	"borough": "STARE_BABICE",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.25075,
@@ -70679,7 +70679,7 @@
 }, {
 	"id": "6188",
 	"name": "Borzęcin_Duży-Szkoła",
-	"borough": "BORZĘCIN DUŻY",
+	"borough": "BORZĘCIN_DUŻY",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.25202,
@@ -70904,7 +70904,7 @@
 }, {
 	"id": "6200",
 	"name": "Thomme",
-	"borough": "STARE BABICE",
+	"borough": "STARE_BABICE",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.26057,
@@ -70954,7 +70954,7 @@
 }, {
 	"id": "6202",
 	"name": "Koczargi_Nowe",
-	"borough": "KOCZARGI NOWE",
+	"borough": "KOCZARGI_NOWE",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.25539,
@@ -70979,7 +70979,7 @@
 }, {
 	"id": "6208",
 	"name": "Podleśna",
-	"borough": "KOCZARGI STARE",
+	"borough": "KOCZARGI_STARE",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.2683,
@@ -71218,7 +71218,7 @@
 }, {
 	"id": "6400",
 	"name": "Palmiry-Muzeum",
-	"borough": "KAMPINOSKI PN",
+	"borough": "KAMPINOSKI_PN",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.33237,
@@ -71568,7 +71568,7 @@
 }, {
 	"id": "6634",
 	"name": "Koszałka_Opałka",
-	"borough": "DZIEKANÓW LEŚNY",
+	"borough": "DZIEKANÓW_LEŚNY",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.360296,
@@ -71593,7 +71593,7 @@
 }, {
 	"id": "6635",
 	"name": "Dziekanów_Polski_Wschód",
-	"borough": "DZIEKANÓW POLSKI",
+	"borough": "DZIEKANÓW_POLSKI",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.3624,
@@ -71618,7 +71618,7 @@
 }, {
 	"id": "6636",
 	"name": "Dziekanów_Polski_Centrum",
-	"borough": "DZIEKANÓW POLSKI",
+	"borough": "DZIEKANÓW_POLSKI",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.365876,
@@ -71643,7 +71643,7 @@
 }, {
 	"id": "6637",
 	"name": "Dziekanów_Polski_Zachód",
-	"borough": "DZIEKANÓW POLSKI",
+	"borough": "DZIEKANÓW_POLSKI",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.367707,
@@ -71668,7 +71668,7 @@
 }, {
 	"id": "6638",
 	"name": "Dziekanów_Nowy_Wschód",
-	"borough": "NOWY DZIEKANÓW",
+	"borough": "NOWY_DZIEKANÓW",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.37038,
@@ -71693,7 +71693,7 @@
 }, {
 	"id": "6639",
 	"name": "Dziekanów_Nowy_Zachód",
-	"borough": "NOWY DZIEKANÓW",
+	"borough": "NOWY_DZIEKANÓW",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.372429,
@@ -71743,7 +71743,7 @@
 }, {
 	"id": "6641",
 	"name": "Podróżna",
-	"borough": "DZIEKANÓW POLSKI",
+	"borough": "DZIEKANÓW_POLSKI",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.367475,
@@ -71759,7 +71759,7 @@
 }, {
 	"id": "6643",
 	"name": "Wędkarska",
-	"borough": "DZIEKANÓW POLSKI",
+	"borough": "DZIEKANÓW_POLSKI",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.355299,
@@ -71975,7 +71975,7 @@
 }, {
 	"id": "6654",
 	"name": "Cząstków_Polski",
-	"borough": "CZĄSTKÓW POLSKI",
+	"borough": "CZĄSTKÓW_POLSKI",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.38977,
@@ -72000,7 +72000,7 @@
 }, {
 	"id": "6653",
 	"name": "Cząstków_Polski_Wschód",
-	"borough": "CZĄSTKÓW POLSKI",
+	"borough": "CZĄSTKÓW_POLSKI",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.387989,
@@ -72025,7 +72025,7 @@
 }, {
 	"id": "6655",
 	"name": "Cząstków_Mazowiecki",
-	"borough": "CZĄSTKÓW MAZOWIECKI",
+	"borough": "CZĄSTKÓW_MAZOWIECKI",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.391507,
@@ -72123,7 +72123,7 @@
 }, {
 	"id": "6801",
 	"name": "Kosmowska_I",
-	"borough": "BORZĘCIN DUŻY",
+	"borough": "BORZĘCIN_DUŻY",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.25077,
@@ -72148,7 +72148,7 @@
 }, {
 	"id": "6802",
 	"name": "Kosmowska_II",
-	"borough": "BORZĘCIN DUŻY",
+	"borough": "BORZĘCIN_DUŻY",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.249814,
@@ -72173,7 +72173,7 @@
 }, {
 	"id": "6803",
 	"name": "Borzęcin_Mały",
-	"borough": "BORZĘCIN MAŁY",
+	"borough": "BORZĘCIN_MAŁY",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.24818,
@@ -72198,7 +72198,7 @@
 }, {
 	"id": "6804",
 	"name": "Dzikiej_Róży",
-	"borough": "BORZĘCIN MAŁY",
+	"borough": "BORZĘCIN_MAŁY",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.24537,
@@ -72223,7 +72223,7 @@
 }, {
 	"id": "6806",
 	"name": "Instytut_Ekologii_PAN",
-	"borough": "DZIEKANÓW LEŚNY",
+	"borough": "DZIEKANÓW_LEŚNY",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.346183,
@@ -72364,7 +72364,7 @@
 }, {
 	"id": "6812",
 	"name": "Nowe_Babice",
-	"borough": "NOWE BABICE",
+	"borough": "NOWE_BABICE",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.241974,
@@ -72389,7 +72389,7 @@
 }, {
 	"id": "6814",
 	"name": "Izabelińska",
-	"borough": "STARE BABICE",
+	"borough": "STARE_BABICE",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.268892,
@@ -72571,7 +72571,7 @@
 }, {
 	"id": "6822",
 	"name": "Wilkowa_Wieś_II",
-	"borough": "WILKOWA WIEŚ",
+	"borough": "WILKOWA_WIEŚ",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.259075,
@@ -72646,7 +72646,7 @@
 }, {
 	"id": "6825",
 	"name": "Wilkowa_Wieś_I",
-	"borough": "WILKOWA WIEŚ",
+	"borough": "WILKOWA_WIEŚ",
 	"under_stops": [{
 		"id": "01",
 		"lat": 52.258351,

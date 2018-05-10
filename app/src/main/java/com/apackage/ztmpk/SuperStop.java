@@ -27,23 +27,28 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 public class SuperStop {
-    public String id;
+    public int id;
     public String name;
+    public String borough;
     public LatLng position;
     public ArrayList<UnderStop> underStops;
     private Marker stopMarker;
     private static String TAG = "SuperStop";
 
     public SuperStop(JSONObject json) throws JSONException {
-        id = json.getString("id");
-        name = json.getString("name").replace("_", " ");
-        double lat = json.getDouble("lat");
-        double lon = json.getDouble("lon");
+        id = json.getInt("id");
+        name = json.getString("name");
+        name = name.replace("_", " ");
+        borough = json.getString("borough");
+        borough = borough.replace("_", " ");
+        Double lat = json.getDouble("lat");
+        Double lon = json.getDouble("lon");
         position = new LatLng(lat, lon);
         underStops = new ArrayList<>();
-        JSONArray us =  json.getJSONArray("underStops");
+        JSONArray us =  json.getJSONArray("under_stops");
         for (int i = 0; i < us.length(); ++i) {
             try {
+                Log.d(TAG, us.getJSONObject(i).toString());
                 UnderStop element = new UnderStop(us.getJSONObject(i));
                 underStops.add(element);
             } catch(JSONException e) {

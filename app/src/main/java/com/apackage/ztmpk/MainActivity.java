@@ -9,7 +9,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.model.Marker;
 
-public class MainActivity extends AppCompatActivity implements GoogleMap.OnMarkerClickListener {
+public class MainActivity extends AppCompatActivity {
 
     public static boolean first_run = true;
     public static MyMap map_reference;
@@ -32,24 +32,4 @@ public class MainActivity extends AppCompatActivity implements GoogleMap.OnMarke
 
     }
 
-    @Override
-    public boolean onMarkerClick(Marker marker) {
-        String title = marker.getTitle();
-        if (title == null)
-            return false;
-        Intent intent = new Intent(this, StopActivity.class);
-        if (title.contains(";")){
-            String[] elements = title.split(";");
-            int superId = Integer.valueOf(elements[0]);
-            int underId = Integer.valueOf(elements[1]);
-            intent.putExtra("superId", superId);
-            intent.putExtra("underId", underId);
-        }
-        else{
-            int superId = Integer.valueOf(title);
-            intent.putExtra("superId", superId);
-        }
-        startActivity(intent);
-        return false;
-    }
 }
