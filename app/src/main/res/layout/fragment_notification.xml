@@ -57,7 +57,7 @@
         android:layout_toRightOf="@+id/bus_no_number"
         android:text="@string/send" />
 
-    <EditText
+    <TextView
         android:id="@+id/bus_yes_number"
         android:layout_width="25dp"
         android:layout_height="25dp"
@@ -67,7 +67,7 @@
         android:ems="10"
         android:inputType="numberSigned" />
 
-    <EditText
+    <TextView
         android:id="@+id/bus_no_number"
         android:layout_width="25dp"
         android:layout_height="25dp"

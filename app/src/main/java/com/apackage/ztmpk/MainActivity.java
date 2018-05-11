@@ -20,14 +20,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //if (first_run){
+        if (first_run){
             first_run = false;
             map_reference = com.apackage.ztmpk.MyMap.newInstance();
-        //}
+        }
         map_reference.setActivity(this);
-        Log.d(TAG, map_reference.toString());
         MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.mainMap);
-        Log.d(TAG, mapFragment.toString());
         mapFragment.getMapAsync(map_reference);
 
     }

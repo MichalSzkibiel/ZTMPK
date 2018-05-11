@@ -2,11 +2,18 @@ package com.apackage.ztmpk;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.drawable.VectorDrawable;
+import android.os.Build;
+import android.support.annotation.DrawableRes;
 import android.util.Log;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 
@@ -21,6 +28,9 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
     private static String TAG = "MyMap";
     public static StopsHandler sh;
     private static boolean first_start;
+    private static BitmapDescriptor bitmap;
+    public static SuperStop currentSuperStop;
+    public static UnderStop currentUnderStop;
 
     public MyMap() {
         first_start = true;
@@ -55,6 +65,7 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
 
     public void setActivity(Activity act){
         current_activity = act;
+        getMarkerBitmapFromView(R.drawable.ic_bus_stop, act);
     }
 
     @Override
@@ -78,8 +89,9 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
     }
 
 
-    public Activity getCurrent_activity(){
+    public Activity getCurrent_activity() {
         return current_activity;
+    }
 
     @Override
     public boolean onMarkerClick(Marker marker) {
@@ -87,19 +99,41 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
         String title = marker.getTitle();
         if (title == null)
             return false;
-        Intent intent = new Intent(current_activity, StopActivity.class);
         if (title.contains(";")){
+            Intent intent = new Intent(current_activity, StopActivity.class);
             String[] elements = title.split(";");
             int superId = Integer.valueOf(elements[0]);
             int underId = Integer.valueOf(elements[1]);
-            intent.putExtra("superId", superId);
-            intent.putExtra("underId", underId);
+            currentSuperStop = sh.stops.get(superId);
+            currentUnderStop = sh.stops.get(superId).underStops.get(underId);
+            move(currentUnderStop.position, 15);
+            current_activity.startActivity(intent);
         }
-        else{
-            int superId = Integer.valueOf(title);
-            intent.putExtra("superId", superId);
-        }
-        current_activity.startActivity(intent);
         return false;
+    }
+
+    private void getMarkerBitmapFromView(@DrawableRes int resId, Activity activity) {
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            VectorDrawable vectorDrawable = (VectorDrawable) activity.getDrawable(resId);
+
+            int h = vectorDrawable.getIntrinsicHeight();
+            int w = vectorDrawable.getIntrinsicWidth();
+
+            vectorDrawable.setBounds(0, 0, w, h);
+
+            Bitmap bm = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
+            Canvas canvas = new Canvas(bm);
+            vectorDrawable.draw(canvas);
+
+            bitmap = BitmapDescriptorFactory.fromBitmap(bm);
+
+        } else {
+            bitmap = BitmapDescriptorFactory.fromResource(resId);
+        }
+    }
+
+    public static BitmapDescriptor getBitmap(){
+        return bitmap;
     }
 }
