@@ -20,7 +20,7 @@ import java.util.List;
 public class StopActivity extends Activity implements StopFragment.OnFragmentInteractionListener, NotificationFragment.OnFragmentInteractionListener {
 
     private static String TAG = "przyst";
-    private static List<Activity> allStops = new ArrayList<>();
+    public static List<Activity> allStops = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +40,7 @@ public class StopActivity extends Activity implements StopFragment.OnFragmentInt
         exit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                MainActivity.map_reference.back_to_main();
                 for (int i = allStops.size() - 1; i >= 0; --i){
                     allStops.get(i).finish();
                     allStops.remove(i);
