@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
@@ -20,15 +22,23 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //if (first_run){
+        if (first_run){
             first_run = false;
             map_reference = com.apackage.ztmpk.MyMap.newInstance();
-        //}
+        }
         map_reference.setActivity(this);
-        Log.d(TAG, map_reference.toString());
         MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.mainMap);
-        Log.d(TAG, mapFragment.toString());
         mapFragment.getMapAsync(map_reference);
+
+        Button lokal = findViewById(R.id.goTo_location);
+        lokal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (Locator.getPosition() == null)
+                    return;
+                map_reference.move(Locator.getPosition(), 15);
+            }
+        });
 
     }
 
