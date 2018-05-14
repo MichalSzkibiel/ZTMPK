@@ -32,5 +32,7 @@
         <item>zatłoczenie</item>
         <item>awaria ogrzewania/klimatyzacji</item>
     </string-array>
+    <string name="checkNot">Potwierdź zgłoszenie</string>
     <string name="addNot">Dodaj nowe zgłoszenie</string>
+    <string name="title_activity_register">RegisterActivity</string>
 </resources>
