@@ -15,6 +15,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.Marker;
 
 import java.util.ArrayList;
@@ -119,13 +120,14 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
     public void onMapReady(GoogleMap googleMap) {
         //Warszawa
         mMap = googleMap;
+        mMap.setMapStyle(new MapStyleOptions(MainActivity.current.getString(R.string.mapStyle)));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(positions.get(positions.size() - 1), zooms.get(zooms.size() -1)));
         if (first_start){
             sh = new StopsHandler(this);
             bh = new BusHandler();
         }
         else {
-            if (tribe == "main") {
+            if (tribe.equals("main")) {
                 sh.draw();
                 if (widenStop != null){
                     sh.stops.get(widenStop).drawUnderStops(mMap, widenStop);
