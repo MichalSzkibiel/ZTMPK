@@ -138,6 +138,15 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
         mMap.setOnMarkerClickListener(this);
     }
 
+<<<<<<< HEAD
+    @Override
+    public String toString(){
+        return String.valueOf(position.latitude) +  " " + String.valueOf(position.longitude);
+    }
+
+
+=======
+>>>>>>> fe1cf2e6592390074719cb333f79af6ee8298909
     public Activity getCurrent_activity() {
         return current_activity;
     }
