@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimary">#B27035</color> <!--,3F51B5-->
+    <color name="colorPrimaryDark">#FFAE65</color> <!--,#303F9F co powiesz na takie barwy?-->
     <color name="colorAccent">#FF4081</color>
     <color name="Yes">#FF1BE714</color>
     <color name="No">#FFED0511</color>

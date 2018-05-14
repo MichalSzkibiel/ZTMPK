@@ -32,4 +32,5 @@
         <item>zatłoczenie</item>
         <item>awaria ogrzewania/klimatyzacji</item>
     </string-array>
+    <string name="addNot">Dodaj nowe zgłoszenie</string>
 </resources>

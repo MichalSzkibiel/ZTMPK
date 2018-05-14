@@ -19,6 +19,9 @@ import com.google.android.gms.maps.model.Marker;
 
 import java.util.ArrayList;
 
+import static com.apackage.ztmpk.Locator.getPosition;
+//import static com.apackage.ztmpk.Locator.position;
+
 public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
     private GoogleMap mMap;
     private ArrayList<LatLng> positions;
@@ -136,6 +139,13 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
         }
         locator = new Locator(mMap, current_activity, getMarkerBitmapFromView(R.drawable.ic_gps_location_symbol, current_activity));
         mMap.setOnMarkerClickListener(this);
+    }
+
+
+
+    @Override
+    public String toString(){
+        return String.valueOf(getPosition().latitude) +  " " + String.valueOf(getPosition().longitude);
     }
 
     public Activity getCurrent_activity() {
