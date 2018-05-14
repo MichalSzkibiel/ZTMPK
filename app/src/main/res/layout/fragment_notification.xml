@@ -20,39 +20,39 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/textView"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="19dp" />
 
     <TextView
         android:id="@+id/check_notify"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/bus_yes_number"
-        android:layout_alignEnd="@+id/textView"
-        android:layout_alignRight="@+id/textView"
+        android:layout_alignBaseline="@+id/add_notify"
+        android:layout_alignBottom="@+id/add_notify"
+        android:layout_alignLeft="@+id/bus_yes"
+        android:layout_alignStart="@+id/bus_yes"
         android:text="@string/checkNot" />
 
     <TextView
-        android:id="@=id/add_notify"
+        android:id="@+id/add_notify"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_above="@+id/bus_no_number"
         android:layout_toEndOf="@+id/bus_no_number"
         android:layout_toRightOf="@+id/bus_no_number"
-        android:text="@string/addNot"/>
+        android:text="@string/addNot" />
+
     <Button
         android:id="@+id/bus_yes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/bus_notification_spinner"
-        android:layout_marginEnd="18dp"
-        android:layout_marginRight="18dp"
-        android:layout_marginTop="52dp"
-        android:layout_toLeftOf="@+id/bus_no"
-        android:layout_toStartOf="@+id/bus_no"
+        android:layout_marginTop="86dp"
+        android:layout_toLeftOf="@+id/bus_yes_number"
+        android:layout_toStartOf="@+id/bus_yes_number"
         android:background="@color/Yes"
         android:text="@string/Yes_text"
-        android:textSize="20dp"
-        android:textColor="@color/textYes" />
+        android:textColor="@color/textYes"
+        android:textSize="20dp" />
 
     <Button
         android:id="@+id/bus_no"

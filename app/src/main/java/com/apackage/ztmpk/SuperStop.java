@@ -5,6 +5,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.VectorDrawable;
@@ -59,19 +60,58 @@ public class SuperStop {
         }
     }
 
-    public void draw(GoogleMap mMap, Activity activity, int idx){
+    public void draw(GoogleMap mMap, int idx){
         //zespoly
         MarkerOptions superMarker = new MarkerOptions();
         superMarker.position(position);
         superMarker.draggable(false);
         superMarker.icon(MyMap.getBitmap());
-        superMarker.title(String.valueOf(idx));
-        for (int i = 0; i < underStops.size(); ++i){
-            underStops.get(i).draw(mMap, activity, idx,  i);
-        }
+        superMarker.title("stop" + String.valueOf(idx));
         stopMarker = mMap.addMarker(superMarker);
+    }
 
+    public void drawUnderStops(GoogleMap mMap, int idx){
+        for (int i = 0; i < underStops.size(); ++i){
+            underStops.get(i).draw(mMap, idx,  i);
+        }
+        stopMarker.remove();
+        MarkerOptions label = new MarkerOptions();
+        label.position(position);
+        label.icon(createPureTextIcon(name));
+        label.anchor(0.5f, 0.5f);
+        stopMarker = mMap.addMarker(label);
+    }
 
+    public BitmapDescriptor createPureTextIcon(String text) {
+
+        Paint textPaint = new Paint(); // Adapt to your needs
+
+        float textWidth = textPaint.measureText(text);
+        float textHeight = textPaint.getTextSize();
+        int width = (int) (textWidth);
+        int height = (int) (textHeight);
+
+        Bitmap image = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(image);
+
+        canvas.translate(0, height);
+
+        // For development only:
+        // Set a background in order to see the
+        // full size and positioning of the bitmap.
+        // Remove that for a fully transparent icon.
+        canvas.drawColor(Color.LTGRAY);
+
+        canvas.drawText(text, 0, 0, textPaint);
+        return BitmapDescriptorFactory.fromBitmap(image);
+    }
+
+    public void detachUnderStops(GoogleMap mMap, int idx){
+        stopMarker.remove();
+        for(int i = 0; i < underStops.size(); ++i){
+            underStops.get(i).detach();
+        }
+        draw(mMap, idx);
     }
 
     @Override

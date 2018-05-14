@@ -46,7 +46,7 @@ public class BusActivity extends Activity implements BusFragment.OnFragmentInter
 
     @Override
     public void onBackPressed(){
-        MainActivity.map_reference.back();
+        MainActivity.map_reference.back("bus");
         StopActivity.allStops.remove(StopActivity.allStops.size() - 1);
         finish();
     }

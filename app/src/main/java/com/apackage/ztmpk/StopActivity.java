@@ -58,7 +58,7 @@ public class StopActivity extends Activity implements StopFragment.OnFragmentInt
 
     @Override
     public void onBackPressed(){
-        MainActivity.map_reference.back();
+        MainActivity.map_reference.back("stop");
         allStops.remove(allStops.size() - 1);
         finish();
     }
