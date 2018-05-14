@@ -84,7 +84,7 @@ public class UnderStop {
 
     }
 
-    public void draw(GoogleMap mMap, Activity activity, int idx1, int idx2){
+    public void draw(GoogleMap mMap, int idx1, int idx2){
         //slup przystankowy
         MarkerOptions underMarker = new MarkerOptions();
         underMarker.position(position);
@@ -94,7 +94,7 @@ public class UnderStop {
         stopMarker = mMap.addMarker(underMarker);
     }
 
-    public Marker getStopMarker() {
-        return stopMarker;
+    public void detach() {
+        stopMarker.remove();
     }
 }
