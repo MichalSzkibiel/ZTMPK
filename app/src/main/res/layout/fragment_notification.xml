@@ -22,6 +22,23 @@
         android:layout_below="@+id/textView"
         android:layout_marginTop="16dp" />
 
+    <TextView
+        android:id="@+id/check_notify"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bus_yes_number"
+        android:layout_alignEnd="@+id/textView"
+        android:layout_alignRight="@+id/textView"
+        android:text="@string/checkNot" />
+
+    <TextView
+        android:id="@=id/add_notify"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bus_no_number"
+        android:layout_toEndOf="@+id/bus_no_number"
+        android:layout_toRightOf="@+id/bus_no_number"
+        android:text="@string/addNot"/>
     <Button
         android:id="@+id/bus_yes"
         android:layout_width="wrap_content"

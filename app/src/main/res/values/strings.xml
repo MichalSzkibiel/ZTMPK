@@ -24,4 +24,6 @@
     <string name="password">Hasło:</string>
     <string name="password_return">Powtórz hasło:</string>
     <string name="register">Zarejestruj się</string>
+    <string name="checkNot">Potwierdź zgłoszenie</string>
+    <string name="addNot">Dodaj nowe zgłoszenie</string>
 </resources>
