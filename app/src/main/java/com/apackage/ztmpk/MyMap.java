@@ -170,13 +170,16 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
         }
         else if(title.contains("bus")){
             int idx = Integer.valueOf(title.replace("bus", ""));
-            busesHistory.add(currentBus);
-            currentBus = bh.buses.get(idx);
-            move(currentBus.position, 15);
-            tribe = "stopbus";
-            current_activity.startActivity(new Intent(current_activity, BusActivity.class));
+            updateBus(idx);
         }
         return false;
+    }
+    public void updateBus(int idx){
+        busesHistory.add(currentBus);
+        currentBus = bh.buses.get(idx);
+        move(currentBus.position, 15);
+        tribe = "stopbus";
+        current_activity.startActivity(new Intent(current_activity, BusActivity.class));
     }
 
     private BitmapDescriptor getMarkerBitmapFromView(@DrawableRes int resId, Activity activity) {

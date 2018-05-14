@@ -47,12 +47,7 @@ import static java.lang.Math.sqrt;
 
 public class Timetable extends RecyclerView.Adapter {
 
-    private RecyclerView mRecyclerView;
-    private static String link_base = "https://api.um.warszawa.pl/api/action/dbtimetable_get/?id=e923fa0e-d96c-43f9-ae6e-60518c9f3238";
-    private static String apikey = "apikey=41877efd-2c98-432e-bbad-0c93fb56caff";
-    private static String TAG = "rozklad";
     private Departures departures;
-    private asyncDownload ad;
 
     private class MyViewHolder extends RecyclerView.ViewHolder {
         private TextView time;
@@ -78,6 +73,8 @@ public class Timetable extends RecyclerView.Adapter {
                 String busstopId = "busstopId=" + String.valueOf(MyMap.currentSuperStop.id);
                 String busstopNm = "busstopNr=" + MyMap.currentUnderStop.id;
                 String line = "line=" + MyMap.currentUnderStop.lines.get(i);
+                String apikey = "apikey=41877efd-2c98-432e-bbad-0c93fb56caff";
+                String link_base = "https://api.um.warszawa.pl/api/action/dbtimetable_get/?id=e923fa0e-d96c-43f9-ae6e-60518c9f3238";
                 String link = link_base + "&" + busstopId + "&" + busstopNm + "&" + line + "&" + apikey;
                 try {
                     URL line_url = new URL(link);
@@ -89,7 +86,7 @@ public class Timetable extends RecyclerView.Adapter {
                     BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream()));
                     StringBuilder sb = new StringBuilder();
                     while ((line = br.readLine()) != null) {
-                        sb.append(line + "\n");
+                        sb.append(line).append("\n");
                     }
                     br.close();
                     String text = sb.toString();
@@ -99,7 +96,6 @@ public class Timetable extends RecyclerView.Adapter {
                     e.printStackTrace();
                 } catch (IOException e) {
                     e.printStackTrace();
-                    Log.d(TAG, "IOException");
                 }
             }
             departures.sortByCurrentTime();
@@ -108,8 +104,7 @@ public class Timetable extends RecyclerView.Adapter {
 
     // konstruktor adaptera
     public Timetable(RecyclerView pRecyclerView){
-        mRecyclerView = pRecyclerView;
-        ad = new asyncDownload();
+        asyncDownload ad = new asyncDownload();
         ad.start();
         try {
             ad.join();
@@ -125,7 +120,23 @@ public class Timetable extends RecyclerView.Adapter {
 
         view.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {}
+            public void onClick(View v) {
+                String line = departures.get(i).line;
+                String brigade = departures.get(i).brigade;
+                int idx = MyMap.bh.find(line, brigade);
+                if (idx == -1){
+                    new AlertDialog.Builder(MainActivity.map_reference.getCurrent_activity())
+                            .setMessage("Nie znaleziono pojazdu")
+                            .setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    dialogInterface.dismiss();
+                                }
+                            }).show();
+                    return;
+                }
+                MainActivity.map_reference.updateBus(idx);
+            }
         });
 
         return new MyViewHolder(view);
