@@ -78,8 +78,9 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
     }
 
 
-    public Activity getCurrent_activity(){
+    public Activity getCurrent_activity() {
         return current_activity;
+    }
 
     @Override
     public boolean onMarkerClick(Marker marker) {
