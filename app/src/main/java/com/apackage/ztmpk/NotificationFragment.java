@@ -1,5 +1,6 @@
 package com.apackage.ztmpk;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -52,6 +53,14 @@ public class NotificationFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), NotificationActivity.class);
+                Activity top = StopActivity.allStops.get(StopActivity.allStops.size() - 1);
+                try{
+                    StopActivity stop = (StopActivity) top;
+                    intent.putExtra("type", "stop");
+                } catch (Exception e){
+                    intent.putExtra("type", "bus");
+                }
+                getActivity().startActivity(intent);
             }
         });
         return view;

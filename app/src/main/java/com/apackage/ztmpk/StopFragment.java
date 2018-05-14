@@ -47,7 +47,8 @@ public class StopFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_stop, container, false);
 
         TextView name = view.findViewById(R.id.stop_name);
-        name.setText(MyMap.currentSuperStop.name + " " + MyMap.currentUnderStop.id);
+        String fullStop = MyMap.currentSuperStop.name + " " + MyMap.currentUnderStop.id;
+        name.setText(fullStop);
 
         TextView lines = view.findViewById(R.id.stop_lines);
         lines.setText(MyMap.currentUnderStop.lines.toString().replace("[", "").replace("]", ""));

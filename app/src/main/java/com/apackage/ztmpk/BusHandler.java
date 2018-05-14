@@ -82,4 +82,12 @@ public class BusHandler {
             buses.get(i).draw(MainActivity.map_reference.getMap(), i);
         }
     }
+
+    public int find(String line, String brigade){
+        for (int i = 0; i < buses.size(); ++i){
+            if (buses.get(i).line == line && buses.get(i).brigade == brigade)
+                return i;
+        }
+        return -1;
+    }
 }
