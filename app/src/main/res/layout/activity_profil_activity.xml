@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.apackage.ztmpk.profil_activity">
+
+    <TextView
+        android:id="@+id/loginView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:text="nasz login"
+        android:textSize="26dp" />
+
+    <EditText
+        android:id="@+id/current_Password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/loginView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="83dp"
+        android:ems="10"
+        android:text="@string/password"
+        android:inputType="textPassword"
+        android:visibility="invisible" />
+
+    <EditText
+        android:id="@+id/new_Password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/current_Password"
+        android:layout_alignStart="@+id/current_Password"
+        android:layout_below="@+id/current_Password"
+        android:layout_marginTop="27dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:text="@string/new_password"
+        android:visibility="invisible"
+        tools:ignore="UnknownId" />
+
+    <EditText
+        android:id="@+id/new_replay_Password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/new_Password"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:text="@string/password_return"
+        android:inputType="textPassword"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/loginView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="21dp"
+        android:text="@string/change_password" />
+
+    <Button
+        android:id="@+id/check_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/new_replay_Password"
+        android:layout_marginTop="54dp"
+        android:layout_toEndOf="@+id/button"
+        android:layout_toRightOf="@+id/button"
+        android:text="@string/checkChange"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/log_out_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/new_replay_Password"
+        android:layout_alignStart="@+id/new_replay_Password"
+        android:layout_below="@+id/check_button"
+        android:text="@string/action_sign_out_short" />
+</RelativeLayout>
