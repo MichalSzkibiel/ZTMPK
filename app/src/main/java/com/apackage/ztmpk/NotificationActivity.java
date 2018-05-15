@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -23,24 +24,35 @@ import org.json.JSONObject;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
 public class NotificationActivity extends Activity {
     private Spinner spinner;
     private DatabaseReference dRef;
+    public SuperStop superStop;
+    public UnderStop underStop;
+    public Bus bus;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notification);
         Intent intent = getIntent();
         String type = intent.getStringExtra("type");
+        String id = intent.getStringExtra("id");
+        int idx1 = intent.getIntExtra("idx1", -1);
+        int idx2 = intent.getIntExtra("idx2", -1);
+
         Fragment fragment;
         if (savedInstanceState == null) {
             if (type.equals("bus")){
+                bus = MyMap.bh.buses.get(idx1);
                 fragment = BusFragment.newInstance();
             }
             else{
+                superStop = MyMap.sh.stops.get(idx1);
+                underStop = MyMap.sh.stops.get(idx1).underStops.get(idx2);
                 fragment = StopFragment.newInstance();
             }
             getFragmentManager().beginTransaction().replace(R.id.info_fragment, fragment).commit();
@@ -51,17 +63,15 @@ public class NotificationActivity extends Activity {
         if (type.equals("stop")){
             adapter = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, getResources().getStringArray(R.array.stop_problems));
             dRef = FD.getReference("PrzystankiZgl");
-            String id = MyMap.currentSuperStop.id + MyMap.currentUnderStop.id;
-            dRef = dRef.getDatabase().getReference(id);
+            dRef = dRef.child(id);
         }
         else{
             adapter = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, getResources().getStringArray(R.array.bus_problems));
             dRef = FD.getReference("PojazdyZgl");
-            String id = MyMap.currentBus.line + ";" + MyMap.currentBus.brigade;
-            dRef = dRef.getDatabase().getReference(id);
+            dRef = dRef.child(id);
         }
         final String typeCom = spinner.getSelectedItem().toString().replace(" ", "_").replace(",", "$");
-        dRef = dRef.getDatabase().getReference(typeCom);
+        dRef = dRef.child(typeCom);
         spinner.setAdapter(adapter);
 
         Button commit = findViewById(R.id.send_notification);
@@ -70,40 +80,15 @@ public class NotificationActivity extends Activity {
             public void onClick(View v) {
                 EditText editText = findViewById(R.id.extra_edit);
                 final String desc = editText.getText().toString().replace(" ", "_").replace(",", "$").replace("\"", "^");
-                final Date currentTime = Calendar.getInstance().getTime();
                 new AlertDialog.Builder(NotificationActivity.this)
                         .setMessage("Czy na pewno chcesz dokonać zgłoszenia o następującej treści:\n" + typeCom)
                         .setPositiveButton("TAK", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                dRef.addListenerForSingleValueEvent(new ValueEventListener() {
-                                    @Override
-                                    public void onDataChange(DataSnapshot dataSnapshot) {
-                                        String text = dRef.toString();
-                                        if (text.equals("")) {
-                                            dRef.setValue("user", MainActivity.login.getEmail());
-                                            dRef.setValue("desc", desc);
-                                            dRef.setValue("yes", 1);
-                                            dRef.setValue("no", 0);
-                                            dRef.setValue("time", currentTime.toString());
-                                        }
-                                        else {
-                                            try {
-                                                JSONObject json = new JSONObject(text);
-                                                int yes = json.getInt("yes");
-                                                dRef.setValue("yes", yes + 1);
-                                            } catch (JSONException e) {
-                                                e.printStackTrace();
-                                            }
-                                        }
-                                    }
-
-                                    @Override
-                                    public void onCancelled(DatabaseError databaseError) {
-
-                                    }
-                                });
+                                Map<String, Object> objectMap = createNotificationObject(desc, "yes");
+                                dRef.setValue(MainActivity.login.getEmail(), objectMap);
                                 dialogInterface.dismiss();
+                                Toast.makeText(NotificationActivity.this, "Dokonano Zgłoszenia", Toast.LENGTH_SHORT).show();
                             }
                         }).setNegativeButton("NIE", new DialogInterface.OnClickListener() {
                             @Override
@@ -114,6 +99,16 @@ public class NotificationActivity extends Activity {
                 NotificationActivity.this.finish();
             }
         });
+    }
+
+    static public Map<String, Object> createNotificationObject(String desc, String yesNo){
+        Map<String, Object> toRet = new HashMap<>();
+        toRet.put("user", MainActivity.login.getEmail());
+        toRet.put("desc", desc);
+        toRet.put("yesNo", yesNo);
+        Date currentTime = Calendar.getInstance().getTime();
+        toRet.put("time", currentTime.toString());
+        return toRet;
     }
 
 }

@@ -21,7 +21,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class MainActivity extends AppCompatActivity {
 
     public static boolean first_run = true;
-    public static MyMap map_reference;
+    private MyMap map_reference;
     private static String TAG = "Mejn";
     public static FirebaseUser login;
     public static MainActivity current;
@@ -43,9 +43,8 @@ public class MainActivity extends AppCompatActivity {
 
         if (first_run){
             first_run = false;
-            map_reference = com.apackage.ztmpk.MyMap.newInstance();
+            map_reference = new MyMap(this);
         }
-        map_reference.setActivity(this);
         MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.mainMap);
         mapFragment.getMapAsync(map_reference);
 

@@ -46,9 +46,14 @@ public class BusFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_bus, container, false);
         TextView line = view.findViewById(R.id.bus_linie_view);
-        line.setText(MyMap.currentBus.line);
         TextView brigade = view.findViewById(R.id.bus_brigade_view);
-        brigade.setText(MyMap.currentBus.brigade);
+        try {
+            line.setText(((BusActivity) getActivity()).bus.line);
+            brigade.setText(((BusActivity)getActivity()).bus.brigade);
+        } catch (Exception e){
+            line.setText(((NotificationActivity) getActivity()).bus.line);
+            brigade.setText(((NotificationActivity)getActivity()).bus.brigade);
+        }
         return view;
     }
 
