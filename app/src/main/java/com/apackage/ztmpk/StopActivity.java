@@ -10,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.model.LatLng;
@@ -19,11 +20,25 @@ import java.util.List;
 
 public class StopActivity extends Activity implements StopFragment.OnFragmentInteractionListener, NotificationFragment.OnFragmentInteractionListener {
 
+    public SuperStop superStop;
+    public UnderStop underStop;
     private static String TAG = "przyst";
     public static List<Activity> allStops = new ArrayList<>();
+    public int superId;
+    public int underId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Intent intent = getIntent();
+        superId = intent.getIntExtra("superId", -1);
+        underId = intent.getIntExtra("underId", -1);
+        if (superId == -1 || superId >= MyMap.sh.stops.size() || underId == -1 || underId >= MyMap.sh.stops.get(superId).underStops.size()) {
+            Toast.makeText(this, "Nie znaleziono przystanku", Toast.LENGTH_LONG).show();
+            finish();
+            return;
+        }
+        superStop = MyMap.sh.stops.get(superId);
+        underStop = superStop.underStops.get(underId);
         if (savedInstanceState == null) {
             Fragment stopFragment = StopFragment.newInstance();
             Fragment notification = NotificationFragment.newInstance();
@@ -32,15 +47,14 @@ public class StopActivity extends Activity implements StopFragment.OnFragmentInt
         }
         allStops.add(this);
         setContentView(R.layout.activity_stop);
-        MainActivity.map_reference.setActivity(this);
+
         MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.stop_map);
-        mapFragment.getMapAsync(MainActivity.map_reference);
+        mapFragment.getMapAsync(new MyMap(this, underStop));
 
         Button exit = findViewById(R.id.return_stop);
         exit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MainActivity.map_reference.back_to_main();
                 for (int i = allStops.size() - 1; i >= 0; --i){
                     allStops.get(i).finish();
                     allStops.remove(i);
@@ -52,13 +66,12 @@ public class StopActivity extends Activity implements StopFragment.OnFragmentInt
         mRecyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
-        RecyclerView.Adapter mAdapter = new Timetable(mRecyclerView);
+        RecyclerView.Adapter mAdapter = new Timetable(this);
         mRecyclerView.setAdapter(mAdapter);
     }
 
     @Override
     public void onBackPressed(){
-        MainActivity.map_reference.back("stop");
         allStops.remove(allStops.size() - 1);
         finish();
     }

@@ -10,6 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -47,6 +49,9 @@ import static java.lang.Math.sqrt;
 
 public class Timetable extends RecyclerView.Adapter {
 
+    private final SuperStop superStop;
+    private final UnderStop underStop;
+    private final StopActivity act;
     private Departures departures;
 
     private class MyViewHolder extends RecyclerView.ViewHolder {
@@ -69,10 +74,10 @@ public class Timetable extends RecyclerView.Adapter {
         @Override
         public void run() {
             departures = new Departures();
-            for (int i = 0; i < MyMap.currentUnderStop.lines.size();++i) {
-                String busstopId = "busstopId=" + String.valueOf(MyMap.currentSuperStop.id);
-                String busstopNm = "busstopNr=" + MyMap.currentUnderStop.id;
-                String line = "line=" + MyMap.currentUnderStop.lines.get(i);
+            for (int i = 0; i < underStop.lines.size();++i) {
+                String busstopId = "busstopId=" + String.valueOf(superStop.id);
+                String busstopNm = "busstopNr=" + underStop.id;
+                String line = "line=" + underStop.lines.get(i);
                 String apikey = "apikey=41877efd-2c98-432e-bbad-0c93fb56caff";
                 String link_base = "https://api.um.warszawa.pl/api/action/dbtimetable_get/?id=e923fa0e-d96c-43f9-ae6e-60518c9f3238";
                 String link = link_base + "&" + busstopId + "&" + busstopNm + "&" + line + "&" + apikey;
@@ -90,7 +95,7 @@ public class Timetable extends RecyclerView.Adapter {
                     }
                     br.close();
                     String text = sb.toString();
-                    departures.addLine(MyMap.currentUnderStop.lines.get(i), text);
+                    departures.addLine(underStop.lines.get(i), text);
                     connection.disconnect();
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
@@ -103,7 +108,7 @@ public class Timetable extends RecyclerView.Adapter {
     }
 
     // konstruktor adaptera
-    public Timetable(RecyclerView pRecyclerView){
+    public Timetable(StopActivity act){
         asyncDownload ad = new asyncDownload();
         ad.start();
         try {
@@ -111,6 +116,9 @@ public class Timetable extends RecyclerView.Adapter {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        this.underStop = act.underStop;
+        this.superStop = act.superStop;
+        this.act = act;
     }
 
     @Override
@@ -125,17 +133,12 @@ public class Timetable extends RecyclerView.Adapter {
                 String brigade = departures.get(i).brigade;
                 int idx = MyMap.bh.find(line, brigade);
                 if (idx == -1){
-                    new AlertDialog.Builder(MainActivity.map_reference.getCurrent_activity())
-                            .setMessage("Nie znaleziono pojazdu")
-                            .setNegativeButton("OK", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialogInterface, int i) {
-                                    dialogInterface.dismiss();
-                                }
-                            }).show();
+                    Toast.makeText(act, "Nie znaleziono pojazdu", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                MainActivity.map_reference.updateBus(idx);
+                Intent intent = new Intent(act, BusActivity.class);
+                intent.putExtra("idx", idx);
+                act.startActivity(intent);
             }
         });
 

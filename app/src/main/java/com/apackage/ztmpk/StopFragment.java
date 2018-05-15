@@ -47,11 +47,18 @@ public class StopFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_stop, container, false);
 
         TextView name = view.findViewById(R.id.stop_name);
-        String fullStop = MyMap.currentSuperStop.name + " " + MyMap.currentUnderStop.id;
-        name.setText(fullStop);
-
         TextView lines = view.findViewById(R.id.stop_lines);
-        lines.setText(MyMap.currentUnderStop.lines.toString().replace("[", "").replace("]", ""));
+
+        String fullStop = "";
+        try {
+            fullStop = ((StopActivity)getActivity()).superStop.name + " " + ((StopActivity)getActivity()).underStop.id;
+            lines.setText(((StopActivity)getActivity()).underStop.lines.toString().replace("[", "").replace("]", ""));
+
+        } catch(Exception e){
+            fullStop = ((NotificationActivity)getActivity()).superStop.name + " " + ((NotificationActivity)getActivity()).underStop.id;
+            lines.setText(((NotificationActivity)getActivity()).underStop.lines.toString().replace("[", "").replace("]", ""));
+        }
+        name.setText(fullStop);
 
         return view;
     }

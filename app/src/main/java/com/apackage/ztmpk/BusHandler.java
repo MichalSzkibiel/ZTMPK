@@ -2,6 +2,8 @@ package com.apackage.ztmpk;
 
 import android.util.Log;
 
+import com.google.android.gms.maps.GoogleMap;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -58,28 +60,28 @@ public class BusHandler {
         }
     }
 
-    public BusHandler(){
+    public BusHandler(GoogleMap mMap){
         buses = new Buses();
-        refresh();
+        refresh(mMap);
     }
 
-    public void refresh(){
+    public void refresh(GoogleMap mMap){
         buses.detach();
         buses = new Buses();
         asyncDownload ad = new asyncDownload();
         ad.start();
         try {
             ad.join();
-            draw();
+            draw(mMap);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
     }
 
-    private void draw(){
+    private void draw(GoogleMap mMap){
         for (int i = 0; i < buses.size(); ++i){
-            buses.get(i).draw(MainActivity.map_reference.getMap(), i);
+            buses.get(i).draw(mMap, i);
         }
     }
 
