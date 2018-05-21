@@ -58,6 +58,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button profil = findViewById(R.id.profile_button);
+        profil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, profil_activity.class));
+            }
+        });
+
     }
 
     public void UpdateUI(FirebaseUser user){
