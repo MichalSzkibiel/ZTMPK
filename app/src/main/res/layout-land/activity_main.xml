@@ -10,7 +10,7 @@
         android:id="@+id/mainMap"
         class="com.google.android.gms.maps.MapFragment"
         android:layout_width="match_parent"
-        android:layout_height="340dp"
+        android:layout_height="140dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
@@ -30,11 +30,12 @@
         android:id="@+id/find_stop"
         android:layout_width="120dp"
         android:layout_height="80dp"
+        android:layout_alignBaseline="@+id/goTo_location"
+        android:layout_alignBottom="@+id/goTo_location"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/profile_button"
-        android:layout_marginLeft="33dp"
-        android:layout_marginStart="33dp"
+        android:layout_marginLeft="29dp"
+        android:layout_marginStart="29dp"
         android:layout_weight="1"
         android:text="@string/find_stop_text" />
 
@@ -45,8 +46,8 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/profile_button"
-        android:layout_marginEnd="35dp"
-        android:layout_marginRight="35dp"
+        android:layout_marginEnd="61dp"
+        android:layout_marginRight="61dp"
         android:layout_weight="1"
         android:text="Szukaj po lokalizacji" />
 

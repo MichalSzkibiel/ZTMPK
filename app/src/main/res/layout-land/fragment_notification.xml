@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NotificationFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="aktywne zgłoszenia:"
+        android:textSize="24sp" />
+
+    <Spinner
+        android:id="@+id/bus_notification_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView"
+        android:layout_marginTop="19dp" />
+
+    <TextView
+        android:id="@+id/check_notify"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/add_notify"
+        android:layout_alignBottom="@+id/add_notify"
+        android:layout_alignLeft="@+id/bus_yes"
+        android:layout_alignStart="@+id/bus_yes"
+        android:text="@string/checkNot" />
+
+    <TextView
+        android:id="@+id/add_notify"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bus_no_number"
+        android:layout_toEndOf="@+id/bus_no_number"
+        android:layout_toRightOf="@+id/bus_no_number"
+        android:text="@string/addNot" />
+
+    <Button
+        android:id="@+id/bus_yes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bus_notification_spinner"
+        android:layout_marginTop="78dp"
+        android:layout_toLeftOf="@+id/bus_yes_number"
+        android:layout_toStartOf="@+id/bus_yes_number"
+        android:background="@color/Yes"
+        android:text="@string/Yes_text"
+        android:textColor="@color/textYes"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/bus_no"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/bus_yes"
+        android:layout_centerHorizontal="true"
+        android:text="@string/No_text"
+        android:background="@color/No"
+        android:textSize="20dp"
+        android:textColor="@color/textNo"/>
+
+    <Button
+        android:id="@+id/bus_make_notification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bus_no_number"
+        android:layout_toEndOf="@+id/bus_no_number"
+        android:layout_toRightOf="@+id/bus_no_number"
+        android:text="@string/send" />
+
+    <TextView
+        android:id="@+id/bus_yes_number"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_above="@+id/bus_no"
+        android:layout_toLeftOf="@+id/bus_no"
+        android:layout_toStartOf="@+id/bus_no"
+        android:ems="10"
+        android:inputType="numberSigned" />
+
+    <TextView
+        android:id="@+id/bus_no_number"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_above="@+id/bus_no"
+        android:layout_toEndOf="@+id/bus_no"
+        android:layout_toRightOf="@+id/bus_no"
+        android:ems="10"
+        android:inputType="numberSigned" />
+
+</RelativeLayout>
