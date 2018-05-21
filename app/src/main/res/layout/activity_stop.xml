@@ -57,11 +57,8 @@
         android:id="@+id/return_stop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/stop_depatures"
         android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/stop_depatures"
-        android:layout_marginEnd="12dp"
-        android:layout_marginRight="12dp"
+        android:layout_centerHorizontal="true"
         android:text="@string/ret_but" />
 
 
