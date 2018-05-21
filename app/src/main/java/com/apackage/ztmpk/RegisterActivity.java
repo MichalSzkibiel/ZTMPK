@@ -1,6 +1,7 @@
 package com.apackage.ztmpk;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
@@ -48,6 +49,16 @@ public class RegisterActivity extends AppCompatActivity {
                 }
                 register(email, password);
 
+            }
+        });
+
+        Button login = findViewById(R.id.account_button);
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
     }
