@@ -39,12 +39,9 @@ public class NotificationActivity extends Activity implements BusFragment.OnFrag
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_notification);
         Intent intent = getIntent();
         String type = intent.getStringExtra("type");
         String id = intent.getStringExtra("id");
-
-        Fragment fragment;
         if (savedInstanceState == null) {
             if (type.equals("bus")){
                 String idx1 = intent.getStringExtra("idx1");
@@ -56,16 +53,18 @@ public class NotificationActivity extends Activity implements BusFragment.OnFrag
                     return;
                 }
                 bus = MyMap.bh.buses.get(pair.toString());
-                fragment = BusFragment.newInstance();
+                BusFragment fragment = BusFragment.newInstance();
+                getFragmentManager().beginTransaction().replace(R.id.info_fragment, fragment).commit();
             }
             else{
                 int idx1 = intent.getIntExtra("idx1", -1);
                 int idx2 = intent.getIntExtra("idx2", -1);
                 superStop = MyMap.sh.stops.get(idx1);
                 underStop = MyMap.sh.stops.get(idx1).underStops.get(idx2);
-                fragment = StopFragment.newInstance();
+                StopFragment fragment = StopFragment.newInstance();
+                getFragmentManager().beginTransaction().replace(R.id.info_fragment, fragment).commit();
             }
-            getFragmentManager().beginTransaction().replace(R.id.info_fragment, fragment).commit();
+
         }
         FirebaseDatabase FD = FirebaseDatabase.getInstance();
         spinner = findViewById(R.id.notification_spinner);
@@ -109,6 +108,7 @@ public class NotificationActivity extends Activity implements BusFragment.OnFrag
                 NotificationActivity.this.finish();
             }
         });
+        setContentView(R.layout.activity_notification);
     }
 
     static public Map<String, Object> createNotificationObject(String desc, String yesNo){

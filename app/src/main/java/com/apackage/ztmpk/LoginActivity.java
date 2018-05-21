@@ -1,5 +1,6 @@
 package com.apackage.ztmpk;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -47,6 +48,15 @@ public class LoginActivity extends AppCompatActivity {
 
                             }
                         });
+            }
+        });
+
+        Button register = findViewById(R.id.goTo_register);
+        register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
+                finish();
             }
         });
     }
