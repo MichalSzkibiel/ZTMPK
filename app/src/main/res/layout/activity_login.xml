@@ -28,7 +28,7 @@
         android:layout_marginTop="30dp"
         android:layout_toLeftOf="@+id/editText"
         android:layout_toStartOf="@+id/editText"
-        android:text="pseudonim"
+        android:text="@string/mail"
         android:textSize="16dp"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="71dp" />
@@ -76,8 +76,6 @@
         android:id="@+id/goTo_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
-
         android:layout_alignEnd="@+id/textView7"
         android:layout_alignRight="@+id/textView7"
         android:layout_below="@+id/textView7"
