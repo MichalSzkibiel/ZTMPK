@@ -56,8 +56,6 @@
         android:layout_marginRight="12dp"
         android:ems="10"
         android:inputType="text"
-        android:inputType="textEmailAddress"
-        android:text="Name"
         tools:layout_editor_absoluteX="71dp"
         tools:layout_editor_absoluteY="50dp" />
 
