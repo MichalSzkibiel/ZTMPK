@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">ZTMPK</string>
-    <string name="title_activity_find_stops">FindStopsActivity</string>
-    <string name="title_activity_go_to_stop">GoToStopActivity</string>
+    <string name="title_activity_find_stops">Znajdź Przystanek</string>
+    <string name="title_activity_go_to_stop">Znajdź drogę</string>
     <string name="title_activity_stop">Wybrany Przystanek</string>
     <string name="title_activity_bus">Wybrany środek Transportu</string>
     <string name="title_activity_notification">Ekran zgłoszeń</string>

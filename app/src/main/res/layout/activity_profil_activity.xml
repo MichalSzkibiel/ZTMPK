@@ -69,6 +69,7 @@
         android:layout_alignStart="@+id/new_replay_Password"
         android:layout_below="@+id/new_replay_Password"
         android:layout_marginTop="35dp"
+        android:text="@string/checkChange"
         android:visibility="invisible" />
 
     <Button
