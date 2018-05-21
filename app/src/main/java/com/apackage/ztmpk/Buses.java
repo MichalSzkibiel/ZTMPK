@@ -1,15 +1,25 @@
 package com.apackage.ztmpk;
 
-import java.util.ArrayList;
+import android.util.Log;
+import android.util.Pair;
 
-public class Buses extends ArrayList<Bus> {
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class Buses extends HashMap<String, Bus> {
+    private static final String TAG = "buseses";
+
     public Buses(){
     }
     public void addBuses(String toParse, int type){
         toParse = toParse.replace("{\"result\":[{", "").replace("}]}", "");
         String[] split = toParse.split("\\},\\{");
-        for (int i = 0; i < split.length; ++i){
-            add(new Bus(split[i], type));
+        for (String aSplit : split) {
+            Bus bus = new Bus(aSplit, type);
+            String line = bus.line;
+            String brigade = bus.brigade;
+            Log.d(TAG, new Pair<>(line, brigade).toString());
+            put(new Pair<>(line, brigade).toString(), bus);
         }
     }
     public void detach(){

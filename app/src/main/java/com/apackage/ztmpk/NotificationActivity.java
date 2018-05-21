@@ -3,8 +3,10 @@ package com.apackage.ztmpk;
 import android.app.Fragment;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;
+import android.support.v4.util.Pair;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -28,7 +30,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class NotificationActivity extends Activity {
+public class NotificationActivity extends Activity implements BusFragment.OnFragmentInteractionListener, StopFragment.OnFragmentInteractionListener{
     private Spinner spinner;
     private DatabaseReference dRef;
     public SuperStop superStop;
@@ -41,16 +43,24 @@ public class NotificationActivity extends Activity {
         Intent intent = getIntent();
         String type = intent.getStringExtra("type");
         String id = intent.getStringExtra("id");
-        int idx1 = intent.getIntExtra("idx1", -1);
-        int idx2 = intent.getIntExtra("idx2", -1);
 
         Fragment fragment;
         if (savedInstanceState == null) {
             if (type.equals("bus")){
-                bus = MyMap.bh.buses.get(idx1);
+                String idx1 = intent.getStringExtra("idx1");
+                String idx2 = intent.getStringExtra("idx2");
+                Pair<String, String> pair = new Pair<>(idx1, idx2);
+                if(!MyMap.bh.buses.containsKey(pair.toString())){
+                    Toast.makeText(this, "Nie znaleziono autobusu", Toast.LENGTH_LONG).show();
+                    finish();
+                    return;
+                }
+                bus = MyMap.bh.buses.get(pair.toString());
                 fragment = BusFragment.newInstance();
             }
             else{
+                int idx1 = intent.getIntExtra("idx1", -1);
+                int idx2 = intent.getIntExtra("idx2", -1);
                 superStop = MyMap.sh.stops.get(idx1);
                 underStop = MyMap.sh.stops.get(idx1).underStops.get(idx2);
                 fragment = StopFragment.newInstance();
@@ -111,4 +121,8 @@ public class NotificationActivity extends Activity {
         return toRet;
     }
 
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
+    }
 }

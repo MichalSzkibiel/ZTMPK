@@ -95,6 +95,7 @@ public class UnderStop {
     }
 
     public void detach() {
-        stopMarker.remove();
+        if (stopMarker != null)
+            stopMarker.remove();
     }
 }

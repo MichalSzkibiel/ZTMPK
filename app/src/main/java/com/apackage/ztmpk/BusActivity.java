@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;
+import android.support.v4.util.Pair;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -13,19 +15,24 @@ import com.google.android.gms.maps.MapFragment;
 
 public class BusActivity extends Activity implements BusFragment.OnFragmentInteractionListener, NotificationFragment.OnFragmentInteractionListener {
 
+    private static final String TAG = "autobus";
     public Bus bus;
-    public int idx;
+    public String line;
+    public String brigade;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent intent = getIntent();
-        idx = intent.getIntExtra("idx", -1);
-        if (idx == -1 || idx >= MyMap.bh.buses.size()){
+        line = intent.getStringExtra("line");
+        brigade = intent.getStringExtra("brigade");
+        Pair<String, String> pair = new Pair<>(line, brigade);
+        Log.d(TAG, line + ";" + brigade);
+        if (!MyMap.bh.buses.containsKey(pair.toString())){
             Toast.makeText(this, "Nie znaleziono autobusu", Toast.LENGTH_LONG).show();
             finish();
             return;
         }
-        bus = MyMap.bh.buses.get(idx);
+        bus = MyMap.bh.buses.get(pair.toString());
         if (savedInstanceState == null) {
             Fragment busFragment = BusFragment.newInstance();
             Fragment notification = NotificationFragment.newInstance();

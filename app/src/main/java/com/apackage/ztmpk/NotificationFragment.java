@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.support.v7.app.AlertDialog;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -69,6 +70,7 @@ public class NotificationFragment extends Fragment {
     private Problems problems;
     private int idx;
     private Spinner spinner;
+    private final static String TAG = "NotFragment";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -105,7 +107,8 @@ public class NotificationFragment extends Fragment {
                 String id = "";
                 if (type.equals("bus")){
                     id = ((BusActivity)getActivity()).bus.line + ";" + ((BusActivity)getActivity()).bus.brigade;
-                    intent.putExtra("idx1", ((BusActivity)getActivity()).idx);
+                    intent.putExtra("idx1", ((BusActivity)getActivity()).line);
+                    intent.putExtra("idx1", ((BusActivity)getActivity()).brigade);
                 }
                 else{
                     id = ((StopActivity)getActivity()).superStop.id + ((StopActivity)getActivity()).underStop.id;
@@ -121,6 +124,9 @@ public class NotificationFragment extends Fragment {
         yes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (spinner == null){
+                    return;
+                }
                 new AlertDialog.Builder(getActivity())
                         .setMessage("Czy na pewno chcesz potwierdzić zgłoszenie treści:\n" + spinner.getSelectedItem().toString())
                         .setPositiveButton("TAK", new DialogInterface.OnClickListener() {
@@ -142,6 +148,9 @@ public class NotificationFragment extends Fragment {
         no.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (spinner == null){
+                    return;
+                }
                 new AlertDialog.Builder(getActivity())
                         .setMessage("Czy na pewno chcesz zanegować zgłoszenie treści:\n" + spinner.getSelectedItem().toString())
                         .setPositiveButton("TAK", new DialogInterface.OnClickListener() {

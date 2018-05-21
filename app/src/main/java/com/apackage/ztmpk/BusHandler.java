@@ -1,6 +1,7 @@
 package com.apackage.ztmpk;
 
 import android.util.Log;
+import android.util.Pair;
 
 import com.google.android.gms.maps.GoogleMap;
 
@@ -67,7 +68,6 @@ public class BusHandler {
 
     public void refresh(GoogleMap mMap){
         buses.detach();
-        buses = new Buses();
         asyncDownload ad = new asyncDownload();
         ad.start();
         try {
@@ -80,16 +80,16 @@ public class BusHandler {
     }
 
     private void draw(GoogleMap mMap){
-        for (int i = 0; i < buses.size(); ++i){
-            buses.get(i).draw(mMap, i);
+        for (String key : buses.keySet()){
+            buses.get(key).draw(mMap);
         }
     }
 
-    public int find(String line, String brigade){
-        for (int i = 0; i < buses.size(); ++i){
-            if (buses.get(i).line == line && buses.get(i).brigade == brigade)
-                return i;
+    public Bus find(String line, String brigade){
+        Pair<String, String> pair = new Pair<>(line, brigade);
+        if (buses.containsKey(pair)){
+            return buses.get(pair);
         }
-        return -1;
+        return null;
     }
 }

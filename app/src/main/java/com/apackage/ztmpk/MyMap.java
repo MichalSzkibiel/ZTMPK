@@ -115,6 +115,14 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
             widenStop = Integer.valueOf(title.replace("stop", ""));
             sh.stops.get(widenStop).drawUnderStops(mMap, widenStop);
         }
+        else if(title.contains("bus")){
+            String[] split = title.replace("bus;", "").split(";");
+            Intent intent = new Intent(current_activity, BusActivity.class);
+            intent.putExtra("line", split[0]);
+            intent.putExtra("brigade", split[1]);
+            Log.d(TAG, split[0] + "DDW" + split[1]);
+            current_activity.startActivity(intent);
+        }
         else if (title.contains(";")){
             Intent intent = new Intent(current_activity, StopActivity.class);
             String[] elements = title.split(";");
@@ -122,12 +130,6 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
             int underId = Integer.valueOf(elements[1]);
             intent.putExtra("superId", superId);
             intent.putExtra("underId", underId);
-            current_activity.startActivity(intent);
-        }
-        else if(title.contains("bus")){
-            int idx = Integer.valueOf(title.replace("bus", ""));
-            Intent intent = new Intent(current_activity, BusActivity.class);
-            intent.putExtra("idx", idx);
             current_activity.startActivity(intent);
         }
         return false;

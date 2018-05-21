@@ -1,5 +1,7 @@
 package com.apackage.ztmpk;
 
+import android.util.Pair;
+
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
@@ -27,10 +29,10 @@ public class Bus {
         marker.remove();
     }
 
-    public void draw(GoogleMap mMap, int idx){
+    public void draw(GoogleMap mMap){
         MarkerOptions mo = new MarkerOptions();
         mo.position(position);
-        mo.title("bus" + String.valueOf(idx));
+        mo.title("bus;" + line + ";" + brigade);
         mo.draggable(false);
         if (type == 1){
             mo.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));

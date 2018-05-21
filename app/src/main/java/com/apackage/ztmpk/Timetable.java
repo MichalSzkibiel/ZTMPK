@@ -109,6 +109,9 @@ public class Timetable extends RecyclerView.Adapter {
 
     // konstruktor adaptera
     public Timetable(StopActivity act){
+        this.underStop = act.underStop;
+        this.superStop = act.superStop;
+        this.act = act;
         asyncDownload ad = new asyncDownload();
         ad.start();
         try {
@@ -116,9 +119,6 @@ public class Timetable extends RecyclerView.Adapter {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        this.underStop = act.underStop;
-        this.superStop = act.superStop;
-        this.act = act;
     }
 
     @Override
@@ -131,13 +131,14 @@ public class Timetable extends RecyclerView.Adapter {
             public void onClick(View v) {
                 String line = departures.get(i).line;
                 String brigade = departures.get(i).brigade;
-                int idx = MyMap.bh.find(line, brigade);
-                if (idx == -1){
+                Bus bus = MyMap.bh.find(line, brigade);
+                if (bus == null){
                     Toast.makeText(act, "Nie znaleziono pojazdu", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 Intent intent = new Intent(act, BusActivity.class);
-                intent.putExtra("idx", idx);
+                intent.putExtra("line", line);
+                intent.putExtra("brigade", brigade);
                 act.startActivity(intent);
             }
         });
