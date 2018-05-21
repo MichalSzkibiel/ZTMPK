@@ -107,8 +107,8 @@ public class NotificationFragment extends Fragment {
                 String id = "";
                 if (type.equals("bus")){
                     id = ((BusActivity)getActivity()).bus.line + ";" + ((BusActivity)getActivity()).bus.brigade;
-                    intent.putExtra("idx1", ((BusActivity)getActivity()).line);
-                    intent.putExtra("idx1", ((BusActivity)getActivity()).brigade);
+                    intent.putExtra("idx1", ((BusActivity)getActivity()).pair.first);
+                    intent.putExtra("idx1", ((BusActivity)getActivity()).pair.second);
                 }
                 else{
                     id = ((StopActivity)getActivity()).superStop.id + ((StopActivity)getActivity()).underStop.id;
