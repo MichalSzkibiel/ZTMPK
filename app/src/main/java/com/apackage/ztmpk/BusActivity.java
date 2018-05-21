@@ -25,7 +25,7 @@ public class BusActivity extends Activity implements BusFragment.OnFragmentInter
         String line = intent.getStringExtra("line");
         String brigade = intent.getStringExtra("brigade");
         pair = new Pair<>(line, brigade);
-        Log.d(TAG, line + ";" + brigade);
+        Log.d("Para1", pair.toString());
         if (!MyMap.bh.buses.containsKey(pair.toString())){
             Toast.makeText(this, "Nie znaleziono autobusu", Toast.LENGTH_SHORT).show();
             finish();

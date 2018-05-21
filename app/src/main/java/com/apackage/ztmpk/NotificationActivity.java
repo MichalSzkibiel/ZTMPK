@@ -8,7 +8,9 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.support.v4.util.Pair;
 import android.support.v7.app.AlertDialog;
+import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -31,11 +33,12 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class NotificationActivity extends Activity implements BusFragment.OnFragmentInteractionListener, StopFragment.OnFragmentInteractionListener{
-    private Spinner spinner;
     private DatabaseReference dRef;
+    private DatabaseReference dRefChild;
     public SuperStop superStop;
     public UnderStop underStop;
     public Bus bus;
+    private String typeCom;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +50,7 @@ public class NotificationActivity extends Activity implements BusFragment.OnFrag
                 String idx1 = intent.getStringExtra("idx1");
                 String idx2 = intent.getStringExtra("idx2");
                 Pair<String, String> pair = new Pair<>(idx1, idx2);
+                Log.d("Para2", pair.toString());
                 if(!MyMap.bh.buses.containsKey(pair.toString())){
                     Toast.makeText(this, "Nie znaleziono autobusu", Toast.LENGTH_LONG).show();
                     finish();
@@ -67,21 +71,35 @@ public class NotificationActivity extends Activity implements BusFragment.OnFrag
 
         }
         FirebaseDatabase FD = FirebaseDatabase.getInstance();
-        spinner = findViewById(R.id.notification_spinner);
+        setContentView(R.layout.activity_notification);
+        final Spinner spinner = (Spinner)findViewById(R.id.notification_spinner);
         ArrayAdapter<String> adapter;
         if (type.equals("stop")){
-            adapter = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, getResources().getStringArray(R.array.stop_problems));
+            adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.stop_problems));
             dRef = FD.getReference("PrzystankiZgl");
             dRef = dRef.child(id);
         }
         else{
-            adapter = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, getResources().getStringArray(R.array.bus_problems));
+            adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.bus_problems));
             dRef = FD.getReference("PojazdyZgl");
             dRef = dRef.child(id);
         }
-        final String typeCom = spinner.getSelectedItem().toString().replace(" ", "_").replace(",", "$");
-        dRef = dRef.child(typeCom);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        Log.d("Super", spinner.toString());
         spinner.setAdapter(adapter);
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                typeCom = spinner.getSelectedItem().toString().replace(" ", "_").replace(",", "$");
+                dRefChild = dRef.child(typeCom);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         Button commit = findViewById(R.id.send_notification);
         commit.setOnClickListener(new View.OnClickListener() {
@@ -95,9 +113,11 @@ public class NotificationActivity extends Activity implements BusFragment.OnFrag
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 Map<String, Object> objectMap = createNotificationObject(desc, "yes");
-                                dRef.setValue(MainActivity.login.getEmail(), objectMap);
+
+                                dRefChild.child(MainActivity.login.getEmail().replace(".", "\'")).setValue(objectMap);
                                 dialogInterface.dismiss();
                                 Toast.makeText(NotificationActivity.this, "Dokonano Zgłoszenia", Toast.LENGTH_SHORT).show();
+                                NotificationActivity.this.finish();
                             }
                         }).setNegativeButton("NIE", new DialogInterface.OnClickListener() {
                             @Override
@@ -105,10 +125,8 @@ public class NotificationActivity extends Activity implements BusFragment.OnFrag
                                 dialogInterface.dismiss();
                             }
                         }).show();
-                NotificationActivity.this.finish();
             }
         });
-        setContentView(R.layout.activity_notification);
     }
 
     static public Map<String, Object> createNotificationObject(String desc, String yesNo){
@@ -117,7 +135,7 @@ public class NotificationActivity extends Activity implements BusFragment.OnFrag
         toRet.put("desc", desc);
         toRet.put("yesNo", yesNo);
         Date currentTime = Calendar.getInstance().getTime();
-        toRet.put("time", currentTime.toString());
+        toRet.put("time", currentTime.toString().replace(" ", "_").replace(",", "$"));
         return toRet;
     }
 

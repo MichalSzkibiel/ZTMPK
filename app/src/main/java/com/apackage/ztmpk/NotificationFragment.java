@@ -108,7 +108,7 @@ public class NotificationFragment extends Fragment {
                 if (type.equals("bus")){
                     id = ((BusActivity)getActivity()).bus.line + ";" + ((BusActivity)getActivity()).bus.brigade;
                     intent.putExtra("idx1", ((BusActivity)getActivity()).pair.first);
-                    intent.putExtra("idx1", ((BusActivity)getActivity()).pair.second);
+                    intent.putExtra("idx2", ((BusActivity)getActivity()).pair.second);
                 }
                 else{
                     id = ((StopActivity)getActivity()).superStop.id + ((StopActivity)getActivity()).underStop.id;
@@ -117,6 +117,7 @@ public class NotificationFragment extends Fragment {
                 }
                 intent.putExtra("id", id);
                 getActivity().startActivity(intent);
+                refreshDatabase();
             }
         });
 
@@ -172,12 +173,10 @@ public class NotificationFragment extends Fragment {
     }
 
     private void addOne(String yesNo){
-        dRef = dRef.child(spinner.getSelectedItem().toString().replace(" ", "_").replace(",", "$"));
-        Map<String, Object> notificationObject = NotificationActivity.createNotificationObject("", yesNo);
-        String key = dRef.push().getKey();
-        dRef.setValue(MainActivity.login.getEmail(), notificationObject);
+        Map<String, Object> notificationObject = NotificationActivity.createNotificationObject("brak", yesNo);
+        dRef.child(spinner.getSelectedItem().toString().replace(" ", "_").replace(",", "$")).child(MainActivity.login.getEmail().replace(".", "\'")).setValue(notificationObject);
         refreshDatabase();
-        Toast.makeText(getActivity(), "Dokonano Zgłoszenia", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getActivity(), "Dokonano Zgłoszenie", Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -216,20 +215,15 @@ public class NotificationFragment extends Fragment {
         dRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                String text = dataSnapshot.toString();
-                if (text != null){
-                    try {
-                        JSONObject json = new JSONObject(text);
+                        Iterable<DataSnapshot> iterable = dataSnapshot.getChildren();
                         problems = new Problems();
-                        Iterator<String> it = json.keys();
-                        while(it.hasNext()){
-                            String name = it.next();
-                            problems.add(name.replace("_", " ").replace("$", ","));
-                            JSONObject notifications = json.getJSONObject(name);
-                            Iterator<String> it2 = notifications.keys();
-                            while(it.hasNext()){
-                                String email = it.next();
-                                String yesNo = notifications.getString("yesNo");
+                        while(iterable.iterator().hasNext()){
+                            DataSnapshot type = iterable.iterator().next();
+                            problems.add(type.getKey().replace("_", " ").replace("$", ","));
+                            Iterable<DataSnapshot> it2 = type.getChildren();
+                            while(it2.iterator().hasNext()){
+                                DataSnapshot single = it2.iterator().next();
+                                String yesNo = single.child("yesNo").toString();
                                 if (yesNo.equals("yes")){
                                     problems.yesAdd();
                                 }
@@ -238,7 +232,8 @@ public class NotificationFragment extends Fragment {
                                 }
                             }
                         }
-                        ArrayAdapter adapter = new ArrayAdapter(getActivity(), R.layout.support_simple_spinner_dropdown_item, problems.name);
+                        ArrayAdapter adapter = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, problems.name);
+                        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                         spinner = getActivity().findViewById(R.id.bus_notification_spinner);
                         spinner.setAdapter(adapter);
                         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -256,13 +251,7 @@ public class NotificationFragment extends Fragment {
 
                             }
                         });
-
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
                 }
-            }
-
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
