@@ -15,7 +15,7 @@ public class Bus {
     public int type;
     private Marker marker;
 
-    public Bus(String toParse, int type){
+    public Bus(String toParse, int type) throws NumberFormatException{
         String[] split = toParse.split(",");
         double lat = Double.valueOf(split[0].split(":")[1]);
         double lon = Double.valueOf(split[1].split(":")[1]);
@@ -35,10 +35,10 @@ public class Bus {
         mo.title("bus;" + line + ";" + brigade);
         mo.draggable(false);
         if (type == 1){
-            mo.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
+            mo.icon(MyMap.getBitmap("bus"));
         }
         else{
-            mo.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
+            mo.icon(MyMap.getBitmap("tram"));
         }
         marker = mMap.addMarker(mo);
     }

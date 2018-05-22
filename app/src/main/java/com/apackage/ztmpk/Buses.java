@@ -16,10 +16,7 @@ public class Buses extends HashMap<String, Bus> {
         String[] split = toParse.split("\\},\\{");
         for (String aSplit : split) {
             Bus bus = new Bus(aSplit, type);
-            String line = bus.line;
-            String brigade = bus.brigade;
-            Log.d(TAG, new Pair<>(line, brigade).toString());
-            put(new Pair<>(line, brigade).toString(), bus);
+            put(bus.line + ";" + bus.brigade, bus);
         }
     }
     public void detach(){

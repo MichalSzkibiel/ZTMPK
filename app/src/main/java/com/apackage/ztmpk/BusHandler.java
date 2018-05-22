@@ -29,23 +29,35 @@ public class BusHandler {
             //while (!Thread.interrupted()) {
                 for (int i = 1; i < 3; ++i) {
                     try {
-                        URL line_url = new URL(link_base + String.valueOf(i));
-                        Log.d(TAG, link_base + String.valueOf(i));
-                        HttpURLConnection connection = (HttpURLConnection) line_url.openConnection();
-                        connection.setRequestMethod("GET");
-                        connection.connect();
-                        InputStream is = connection.getInputStream();
+                        boolean is_good = true;
+                        do {
+                            URL line_url = new URL(link_base + String.valueOf(i));
+                            Log.d(TAG, link_base + String.valueOf(i));
+                            HttpURLConnection connection = (HttpURLConnection) line_url.openConnection();
+                            connection.setRequestMethod("GET");
+                            connection.connect();
+                            InputStream is = connection.getInputStream();
 
-                        BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-                        StringBuilder sb = new StringBuilder();
-                        String line;
-                        while ((line = br.readLine()) != null) {
-                            sb.append(line + "\n");
-                        }
-                        br.close();
-                        String text = sb.toString();
-                        buses.addBuses(text, i);
-                        connection.disconnect();
+                            BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                            StringBuilder sb = new StringBuilder();
+                            String line;
+                            while ((line = br.readLine()) != null) {
+                                sb.append(line).append("\n");
+                            }
+                            br.close();
+                            String text = sb.toString();
+                            connection.disconnect();
+                            try{
+                                buses.addBuses(text, i);
+                                is_good = true;
+                            }
+                            catch(NumberFormatException e){
+                                is_good = false;
+                            }
+                        } while (!is_good);
+
+
+
                     } catch (MalformedURLException e) {
                         e.printStackTrace();
                     } catch (IOException e) {
@@ -86,7 +98,7 @@ public class BusHandler {
     }
 
     public Bus find(String line, String brigade){
-        Pair<String, String> pair = new Pair<>(line, brigade);
+        String pair = line + ";" + brigade;
         if (buses.containsKey(pair)){
             return buses.get(pair);
         }
