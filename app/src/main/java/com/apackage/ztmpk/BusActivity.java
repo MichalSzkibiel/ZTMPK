@@ -17,21 +17,20 @@ public class BusActivity extends Activity implements BusFragment.OnFragmentInter
 
     private static final String TAG = "autobus";
     public Bus bus;
-    public Pair<String, String> pair;
+    public String line;
+    public String brigade;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent intent = getIntent();
-        String line = intent.getStringExtra("line");
-        String brigade = intent.getStringExtra("brigade");
-        pair = new Pair<>(line, brigade);
-        Log.d("Para1", pair.toString());
-        if (!MyMap.bh.buses.containsKey(pair.toString())){
+        line = intent.getStringExtra("line");
+        brigade = intent.getStringExtra("brigade");
+        if (!MyMap.bh.buses.containsKey(line + ";" + brigade)){
             Toast.makeText(this, "Nie znaleziono autobusu", Toast.LENGTH_SHORT).show();
             finish();
             return;
         }
-        bus = MyMap.bh.buses.get(pair.toString());
+        bus = MyMap.bh.buses.get(line + ";" + brigade);
         if (savedInstanceState == null) {
             Fragment busFragment = BusFragment.newInstance();
             Fragment notification = NotificationFragment.newInstance();

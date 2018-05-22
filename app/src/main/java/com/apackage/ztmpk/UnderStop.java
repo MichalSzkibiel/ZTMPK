@@ -89,7 +89,7 @@ public class UnderStop {
         MarkerOptions underMarker = new MarkerOptions();
         underMarker.position(position);
         underMarker.draggable(false);
-        underMarker.icon(MyMap.getBitmap());
+        underMarker.icon(MyMap.getBitmap("under"));
         underMarker.title(String.valueOf(idx1) + ";" + String.valueOf(idx2));
         stopMarker = mMap.addMarker(underMarker);
     }

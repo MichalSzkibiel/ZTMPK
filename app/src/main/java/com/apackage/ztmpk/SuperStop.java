@@ -65,7 +65,7 @@ public class SuperStop {
         MarkerOptions superMarker = new MarkerOptions();
         superMarker.position(position);
         superMarker.draggable(false);
-        superMarker.icon(MyMap.getBitmap());
+        superMarker.icon(MyMap.getBitmap("super"));
         superMarker.title("stop" + String.valueOf(idx));
         stopMarker = mMap.addMarker(superMarker);
     }
@@ -85,6 +85,8 @@ public class SuperStop {
     public BitmapDescriptor createPureTextIcon(String text) {
 
         Paint textPaint = new Paint(); // Adapt to your needs
+
+        textPaint.setTextSize(50.0f);
 
         float textWidth = textPaint.measureText(text);
         float textHeight = textPaint.getTextSize();

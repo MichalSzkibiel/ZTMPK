@@ -49,14 +49,14 @@ public class NotificationActivity extends Activity implements BusFragment.OnFrag
             if (type.equals("bus")){
                 String idx1 = intent.getStringExtra("idx1");
                 String idx2 = intent.getStringExtra("idx2");
-                Pair<String, String> pair = new Pair<>(idx1, idx2);
-                Log.d("Para2", pair.toString());
-                if(!MyMap.bh.buses.containsKey(pair.toString())){
+                String pair = idx1 + ";" + idx2;
+                Log.d("Para2", pair);
+                if(!MyMap.bh.buses.containsKey(pair)){
                     Toast.makeText(this, "Nie znaleziono autobusu", Toast.LENGTH_LONG).show();
                     finish();
                     return;
                 }
-                bus = MyMap.bh.buses.get(pair.toString());
+                bus = MyMap.bh.buses.get(pair);
                 BusFragment fragment = BusFragment.newInstance();
                 getFragmentManager().beginTransaction().replace(R.id.info_fragment, fragment).commit();
             }

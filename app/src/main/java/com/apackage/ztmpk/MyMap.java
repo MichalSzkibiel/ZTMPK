@@ -32,7 +32,10 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
     private static String TAG = "MyMap";
     public static StopsHandler sh;
     private static boolean first_start;
-    private static BitmapDescriptor bitmap;
+    private static BitmapDescriptor bitmapSuper;
+    private static BitmapDescriptor bitmapUnder;
+    private static BitmapDescriptor bitmapBus;
+    private static BitmapDescriptor bitmapTram;
     public static BusHandler bh;
     private static Integer widenStop;
     private String tribe;
@@ -43,7 +46,10 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
         position = new LatLng(52.25, 21.0);
         zoom = 10;
         current_activity = act;
-        bitmap = getMarkerBitmapFromView(R.drawable.ic_bus_stop, act);
+        bitmapUnder = getMarkerBitmapFromView(R.drawable.ic_bus_stop, act);
+        bitmapSuper = getMarkerBitmapFromView(R.drawable.ic_complex_stop, act);
+        bitmapBus = getMarkerBitmapFromView(R.drawable.ic_bus, act);
+        bitmapTram = getMarkerBitmapFromView(R.drawable.ic_tram, act);
     }
 
     public MyMap(Activity act, Bus bus){
@@ -156,8 +162,17 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
         }
     }
 
-    public static BitmapDescriptor getBitmap(){
-        return bitmap;
+    public static BitmapDescriptor getBitmap(String id){
+        switch(id){
+            case "super":
+                return bitmapSuper;
+            case "bus":
+                return bitmapBus;
+            case "tram":
+                return bitmapTram;
+            default:
+                return bitmapUnder;
+        }
     }
 
     public void move(LatLng position, int zoom){
