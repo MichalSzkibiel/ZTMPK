@@ -22,7 +22,7 @@
         android:id="@+id/stop_fragment"
         android:name="com.apackage.ztmpk.StopFragment"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="50dp"
         android:layout_above="@+id/return_stop"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -32,7 +32,7 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/stop_depatures"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="85dp"
         android:layout_above="@+id/stop_fragment"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"

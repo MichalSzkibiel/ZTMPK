@@ -54,19 +54,20 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/loginView"
-        android:layout_alignRight="@+id/loginView"
+        android:layout_alignLeft="@+id/textView8"
+        android:layout_alignStart="@+id/textView8"
         android:layout_below="@+id/loginView"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="18dp"
         android:text="@string/change_password" />
 
     <Button
         android:id="@+id/check_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/new_Password"
-        android:layout_alignEnd="@+id/log_out_button"
-        android:layout_alignRight="@+id/log_out_button"
+        android:layout_alignBaseline="@+id/current_Password"
+        android:layout_alignBottom="@+id/current_Password"
+        android:layout_toEndOf="@+id/log_out_button"
+        android:layout_toRightOf="@+id/log_out_button"
         android:text="@string/checkChange"
         android:visibility="invisible" />
 
@@ -74,11 +75,12 @@
         android:id="@+id/log_out_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView10"
-        android:layout_marginLeft="36dp"
-        android:layout_marginStart="36dp"
-        android:layout_toEndOf="@+id/new_Password"
-        android:layout_toRightOf="@+id/new_Password"
+        android:layout_alignBaseline="@+id/button"
+        android:layout_alignBottom="@+id/button"
+        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_toEndOf="@+id/button"
+        android:layout_toRightOf="@+id/button"
         android:text="@string/action_sign_out_short" />
 
     <TextView
@@ -112,4 +114,15 @@
         android:layout_below="@+id/new_Password"
         android:text="@string/password_return"
         android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/retButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView9"
+        android:layout_marginLeft="19dp"
+        android:layout_marginStart="19dp"
+        android:layout_toEndOf="@+id/new_Password"
+        android:layout_toRightOf="@+id/new_Password"
+        android:text="@string/stop_return" />
 </RelativeLayout>

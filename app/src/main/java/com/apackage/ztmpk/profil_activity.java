@@ -36,6 +36,7 @@ public class profil_activity extends AppCompatActivity {
         pass2 = findViewById(R.id.new_Password);
         pass3 = findViewById(R.id.new_replay_Password);
         confirm = findViewById(R.id.check_button);
+        Button ret=findViewById(R.id.retButton);
         change.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,6 +62,13 @@ public class profil_activity extends AppCompatActivity {
             public void onClick(View v) {
                 RegisterActivity.mAuth.signOut();
                 startActivity(new Intent(profil_activity.this, LoginActivity.class));
+                finish();
+            }
+        });
+        ret.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(profil_activity.this, MainActivity.class));
                 finish();
             }
         });
