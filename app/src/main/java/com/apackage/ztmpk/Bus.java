@@ -26,7 +26,8 @@ public class Bus {
     }
 
     public void detach(){
-        marker.remove();
+        if (marker != null)
+            marker.remove();
     }
 
     public void draw(GoogleMap mMap){

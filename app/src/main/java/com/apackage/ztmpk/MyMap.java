@@ -39,6 +39,7 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
     public static BusHandler bh;
     private static Integer widenStop;
     private String tribe;
+    private StopsHandler sh1;
 
     public MyMap(Activity act) {
         tribe = "main";
@@ -79,18 +80,16 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
         if (first_start){
             sh = new StopsHandler(this);
             bh = new BusHandler(mMap);
+            first_start = false;
+            sh1 = sh;
         }
         else {
-            if (tribe.equals("stop")){
-                if (widenStop != null)
-                    sh.stops.get(widenStop).drawUnderStops(mMap, widenStop);
-            }
-            else {
-                sh.draw();
-                if (widenStop != null){
-                    sh.stops.get(widenStop).drawUnderStops(mMap, widenStop);
+            sh1 = new StopsHandler(sh);
+            Log.d("Place", sh.toString() + " " + sh1.toString());
+            sh1.draw(mMap);
+            if ( widenStop != null){
+                sh1.stops.get(widenStop).drawUnderStops(mMap, widenStop);
                 }
-            }
             bh.refresh(mMap);
         }
         locator = new Locator(mMap, current_activity, getMarkerBitmapFromView(R.drawable.ic_gps_location_symbol, current_activity));
@@ -116,10 +115,10 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
             return false;
         else if (title.contains("stop")){
             if (widenStop != null){
-                sh.stops.get(widenStop).detachUnderStops(mMap, widenStop);
+                sh1.stops.get(widenStop).detachUnderStops(mMap, widenStop);
             }
             widenStop = Integer.valueOf(title.replace("stop", ""));
-            sh.stops.get(widenStop).drawUnderStops(mMap, widenStop);
+            sh1.stops.get(widenStop).drawUnderStops(mMap, widenStop);
         }
         else if(title.contains("bus")){
             String[] split = title.replace("bus;", "").split(";");

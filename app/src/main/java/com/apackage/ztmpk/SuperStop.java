@@ -74,7 +74,8 @@ public class SuperStop {
         for (int i = 0; i < underStops.size(); ++i){
             underStops.get(i).draw(mMap, idx,  i);
         }
-        stopMarker.remove();
+        if (this.stopMarker != null)
+            this.stopMarker.remove();
         MarkerOptions label = new MarkerOptions();
         label.position(position);
         label.icon(createPureTextIcon(name));

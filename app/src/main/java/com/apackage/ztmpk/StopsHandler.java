@@ -45,7 +45,7 @@ public class StopsHandler {
                     Log.d(TAG, "Coś nie tak");
                     e.printStackTrace();
                 }
-                draw();
+                draw(caller.getMap());
             }
 
             @Override
@@ -54,10 +54,15 @@ public class StopsHandler {
         });
     }
 
-    public void draw(){
-        GoogleMap mMap = caller.getMap();
+    public void draw(GoogleMap mMap){
+        Log.d("rysuje", String.valueOf(stops.size()));
         for (int i = 0; i < stops.size(); ++i){
             stops.get(i).draw(mMap, i);
         }
+    }
+
+    public StopsHandler(StopsHandler orig){
+        stops = new ArrayList<>(orig.stops);
+        caller = orig.caller;
     }
 }

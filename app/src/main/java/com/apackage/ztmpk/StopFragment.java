@@ -55,8 +55,8 @@ public class StopFragment extends Fragment {
             lines.setText(((StopActivity)getActivity()).underStop.lines.toString().replace("[", "").replace("]", ""));
 
         } catch(Exception e){
-            fullStop = ((NotificationActivity)getActivity()).superStop.name + " " + ((NotificationActivity)getActivity()).underStop.id;
-            lines.setText(((NotificationActivity)getActivity()).underStop.lines.toString().replace("[", "").replace("]", ""));
+            fullStop = ((NotificationActivityStop)getActivity()).superStop.name + " " + ((NotificationActivityStop)getActivity()).underStop.id;
+            lines.setText(((NotificationActivityStop)getActivity()).underStop.lines.toString().replace("[", "").replace("]", ""));
         }
         name.setText(fullStop);
 

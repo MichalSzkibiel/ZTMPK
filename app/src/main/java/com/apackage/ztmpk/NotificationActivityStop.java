@@ -32,10 +32,11 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class NotificationActivity extends Activity implements BusFragment.OnFragmentInteractionListener, StopFragment.OnFragmentInteractionListener{
+public class NotificationActivityStop extends Activity implements BusFragment.OnFragmentInteractionListener, StopFragment.OnFragmentInteractionListener{
     private DatabaseReference dRef;
     private DatabaseReference dRefChild;
-    public Bus bus;
+    public SuperStop superStop;
+    public UnderStop underStop;
     private String typeCom;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,25 +44,20 @@ public class NotificationActivity extends Activity implements BusFragment.OnFrag
         Intent intent = getIntent();
         String id = intent.getStringExtra("id");
         if (savedInstanceState == null) {
-            String idx1 = intent.getStringExtra("idx1");
-            String idx2 = intent.getStringExtra("idx2");
-            String pair = idx1 + ";" + idx2;
-            Log.d("Para2", pair);
-            if (!MyMap.bh.buses.containsKey(pair)) {
-                Toast.makeText(this, "Nie znaleziono autobusu", Toast.LENGTH_LONG).show();
-                finish();
-                return;
-            }
-            bus = MyMap.bh.buses.get(pair);
-            BusFragment fragment = BusFragment.newInstance();
-            getFragmentManager().beginTransaction().replace(R.id.info_fragment, fragment).commit();
+                int idx1 = intent.getIntExtra("idx1", -1);
+                int idx2 = intent.getIntExtra("idx2", -1);
+                superStop = MyMap.sh.stops.get(idx1);
+                underStop = MyMap.sh.stops.get(idx1).underStops.get(idx2);
+                StopFragment fragment = StopFragment.newInstance();
+                getFragmentManager().beginTransaction().replace(R.id.info_fragment, fragment).commit();
+
         }
         FirebaseDatabase FD = FirebaseDatabase.getInstance();
-        setContentView(R.layout.activity_notification);
+        setContentView(R.layout.activity_notification_stop);
         final Spinner spinner = (Spinner)findViewById(R.id.notification_spinner);
         ArrayAdapter<String> adapter;
-        adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.bus_problems));
-        dRef = FD.getReference("PojazdyZgl");
+        adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.stop_problems));
+        dRef = FD.getReference("PrzystankiZgl");
         dRef = dRef.child(id);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         Log.d("Super", spinner.toString());
@@ -86,7 +82,7 @@ public class NotificationActivity extends Activity implements BusFragment.OnFrag
             public void onClick(View v) {
                 EditText editText = findViewById(R.id.extra_edit);
                 final String desc = editText.getText().toString().replace(" ", "_").replace(",", "$").replace("\"", "^");
-                new AlertDialog.Builder(NotificationActivity.this)
+                new AlertDialog.Builder(NotificationActivityStop.this)
                         .setMessage("Czy na pewno chcesz dokonać zgłoszenia o następującej treści:\n" + typeCom)
                         .setPositiveButton("TAK", new DialogInterface.OnClickListener() {
                             @Override
@@ -95,15 +91,15 @@ public class NotificationActivity extends Activity implements BusFragment.OnFrag
 
                                 dRefChild.child(MainActivity.login.getEmail().replace(".", "\'")).setValue(objectMap);
                                 dialogInterface.dismiss();
-                                Toast.makeText(NotificationActivity.this, "Dokonano Zgłoszenia", Toast.LENGTH_SHORT).show();
-                                NotificationActivity.this.finish();
+                                Toast.makeText(NotificationActivityStop.this, "Dokonano Zgłoszenia", Toast.LENGTH_SHORT).show();
+                                NotificationActivityStop.this.finish();
                             }
                         }).setNegativeButton("NIE", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                dialogInterface.dismiss();
-                            }
-                        }).show();
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                }).show();
             }
         });
     }

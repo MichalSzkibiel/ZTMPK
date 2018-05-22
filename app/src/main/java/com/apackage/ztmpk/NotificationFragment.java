@@ -102,15 +102,16 @@ public class NotificationFragment extends Fragment {
         commit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), NotificationActivity.class);
-                intent.putExtra("type", type);
+                Intent intent;
                 String id = "";
                 if (type.equals("bus")){
+                    intent = new Intent(getActivity(), NotificationActivity.class);
                     id = ((BusActivity)getActivity()).bus.line + ";" + ((BusActivity)getActivity()).bus.brigade;
                     intent.putExtra("idx1", ((BusActivity)getActivity()).line);
                     intent.putExtra("idx2", ((BusActivity)getActivity()).brigade);
                 }
                 else{
+                    intent = new Intent(getActivity(), NotificationActivityStop.class);
                     id = ((StopActivity)getActivity()).superStop.id + ((StopActivity)getActivity()).underStop.id;
                     intent.putExtra("idx1", ((StopActivity)getActivity()).superId);
                     intent.putExtra("idx2", ((StopActivity)getActivity()).underId);

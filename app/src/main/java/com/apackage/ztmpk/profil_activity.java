@@ -68,7 +68,6 @@ public class profil_activity extends AppCompatActivity {
         ret.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(profil_activity.this, MainActivity.class));
                 finish();
             }
         });

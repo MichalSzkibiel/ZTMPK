@@ -21,7 +21,8 @@ public class Buses extends HashMap<String, Bus> {
     }
     public void detach(){
         for (int i = 0; i <size(); ++i){
-            get(i).detach();
+            if (get(i) != null)
+                get(i).detach();
         }
     }
 }
