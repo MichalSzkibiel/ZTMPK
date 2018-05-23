@@ -12,7 +12,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="find_stop_text">Znajdź Przystanek</string>
     <string name="send">Zgłoś</string>
-    <string name="stop_return">Powrót do mapy</string>
     <string name="Yes_text">TAK</string>
     <string name="No_text">NIE</string>
     <string name="line">linia:</string>
@@ -21,7 +20,7 @@
     <string name="brigade_nr">brygada:</string>
     <string name="direct_stop">kierunek:</string>
     <string name="bus_stop">słupek Przystankowy:</string>
-    <string name="ret_but">Powrót do głównego menu</string>
+    <string name="ret_but">Powrót do mapy</string>
     <string name="checkChange">Potwierdź</string>
     <string name="change_password">zmień hasło</string>
     <string name="password">Hasło:</string>
@@ -30,14 +29,17 @@
     <string name="register">Zarejestruj się</string>
     <string name="mail">E-mail</string>
     <string name="my_profile">Mój profil</string>
+    <string name="ref">odśwież</string>
     <string name="have_account">Mam już konto</string>
     <string-array name="stop_problems">
         <item>brak tabliczki przystankowej</item>
         <item>zamazany rozkład</item>
+        <item>inne</item>
     </string-array>
     <string-array name="bus_problems">
         <item>zatłoczenie</item>
         <item>awaria ogrzewania lub klimatyzacji</item>
+        <item>inne</item>
     </string-array>
     <string name="checkNot">Potwierdź zgłoszenie</string>
     <string name="addNot">Dodaj nowe zgłoszenie</string>
