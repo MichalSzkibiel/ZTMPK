@@ -22,10 +22,10 @@
         android:id="@+id/stop_fragment"
         android:name="com.apackage.ztmpk.StopFragment"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_above="@+id/return_stop"
+        android:layout_height="80dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_below="@+id/stop_depatures"
         tools:layout_editor_absoluteX="163dp"
         tools:layout_editor_absoluteY="197dp" />
 
@@ -33,23 +33,20 @@
         android:id="@+id/stop_depatures"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_above="@+id/stop_fragment"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_below="@+id/stop_map"
         tools:layout_editor_absoluteX="10dp"
         tools:layout_editor_absoluteY="270dp" />
 
     <fragment
         android:id="@+id/notification_fragment"
         android:name="com.apackage.ztmpk.NotificationFragment"
-        android:layout_width="wrap_content"
-        android:layout_height="120dp"
-        android:layout_above="@+id/stop_depatures"
-        android:layout_alignParentEnd="true"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/stop_map"
+        android:layout_below="@+id/stop_fragment"
         tools:layout_editor_absoluteX="93dp"
         tools:layout_editor_absoluteY="434dp" />
 
@@ -60,6 +57,32 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:text="@string/ret_but" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/stop_depatures"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="nr Linii" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/stop_depatures"
+        android:layout_centerHorizontal="true"
+        android:text="kierunek" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/stop_depatures"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:text="odjazd" />
 
 
 </RelativeLayout>
