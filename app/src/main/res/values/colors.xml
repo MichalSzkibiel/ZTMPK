@@ -7,4 +7,6 @@
     <color name="No">#FFED0511</color>
     <color name="textYes">#FF07691E</color>
     <color name="textNo">#FF710202</color>
+    <color name="back">#abcdef</color>
+    <color name="textProfile">#effe2d</color>
 </resources>

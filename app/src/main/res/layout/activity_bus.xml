@@ -23,7 +23,7 @@
         android:id="@+id/bus_fragment"
         android:name="com.apackage.ztmpk.BusFragment"
         android:layout_width="match_parent"
-        android:layout_height="165dp"
+        android:layout_height="140dp"
         android:layout_above="@+id/return_bus"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -32,7 +32,7 @@
         android:id="@+id/notification_fragment"
         android:name="com.apackage.ztmpk.NotificationFragment"
         android:layout_width="match_parent"
-        android:layout_height="175dp"
+        android:layout_height="200dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/bus_map"
