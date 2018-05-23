@@ -66,7 +66,7 @@ public class StopActivity extends Activity implements StopFragment.OnFragmentInt
         mRecyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
-        RecyclerView.Adapter mAdapter = new Timetable(this);
+        RecyclerView.Adapter mAdapter = new Timetable(this, mRecyclerView);
         mRecyclerView.setAdapter(mAdapter);
     }
 
@@ -79,5 +79,11 @@ public class StopActivity extends Activity implements StopFragment.OnFragmentInt
     @Override
     public void onFragmentInteraction(Uri uri) {
 
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data){
+        Fragment notification = NotificationFragment.newInstance();
+        getFragmentManager().beginTransaction().replace(R.id.notification_fragment, notification).commit();
     }
 }

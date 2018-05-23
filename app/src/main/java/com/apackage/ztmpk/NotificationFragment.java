@@ -45,6 +45,7 @@ import java.util.Map;
 public class NotificationFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
+    private final static int REQUEST_CODE_A = 0;
 
     public NotificationFragment() {
         // Required empty public constructor
@@ -117,8 +118,7 @@ public class NotificationFragment extends Fragment {
                     intent.putExtra("idx2", ((StopActivity)getActivity()).underId);
                 }
                 intent.putExtra("id", id);
-                getActivity().startActivity(intent);
-                refreshDatabase();
+                getActivity().startActivityForResult(intent, REQUEST_CODE_A);
             }
         });
 
@@ -126,7 +126,7 @@ public class NotificationFragment extends Fragment {
         yes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (spinner == null){
+                if (spinner == null || spinner.getSelectedItem().toString().equals("Brak Aktywnych zgłoszeń")){
                     return;
                 }
                 new AlertDialog.Builder(getActivity())
@@ -150,7 +150,7 @@ public class NotificationFragment extends Fragment {
         no.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (spinner == null){
+                if (spinner == null  || spinner.getSelectedItem().toString().equals("Brak Aktywnych zgłoszeń")){
                     return;
                 }
                 new AlertDialog.Builder(getActivity())
@@ -177,7 +177,7 @@ public class NotificationFragment extends Fragment {
         Map<String, Object> notificationObject = NotificationActivity.createNotificationObject("brak", yesNo);
         dRef.child(spinner.getSelectedItem().toString().replace(" ", "_").replace(",", "$")).child(MainActivity.login.getEmail().replace(".", "\'")).setValue(notificationObject);
         refreshDatabase();
-        Toast.makeText(getActivity(), "Dokonano Zgłoszenie", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getActivity(), "Dokonano Zgłoszenia", Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -233,13 +233,23 @@ public class NotificationFragment extends Fragment {
                                 }
                             }
                         }
-                        ArrayAdapter adapter = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, problems.name);
+                        ArrayAdapter adapter;
+                        if (problems.name.size() == 0){
+                            String[] arr = new String[]{"Brak Aktywnych zgłoszeń"};
+                            adapter = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, arr);
+                        }
+                        else {
+                            adapter = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, problems.name);
+                        }
                         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                         spinner = getActivity().findViewById(R.id.bus_notification_spinner);
                         spinner.setAdapter(adapter);
                         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                             @Override
                             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                                if (spinner.getAdapter().isEmpty() || spinner.getSelectedItem().toString().equals("Brak Aktywnych zgłoszeń")){
+                                    return;
+                                }
                                 idx = position;
                                 TextView yesView = getActivity().findViewById(R.id.bus_yes_number);
                                 yesView.setText(String.valueOf(problems.yes.get(idx)));

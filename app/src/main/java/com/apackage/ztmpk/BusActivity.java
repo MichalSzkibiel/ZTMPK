@@ -65,5 +65,10 @@ public class BusActivity extends Activity implements BusFragment.OnFragmentInter
         finish();
     }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data){
+        Fragment notification = NotificationFragment.newInstance();
+        getFragmentManager().beginTransaction().replace(R.id.notification_fragment, notification).commit();
+    }
 
 }

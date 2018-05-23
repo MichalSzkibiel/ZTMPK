@@ -42,16 +42,12 @@ import static java.lang.Math.pow;
 import static java.lang.Math.sin;
 import static java.lang.Math.sqrt;
 
-/**
- * Created by trole_000 on 2018-04-09.
- * Klasa opisująca RecyclerView przechowującego listę zadań
- */
-
 public class Timetable extends RecyclerView.Adapter {
 
     private final SuperStop superStop;
     private final UnderStop underStop;
     private final StopActivity act;
+    private final RecyclerView mRecyclerView;
     private Departures departures;
 
     private class MyViewHolder extends RecyclerView.ViewHolder {
@@ -108,7 +104,7 @@ public class Timetable extends RecyclerView.Adapter {
     }
 
     // konstruktor adaptera
-    public Timetable(StopActivity act){
+    public Timetable(StopActivity act, RecyclerView rv){
         this.underStop = act.underStop;
         this.superStop = act.superStop;
         this.act = act;
@@ -119,6 +115,7 @@ public class Timetable extends RecyclerView.Adapter {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        mRecyclerView = rv;
     }
 
     @Override
@@ -129,8 +126,9 @@ public class Timetable extends RecyclerView.Adapter {
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String line = departures.get(i).line;
-                String brigade = departures.get(i).brigade;
+                int idx = mRecyclerView.getChildAdapterPosition(v);
+                String line = departures.get(idx).line;
+                String brigade = departures.get(idx).brigade;
                 Bus bus = MyMap.bh.find(line, brigade);
                 if (bus == null){
                     Toast.makeText(act, "Nie znaleziono pojazdu", Toast.LENGTH_SHORT).show();
@@ -148,7 +146,7 @@ public class Timetable extends RecyclerView.Adapter {
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, final int i) {
-        ((MyViewHolder) viewHolder).time.setText(departures.get(i).time);
+        ((MyViewHolder) viewHolder).time.setText(departures.get(i).time.substring(0, 5));
         ((MyViewHolder) viewHolder).direction.setText(departures.get(i).headsign);
         ((MyViewHolder) viewHolder).delay.setText("0");
         ((MyViewHolder) viewHolder).line.setText(departures.get(i).line);

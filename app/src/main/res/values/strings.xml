@@ -37,7 +37,7 @@
     </string-array>
     <string-array name="bus_problems">
         <item>zatłoczenie</item>
-        <item>awaria ogrzewania/klimatyzacji</item>
+        <item>awaria ogrzewania lub klimatyzacji</item>
     </string-array>
     <string name="checkNot">Potwierdź zgłoszenie</string>
     <string name="addNot">Dodaj nowe zgłoszenie</string>
