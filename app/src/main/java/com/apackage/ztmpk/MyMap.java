@@ -40,6 +40,7 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
     private static Integer widenStop;
     private String tribe;
     private StopsHandler sh1;
+    private Marker lineNumber;
 
     public MyMap(Activity act) {
         tribe = "main";
@@ -121,6 +122,14 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
             sh1.stops.get(widenStop).drawUnderStops(mMap, widenStop);
         }
         else if(title.contains("bus")){
+            if (bh.buses.get(title.replace("bus;", "")).textMarker == null){
+                if (lineNumber != null){
+                    lineNumber.remove();
+                    lineNumber = null;
+                }
+                lineNumber = bh.buses.get(title.replace("bus;", "")).drawText(mMap);
+                return false;
+            }
             String[] split = title.replace("bus;", "").split(";");
             Intent intent = new Intent(current_activity, BusActivity.class);
             intent.putExtra("line", split[0]);

@@ -14,6 +14,7 @@ public class Bus {
     public LatLng position;
     public int type;
     private Marker marker;
+    public Marker textMarker;
 
     public Bus(String toParse, int type) throws NumberFormatException{
         String[] split = toParse.split(",");
@@ -25,9 +26,11 @@ public class Bus {
         this.type = type;
     }
 
-    public void detach(){
-        if (marker != null)
+    public void detach() {
+        if (marker != null) {
             marker.remove();
+            textMarker.remove();
+        }
     }
 
     public void draw(GoogleMap mMap){
@@ -42,5 +45,14 @@ public class Bus {
             mo.icon(MyMap.getBitmap("tram"));
         }
         marker = mMap.addMarker(mo);
+    }
+
+    public Marker drawText(GoogleMap mMap){
+        MarkerOptions label = new MarkerOptions();
+        label.position(position);
+        label.icon(SuperStop.createPureTextIcon(line));
+        label.anchor(0.5f, 0.0f);
+        textMarker = mMap.addMarker(label);
+        return textMarker;
     }
 }

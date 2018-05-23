@@ -83,7 +83,7 @@ public class SuperStop {
         stopMarker = mMap.addMarker(label);
     }
 
-    public BitmapDescriptor createPureTextIcon(String text) {
+    public static BitmapDescriptor createPureTextIcon(String text) {
 
         Paint textPaint = new Paint(); // Adapt to your needs
 
