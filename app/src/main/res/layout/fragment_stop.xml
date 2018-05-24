@@ -10,23 +10,25 @@
 
     <TextView
         android:id="@+id/stop_name"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView2"
         android:layout_alignBottom="@+id/textView2"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginEnd="82dp"
-        android:layout_marginRight="82dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginStart="25dp"
+        android:layout_toEndOf="@+id/textView2"
+        android:layout_toRightOf="@+id/textView2"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="" />
 
     <TextView
         android:id="@+id/stop_lines"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/textView4"
         android:layout_alignLeft="@+id/stop_name"
+        android:layout_alignStart="@+id/stop_name"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="" />
@@ -35,12 +37,12 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/stop_lines"
-        android:layout_marginBottom="12dp"
-        android:layout_marginEnd="43dp"
-        android:layout_marginRight="43dp"
-        android:layout_toLeftOf="@+id/stop_name"
-        android:layout_toStartOf="@+id/stop_name"
+        android:layout_above="@+id/textView4"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="13dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
         android:text="@string/name_stop"
         android:textSize="20dp" />
 
@@ -51,7 +53,7 @@
         android:layout_alignEnd="@+id/textView2"
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/textView2"
-        android:layout_marginBottom="37dp"
+        android:layout_marginBottom="15dp"
         android:text="@string/line"
         android:textSize="20dp" />
 </RelativeLayout>

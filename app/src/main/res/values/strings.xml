@@ -30,6 +30,9 @@
     <string name="mail">E-mail</string>
     <string name="my_profile">Mój profil</string>
     <string name="ref">odśwież</string>
+    <string name="nr_line"><b>nr linii</b></string>
+    <string name="direct"><b>kierunek</b></string>
+    <string name="arrival"><b>odjazd</b></string>
     <string name="have_account">Mam już konto</string>
     <string-array name="stop_problems">
         <item>brak tabliczki przystankowej</item>

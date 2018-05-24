@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#ef2e24</color> <!--3F51B5-->
     <color name="colorPrimaryDark">#efd933</color> <!--#303F9F -->
-    <color name="colorAccent">#33f2c9</color><!--#FF4081-->
+    <color name="colorAccent">#289981</color><!--#FF4081-->
     <color name="Yes">#FF1BE714</color>
     <color name="No">#FFED0511</color>
     <color name="textYes">#FF07691E</color>
