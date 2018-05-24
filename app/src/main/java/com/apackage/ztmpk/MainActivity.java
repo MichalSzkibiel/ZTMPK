@@ -66,10 +66,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button refresh = findViewById(R.id.refresh);
+        refresh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                refresh_buses();
+            }
+        });
+
     }
 
     public void UpdateUI(FirebaseUser user){
         login = user;
+    }
+
+    public void refresh_buses(){
+        MyMap.bh.refresh(map_reference.getMap());
     }
 
 }

@@ -41,6 +41,7 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
     private String tribe;
     private StopsHandler sh1;
     private Marker lineNumber;
+    private static ArrayList<Marker> busMarkers;
 
     public MyMap(Activity act) {
         tribe = "main";
@@ -52,6 +53,7 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
         bitmapSuper = getMarkerBitmapFromView(R.drawable.ic_complex_stop, act);
         bitmapBus = getMarkerBitmapFromView(R.drawable.ic_bus, act);
         bitmapTram = getMarkerBitmapFromView(R.drawable.ic_tram, act);
+        busMarkers = new ArrayList<>();
     }
 
     public MyMap(Activity act, Bus bus){
@@ -187,5 +189,16 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
         this.position = position;
         this.zoom = zoom;
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(position, zoom));
+    }
+
+    public static void addBusMarker(Marker marker){
+        busMarkers.add(marker);
+    }
+
+    public static void detachBusMarkers(){
+        for (Marker marker : busMarkers){
+            marker.remove();
+        }
+        busMarkers.clear();
     }
 }

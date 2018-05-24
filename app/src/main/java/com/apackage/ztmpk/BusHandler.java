@@ -13,11 +13,33 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class BusHandler {
     private static String link_base = "https://api.um.warszawa.pl/api/action/busestrams_get/?resource_id=f2e5503e-927d-4ad3-9500-4ab9e55deb59&apikey=41877efd-2c98-432e-bbad-0c93fb56caff&type=";
     public Buses buses;
     private static String TAG = "tram";
+
+    class UpdatePositions extends TimerTask {
+        @Override
+        public void run() {
+            (new Thread() {
+
+                @Override
+                public void run() {
+                    Log.d(TAG, "wątek");
+                    asyncDownload ad = new asyncDownload();
+                    ad.start();
+                    try {
+                        ad.join();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }).start();
+        }
+    }
 
     private class asyncDownload extends Thread {
 
@@ -29,7 +51,7 @@ public class BusHandler {
             //while (!Thread.interrupted()) {
                 for (int i = 1; i < 3; ++i) {
                     try {
-                        boolean is_good = true;
+                        boolean is_good;
                         do {
                             URL line_url = new URL(link_base + String.valueOf(i));
                             Log.d(TAG, link_base + String.valueOf(i));
@@ -55,31 +77,17 @@ public class BusHandler {
                                 is_good = false;
                             }
                         } while (!is_good);
-
-
-
                     } catch (MalformedURLException e) {
                         e.printStackTrace();
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 }
-           //     try {
-           //         Thread.sleep(30000);
-           //     } catch (InterruptedException e) {
-           //         e.printStackTrace();
-           //     }
-           // }
         }
     }
 
     public BusHandler(GoogleMap mMap){
         buses = new Buses();
-        refresh(mMap);
-    }
-
-    public void refresh(GoogleMap mMap){
-        buses.detach();
         asyncDownload ad = new asyncDownload();
         ad.start();
         try {
@@ -88,7 +96,13 @@ public class BusHandler {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        Timer time = new Timer();
+        time.schedule(new UpdatePositions(), 30000,30000);
+    }
 
+    public void refresh(GoogleMap mMap){
+        MyMap.detachBusMarkers();
+        draw(mMap);
     }
 
     private void draw(GoogleMap mMap){
