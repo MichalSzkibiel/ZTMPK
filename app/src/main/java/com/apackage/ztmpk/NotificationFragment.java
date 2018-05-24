@@ -15,7 +15,6 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ListAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,11 +25,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Map;
 
 
@@ -218,7 +212,9 @@ public class NotificationFragment extends Fragment {
             public void onDataChange(DataSnapshot dataSnapshot) {
                         Iterable<DataSnapshot> iterable = dataSnapshot.getChildren();
                         problems = new Problems();
+                        int it = 0;
                         while(iterable.iterator().hasNext()){
+                            it += 1;
                             DataSnapshot type = iterable.iterator().next();
                             problems.add(type.getKey().replace("_", " ").replace("$", ","));
                             Iterable<DataSnapshot> it2 = type.getChildren();
@@ -233,13 +229,13 @@ public class NotificationFragment extends Fragment {
                                 }
                             }
                         }
-                        ArrayAdapter adapter;
+                        ArrayAdapter<String> adapter;
                         if (problems.name.size() == 0){
                             String[] arr = new String[]{"Brak Aktywnych zgłoszeń"};
-                            adapter = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, arr);
+                            adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item, arr);
                         }
                         else {
-                            adapter = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, problems.name);
+                            adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item, problems.name);
                         }
                         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                         spinner = getActivity().findViewById(R.id.bus_notification_spinner);
@@ -250,6 +246,7 @@ public class NotificationFragment extends Fragment {
                                 if (spinner.getAdapter().isEmpty() || spinner.getSelectedItem().toString().equals("Brak Aktywnych zgłoszeń")){
                                     return;
                                 }
+                                Log.d(TAG, String.valueOf(spinner.getAdapter().getCount()));
                                 idx = position;
                                 TextView yesView = getActivity().findViewById(R.id.bus_yes_number);
                                 yesView.setText(String.valueOf(problems.yes.get(idx)));
