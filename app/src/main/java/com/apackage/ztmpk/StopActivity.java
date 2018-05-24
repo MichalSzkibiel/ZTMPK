@@ -3,6 +3,7 @@ package com.apackage.ztmpk;
 import android.app.Fragment;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -19,6 +20,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StopActivity extends Activity implements StopFragment.OnFragmentInteractionListener, NotificationFragment.OnFragmentInteractionListener {
+
+    private RecyclerView mRecyclerView;
+
+    private class TimetableDownload extends AsyncTask<Integer, Integer, Timetable>{
+
+        @Override
+        protected Timetable doInBackground(Integer... views) {
+            return new Timetable(StopActivity.this, mRecyclerView);
+        }
+
+        @Override
+        protected void onPostExecute(Timetable result) {
+            mRecyclerView.setAdapter(result);
+        }
+
+    }
 
     public SuperStop superStop;
     public UnderStop underStop;
@@ -40,6 +57,7 @@ public class StopActivity extends Activity implements StopFragment.OnFragmentInt
         }
         superStop = MyMap.sh.stops.get(superId);
         underStop = superStop.underStops.get(underId);
+
         if (savedInstanceState == null) {
             Fragment stopFragment = StopFragment.newInstance();
             Fragment notification = NotificationFragment.newInstance();
@@ -48,6 +66,13 @@ public class StopActivity extends Activity implements StopFragment.OnFragmentInt
         }
         allStops.add(this);
         setContentView(R.layout.activity_stop);
+
+        mRecyclerView = (RecyclerView) findViewById(R.id.stop_depatures);
+        mRecyclerView.setHasFixedSize(true);
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this);
+        mRecyclerView.setLayoutManager(mLayoutManager);
+
+        (new TimetableDownload()).execute();
 
         MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.stop_map);
         map_reference = new MyMap(this, underStop);
@@ -63,13 +88,6 @@ public class StopActivity extends Activity implements StopFragment.OnFragmentInt
                 }
             }
         });
-
-        RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.stop_depatures);
-        mRecyclerView.setHasFixedSize(true);
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this);
-        mRecyclerView.setLayoutManager(mLayoutManager);
-        RecyclerView.Adapter mAdapter = new Timetable(this, mRecyclerView);
-        mRecyclerView.setAdapter(mAdapter);
     }
 
     @Override
