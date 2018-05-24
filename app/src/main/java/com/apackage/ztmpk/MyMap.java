@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.drawable.VectorDrawable;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.support.annotation.DrawableRes;
 import android.util.Log;
@@ -19,6 +20,8 @@ import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.Marker;
 
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import static com.apackage.ztmpk.Locator.getPosition;
 //import static com.apackage.ztmpk.Locator.position;
@@ -43,6 +46,25 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
     private Marker lineNumber;
     private static ArrayList<Marker> busMarkers;
     public final static int MARKER_REQUEST_CODE = 2132;
+
+    private class busRefresher extends TimerTask {
+
+        @Override
+        public void run() {
+            (new AsyncTask<Void, Void, Void>(){
+
+                @Override
+                protected Void doInBackground(Void... voids) {
+                    return null;
+                }
+                @Override
+                protected void onPostExecute(Void voids){
+                    detachBusMarkers();
+                    bh.refresh(mMap);
+                }
+            }).execute();
+        }
+    }
 
     public MyMap(Activity act) {
         tribe = "main";
@@ -98,6 +120,8 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
         }
         locator = new Locator(mMap, current_activity, getMarkerBitmapFromView(R.drawable.ic_gps_location_symbol, current_activity));
         mMap.setOnMarkerClickListener(this);
+        Timer timer = new Timer();
+        timer.schedule(new busRefresher(), 30000, 30000);
     }
 
 
