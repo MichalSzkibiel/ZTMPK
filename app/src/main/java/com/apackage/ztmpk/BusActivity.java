@@ -19,6 +19,7 @@ public class BusActivity extends Activity implements BusFragment.OnFragmentInter
     public Bus bus;
     public String line;
     public String brigade;
+    private MyMap map_reference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +41,8 @@ public class BusActivity extends Activity implements BusFragment.OnFragmentInter
         StopActivity.allStops.add(this);
         setContentView(R.layout.activity_bus);
         MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.bus_map);
-        mapFragment.getMapAsync(new MyMap(this, bus));
+        map_reference = new MyMap(this, bus);
+        mapFragment.getMapAsync(map_reference);
 
         Button exit = findViewById(R.id.return_bus);
         exit.setOnClickListener(new View.OnClickListener() {
@@ -67,8 +69,14 @@ public class BusActivity extends Activity implements BusFragment.OnFragmentInter
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data){
-        Fragment notification = NotificationFragment.newInstance();
-        getFragmentManager().beginTransaction().replace(R.id.notification_fragment, notification).commit();
+        switch(requestCode) {
+            case NotificationFragment.REQUEST_CODE_A:
+                Fragment notification = NotificationFragment.newInstance();
+                getFragmentManager().beginTransaction().replace(R.id.notification_fragment, notification).commit();
+                break;
+            case MyMap.MARKER_REQUEST_CODE:
+                MyMap.bh.refresh(map_reference.getMap());
+        }
     }
 
 }

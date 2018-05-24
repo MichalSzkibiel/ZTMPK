@@ -45,7 +45,7 @@ import java.util.Map;
 public class NotificationFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
-    private final static int REQUEST_CODE_A = 0;
+    public final static int REQUEST_CODE_A = 0;
 
     public NotificationFragment() {
         // Required empty public constructor

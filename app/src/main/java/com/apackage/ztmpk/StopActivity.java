@@ -26,6 +26,7 @@ public class StopActivity extends Activity implements StopFragment.OnFragmentInt
     public static List<Activity> allStops = new ArrayList<>();
     public int superId;
     public int underId;
+    private MyMap map_reference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,7 +50,8 @@ public class StopActivity extends Activity implements StopFragment.OnFragmentInt
         setContentView(R.layout.activity_stop);
 
         MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.stop_map);
-        mapFragment.getMapAsync(new MyMap(this, underStop));
+        map_reference = new MyMap(this, underStop);
+        mapFragment.getMapAsync(map_reference);
 
         Button exit = findViewById(R.id.return_stop);
         exit.setOnClickListener(new View.OnClickListener() {
@@ -83,7 +85,13 @@ public class StopActivity extends Activity implements StopFragment.OnFragmentInt
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data){
-        Fragment notification = NotificationFragment.newInstance();
-        getFragmentManager().beginTransaction().replace(R.id.notification_fragment, notification).commit();
+        switch(requestCode) {
+            case NotificationFragment.REQUEST_CODE_A:
+                Fragment notification = NotificationFragment.newInstance();
+                getFragmentManager().beginTransaction().replace(R.id.notification_fragment, notification).commit();
+                break;
+            case MyMap.MARKER_REQUEST_CODE:
+                MyMap.bh.refresh(map_reference.getMap());
+        }
     }
 }

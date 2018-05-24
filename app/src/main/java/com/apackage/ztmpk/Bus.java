@@ -65,7 +65,6 @@ public class Bus {
         if (prevPosition != null){
             double diffX = position.latitude - prevPosition.latitude;
             double diffY = position.longitude - prevPosition.longitude;
-            Log.d("rotacja", String.valueOf(diffX) + " " + String.valueOf(diffY));
           label.rotation((float)(Math.atan2(diffY, diffX)*180.0/Math.PI));
         }
         textMarker = mMap.addMarker(label);

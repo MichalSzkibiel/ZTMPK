@@ -42,6 +42,7 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
     private StopsHandler sh1;
     private Marker lineNumber;
     private static ArrayList<Marker> busMarkers;
+    public final static int MARKER_REQUEST_CODE = 2132;
 
     public MyMap(Activity act) {
         tribe = "main";
@@ -137,7 +138,7 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
             intent.putExtra("line", split[0]);
             intent.putExtra("brigade", split[1]);
             Log.d(TAG, split[0] + "DDW" + split[1]);
-            current_activity.startActivity(intent);
+            current_activity.startActivityForResult(intent, MARKER_REQUEST_CODE);
         }
         else if (title.contains(";")){
             Intent intent = new Intent(current_activity, StopActivity.class);
@@ -146,7 +147,7 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
             int underId = Integer.valueOf(elements[1]);
             intent.putExtra("superId", superId);
             intent.putExtra("underId", underId);
-            current_activity.startActivity(intent);
+            current_activity.startActivityForResult(intent, MARKER_REQUEST_CODE);
         }
         return false;
     }
