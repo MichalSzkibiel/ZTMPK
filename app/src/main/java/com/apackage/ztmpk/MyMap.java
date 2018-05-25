@@ -29,7 +29,7 @@ import static com.apackage.ztmpk.Locator.getPosition;
 public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
     private GoogleMap mMap;
     private LatLng position;
-    private int zoom;
+    public int zoom;
     private Locator locator;
     private Activity current_activity;
     private static String TAG = "MyMap";
@@ -69,6 +69,11 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
                 protected void onPostExecute(Void voids){
                     detachBusMarkers();
                     bh.refresh(mMap, BusId);
+                    if (tribe.equals("bus")){
+                        if (bh.buses.containsKey(BusId)){
+                            move(bh.buses.get(BusId).position, zoom);
+                        }
+                    }
                 }
             }).execute();
         }

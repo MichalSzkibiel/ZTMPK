@@ -79,6 +79,7 @@ public class BusActivity extends Activity implements BusFragment.OnFragmentInter
             case MyMap.MARKER_REQUEST_CODE:
                 MyMap.BusId = line + ";" + brigade;
                 MyMap.bh.refresh(map_reference.getMap(), line + ":" + brigade);
+                map_reference.move(MyMap.bh.buses.get(MyMap.BusId).position, map_reference.zoom);
         }
     }
 
