@@ -13,6 +13,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.model.LatLng;
 
@@ -81,6 +82,10 @@ public class FindStopsActivity extends AppCompatActivity {
                 position = i;
                 break;
             }
+        }
+        if (position == -1){
+            Toast.makeText(FindStopsActivity.this, "Nie znaleziono przystanku", Toast.LENGTH_SHORT);
+            return;
         }
         SuperStop stop = MyMap.sh.stops.get(position);
         underStopsView.setAdapter(new UnderStopAdapter(underStopsView, position, stop));
