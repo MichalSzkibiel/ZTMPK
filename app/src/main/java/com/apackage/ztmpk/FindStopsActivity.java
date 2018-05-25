@@ -14,23 +14,38 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 
+import com.google.android.gms.maps.model.LatLng;
+
 public class FindStopsActivity extends AppCompatActivity {
 
     private RecyclerView underStopsView;
+    private RecyclerView superStopsView;
     private AutoCompleteTextView textView;
+    private Button show;
+    private String[] stop_names;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_find_stops);
 
+        superStopsView = findViewById(R.id.closest_cardView_stop);
+        superStopsView.setHasFixedSize(true);
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this);
+        superStopsView.setLayoutManager(mLayoutManager);
+        LatLng pos = Locator.getPosition();
+        if (pos == null){
+            pos = new LatLng(52.25, 21.0);
+        }
+        superStopsView.setAdapter(new SuperStopAdapter(superStopsView, pos));
+
         underStopsView = findViewById(R.id.found_cardView_stop);
         underStopsView.setHasFixedSize(true);
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this);
-        underStopsView.setLayoutManager(mLayoutManager);
+        RecyclerView.LayoutManager mLayoutManager2 = new LinearLayoutManager(this);
+        underStopsView.setLayoutManager(mLayoutManager2);
 
         textView = findViewById(R.id.find_stops_view);
-        final String[] stop_names = MyMap.sh.stop_names();
+        stop_names = MyMap.sh.stop_names();
         final ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, stop_names);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
@@ -49,22 +64,30 @@ public class FindStopsActivity extends AppCompatActivity {
 
             }
         });
-        Button show = findViewById(R.id.search_button);
+        show = findViewById(R.id.search_button);
         show.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("znajdz", "Callback");
-                int position = -1;
-                for (int i = 0; i < stop_names.length; ++i){
-                    if (stop_names[i].equals(textView.getText().toString())){
-                        position = i;
-                        break;
-                    }
-                }
-                SuperStop stop = MyMap.sh.stops.get(position);
-                underStopsView.setAdapter(new UnderStopAdapter(underStopsView, position, stop));
+                populateLowerRecyclerView(textView.getText().toString());
             }
         });
+    }
+
+    private void populateLowerRecyclerView(String stopStr){
+        Log.d("znajdz", "Callback");
+        int position = -1;
+        for (int i = 0; i < stop_names.length; ++i){
+            if (stop_names[i].equals(stopStr)){
+                position = i;
+                break;
+            }
+        }
+        SuperStop stop = MyMap.sh.stops.get(position);
+        underStopsView.setAdapter(new UnderStopAdapter(underStopsView, position, stop));
+    }
+
+    public void stopFromUpperRecyclerView(String stop){
+        populateLowerRecyclerView(stop);
     }
 
 }

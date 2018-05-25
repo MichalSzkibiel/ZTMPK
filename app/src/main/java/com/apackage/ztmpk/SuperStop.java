@@ -29,6 +29,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 public class SuperStop {
     public int id;
@@ -153,5 +155,13 @@ public class SuperStop {
 
     public Marker getStopMarker() {
         return stopMarker;
+    }
+
+    public String getLines(){
+        Set<String> lines = new HashSet<>();
+        for (UnderStop stop : underStops){
+            lines.addAll(stop.lines);
+        }
+        return lines.toString();
     }
 }
