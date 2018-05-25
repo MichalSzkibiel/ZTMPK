@@ -94,7 +94,7 @@ public class Bus {
     public boolean setPrevPosition(LatLng prevPosition){
         double diffX = position.latitude - prevPosition.latitude;
         double diffY = position.longitude - prevPosition.longitude;
-        if (diffX == 0 && diffY == 0){
+        if (diffX == 0.0 && diffY == 0.0){
             return false;
         }
         this.prevPosition = prevPosition;
