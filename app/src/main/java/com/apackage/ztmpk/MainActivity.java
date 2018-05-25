@@ -74,6 +74,10 @@ public class MainActivity extends AppCompatActivity {
         findStops.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (MyMap.sh.stops == null){
+                    Toast.makeText(MainActivity.this, "Poczekaj, aż załadują się przystanki", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 startActivity(new Intent(MainActivity.this, FindStopsActivity.class));
             }
         });
