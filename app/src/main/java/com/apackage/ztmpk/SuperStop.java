@@ -122,14 +122,13 @@ public class SuperStop {
     public void setActiveMarker(GoogleMap mMap, int idx){
         if (stopMarker != null) {
             stopMarker.remove();
-            MarkerOptions superMarker = new MarkerOptions();
-            superMarker.position(position);
-            superMarker.draggable(false);
-            superMarker.icon(MyMap.getActiveBitmap("super"));
-            superMarker.title("stop" + String.valueOf(idx));
-            stopMarker = mMap.addMarker(superMarker);
         }
-
+        MarkerOptions superMarker = new MarkerOptions();
+        superMarker.position(position);
+        superMarker.draggable(false);
+        superMarker.icon(MyMap.getActiveBitmap("super"));
+        superMarker.title("stop" + String.valueOf(idx));
+        stopMarker = mMap.addMarker(superMarker);
     }
 
     @Override
