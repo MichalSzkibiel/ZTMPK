@@ -144,7 +144,11 @@ public class SuperStop {
 
     @Override
     public String toString(){
-        return name;
+        String toRet = name;
+        if (!borough.equals("WARSZAWA")){
+            name += "(" + borough + ")";
+        }
+        return toRet;
     }
 
     public Marker getStopMarker() {

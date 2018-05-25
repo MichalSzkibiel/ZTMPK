@@ -70,6 +70,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button findStops = findViewById(R.id.find_stop);
+        findStops.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, FindStopsActivity.class));
+            }
+        });
+
     }
 
     public void UpdateUI(FirebaseUser user){

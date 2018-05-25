@@ -68,4 +68,12 @@ public class StopsHandler {
         }
         caller = orig.caller;
     }
+
+    public String[] stop_names(){
+        String[] toRet = new String[stops.size()];
+        for (int i = 0; i < stops.size(); ++i){
+            toRet[i] = stops.get(i).toString();
+        }
+        return toRet;
+    }
 }
