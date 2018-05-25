@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.MapFragment;
 import com.google.firebase.auth.FirebaseAuth;
@@ -45,8 +46,10 @@ public class MainActivity extends AppCompatActivity {
         lokal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Locator.getPosition() == null)
+                if (Locator.getPosition() == null) {
+                    Toast.makeText(MainActivity.this,"Nie znaleziono lokalizacji", Toast.LENGTH_SHORT).show();
                     return;
+                }
                 map_reference.move(Locator.getPosition(), 15);
             }
         });
