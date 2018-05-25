@@ -2,6 +2,7 @@ package com.apackage.ztmpk;
 
 import android.app.Fragment;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -47,6 +48,7 @@ public class StopActivity extends Activity implements StopFragment.OnFragmentInt
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         Intent intent = getIntent();
         superId = intent.getIntExtra("superId", -1);
         underId = intent.getIntExtra("underId", -1);

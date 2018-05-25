@@ -2,6 +2,7 @@ package com.apackage.ztmpk;
 
 import android.app.Fragment;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;
@@ -23,6 +24,7 @@ public class BusActivity extends Activity implements BusFragment.OnFragmentInter
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         Intent intent = getIntent();
         line = intent.getStringExtra("line");
         brigade = intent.getStringExtra("brigade");
