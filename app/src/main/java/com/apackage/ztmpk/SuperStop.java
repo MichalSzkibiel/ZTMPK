@@ -60,6 +60,17 @@ public class SuperStop {
         }
     }
 
+    public SuperStop(SuperStop orig){
+        id = orig.id;
+        name = orig.name;
+        borough = orig.borough;
+        position = orig.position;
+        underStops = new ArrayList<>();
+        for (UnderStop stop : orig.underStops){
+            underStops.add(new UnderStop(stop));
+        }
+    }
+
     public void draw(GoogleMap mMap, int idx){
         //zespoly
         MarkerOptions superMarker = new MarkerOptions();

@@ -62,7 +62,10 @@ public class StopsHandler {
     }
 
     public StopsHandler(StopsHandler orig){
-        stops = new ArrayList<>(orig.stops);
+        stops = new ArrayList<>();
+        for (SuperStop stop : orig.stops){
+            stops.add(new SuperStop(stop));
+        }
         caller = orig.caller;
     }
 }

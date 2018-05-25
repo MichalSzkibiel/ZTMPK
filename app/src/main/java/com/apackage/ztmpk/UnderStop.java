@@ -107,4 +107,10 @@ public class UnderStop {
         if (stopMarker != null)
             stopMarker.remove();
     }
+
+    public UnderStop(UnderStop orig){
+        id = orig.id;
+        lines = orig.lines;
+        position = orig.position;
+    }
 }
