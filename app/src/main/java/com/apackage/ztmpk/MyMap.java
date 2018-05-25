@@ -44,6 +44,7 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
     private String tribe;
     private StopsHandler sh1;
     private Marker lineNumber;
+    private String currentBus;
     private static ArrayList<Marker> busMarkers;
     public final static int MARKER_REQUEST_CODE = 2132;
 
@@ -72,6 +73,7 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
         position = new LatLng(52.25, 21.0);
         zoom = 10;
         current_activity = act;
+        currentBus = "";
         bitmapUnder = getMarkerBitmapFromView(R.drawable.ic_bus_stop, act);
         bitmapSuper = getMarkerBitmapFromView(R.drawable.ic_complex_stop, act);
         bitmapBus = getMarkerBitmapFromView(R.drawable.ic_bus, act);
@@ -84,6 +86,7 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
         position = bus.position;
         zoom = 15;
         current_activity = act;
+        currentBus = "";
     }
 
     public MyMap(Activity act, UnderStop underStop){
@@ -91,6 +94,7 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
         position = underStop.position;
         zoom = 15;
         current_activity = act;
+        currentBus = "";
     }
 
     public GoogleMap getMap() {
@@ -117,6 +121,16 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
                 sh1.stops.get(widenStop).drawUnderStops(mMap, widenStop);
                 }
             bh.refresh(mMap);
+            if (lineNumber != null) {
+                lineNumber.remove();
+                if (bh.buses.containsKey(currentBus)){
+                    lineNumber = bh.buses.get(currentBus).drawText(mMap);
+                }
+                else{
+                    lineNumber = null;
+                    currentBus = "";
+                }
+            }
         }
         locator = new Locator(mMap, current_activity, getMarkerBitmapFromView(R.drawable.ic_gps_location_symbol, current_activity));
         mMap.setOnMarkerClickListener(this);
@@ -149,12 +163,13 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
             sh1.stops.get(widenStop).drawUnderStops(mMap, widenStop);
         }
         else if(title.contains("bus")){
-            if (bh.buses.get(title.replace("bus;", "")).textMarker == null){
+            if (currentBus != title.replace("bus;", "")){
                 if (lineNumber != null){
                     lineNumber.remove();
                     lineNumber = null;
                 }
                 lineNumber = bh.buses.get(title.replace("bus;", "")).drawText(mMap);
+                currentBus = title.replace("bus;", "");
                 return false;
             }
             String[] split = title.replace("bus;", "").split(";");
