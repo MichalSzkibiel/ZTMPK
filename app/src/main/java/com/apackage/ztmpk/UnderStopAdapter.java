@@ -53,7 +53,7 @@ class UnderStopAdapter extends RecyclerView.Adapter {
     public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, final int i) {
         String stopDesc = stop.name + " " + stop.underStops.get(i).id;
         if (!stop.borough.equals("WARSZAWA")){
-            stopDesc += "(" + stop.borough + ")";
+            stopDesc += " (" + stop.borough + ")";
         }
         ((MyViewHolder) viewHolder).name.setText(stopDesc);
         ((MyViewHolder) viewHolder).lines.setText(stop.underStops.get(i).lines.toString().replace("[", "").replace("]", ""));

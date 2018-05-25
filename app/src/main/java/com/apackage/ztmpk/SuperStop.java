@@ -148,7 +148,7 @@ public class SuperStop {
     public String toString(){
         String toRet = name;
         if (!borough.equals("WARSZAWA")){
-            toRet += "(" + borough + ")";
+            toRet += " (" + borough + ")";
         }
         return toRet;
     }

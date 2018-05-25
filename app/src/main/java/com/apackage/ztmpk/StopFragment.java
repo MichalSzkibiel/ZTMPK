@@ -53,14 +53,14 @@ public class StopFragment extends Fragment {
         try {
             fullStop = ((StopActivity)getActivity()).superStop.name + " " + ((StopActivity)getActivity()).underStop.id;
             if (!((StopActivity)getActivity()).superStop.borough.equals("WARSZAWA")){
-                fullStop += "(" + ((StopActivity)getActivity()).superStop.borough + ")";
+                fullStop += " (" + ((StopActivity)getActivity()).superStop.borough + ")";
             }
             lines.setText(((StopActivity)getActivity()).underStop.lines.toString().replace("[", "").replace("]", ""));
 
         } catch(Exception e){
             fullStop = ((NotificationActivityStop)getActivity()).superStop.name + " " + ((NotificationActivityStop)getActivity()).underStop.id;
             if (!((NotificationActivityStop)getActivity()).superStop.borough.equals("WARSZAWA")){
-                fullStop += "(" + ((NotificationActivityStop)getActivity()).superStop.borough + ")";
+                fullStop += " (" + ((NotificationActivityStop)getActivity()).superStop.borough + ")";
             }
             lines.setText(((NotificationActivityStop)getActivity()).underStop.lines.toString().replace("[", "").replace("]", ""));
         }
