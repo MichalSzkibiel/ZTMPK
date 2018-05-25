@@ -41,7 +41,7 @@ public class BusActivity extends Activity implements BusFragment.OnFragmentInter
         StopActivity.allStops.add(this);
         setContentView(R.layout.activity_bus);
         MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.bus_map);
-        map_reference = new MyMap(this, bus);
+        map_reference = new MyMap(this, line + ";" + brigade);
         mapFragment.getMapAsync(map_reference);
 
         Button exit = findViewById(R.id.return_bus);
@@ -75,7 +75,8 @@ public class BusActivity extends Activity implements BusFragment.OnFragmentInter
                 getFragmentManager().beginTransaction().replace(R.id.notification_fragment, notification).commit();
                 break;
             case MyMap.MARKER_REQUEST_CODE:
-                MyMap.bh.refresh(map_reference.getMap());
+                MyMap.BusId = line + ";" + brigade;
+                MyMap.bh.refresh(map_reference.getMap(), line + ":" + brigade);
         }
     }
 

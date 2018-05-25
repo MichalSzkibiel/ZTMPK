@@ -92,7 +92,7 @@ public class BusHandler {
         ad.start();
         try {
             ad.join();
-            draw(mMap);
+            draw(mMap, "");
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -100,14 +100,19 @@ public class BusHandler {
         time.schedule(new UpdatePositions(), 30000,30000);
     }
 
-    public void refresh(GoogleMap mMap){
+    public void refresh(GoogleMap mMap, String currentBus){
         MyMap.detachBusMarkers();
-        draw(mMap);
+        draw(mMap, currentBus);
     }
 
-    private void draw(GoogleMap mMap){
+    private void draw(GoogleMap mMap, String currentBus){
         for (String key : buses.keySet()){
-            buses.get(key).draw(mMap);
+            if (currentBus != null && key.equals(currentBus)){
+                buses.get(key).drawActive(mMap);
+            }
+            else{
+                buses.get(key).draw(mMap);
+            }
         }
     }
 

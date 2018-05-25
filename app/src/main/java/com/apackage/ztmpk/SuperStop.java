@@ -110,11 +110,26 @@ public class SuperStop {
     }
 
     public void detachUnderStops(GoogleMap mMap, int idx){
-        stopMarker.remove();
+        if (stopMarker != null) {
+            stopMarker.remove();
+        }
         for(int i = 0; i < underStops.size(); ++i){
             underStops.get(i).detach();
         }
         draw(mMap, idx);
+    }
+
+    public void setActiveMarker(GoogleMap mMap, int idx){
+        if (stopMarker != null) {
+            stopMarker.remove();
+            MarkerOptions superMarker = new MarkerOptions();
+            superMarker.position(position);
+            superMarker.draggable(false);
+            superMarker.icon(MyMap.getActiveBitmap("super"));
+            superMarker.title("stop" + String.valueOf(idx));
+            stopMarker = mMap.addMarker(superMarker);
+        }
+
     }
 
     @Override

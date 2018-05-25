@@ -75,7 +75,7 @@ public class StopActivity extends Activity implements StopFragment.OnFragmentInt
         (new TimetableDownload()).execute();
 
         MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.stop_map);
-        map_reference = new MyMap(this, underStop);
+        map_reference = new MyMap(this, superId, underId);
         mapFragment.getMapAsync(map_reference);
 
         Button exit = findViewById(R.id.return_stop);
@@ -109,7 +109,7 @@ public class StopActivity extends Activity implements StopFragment.OnFragmentInt
                 getFragmentManager().beginTransaction().replace(R.id.notification_fragment, notification).commit();
                 break;
             case MyMap.MARKER_REQUEST_CODE:
-                MyMap.bh.refresh(map_reference.getMap());
+                MyMap.bh.refresh(map_reference.getMap(), "");
         }
     }
 }

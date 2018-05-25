@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void refresh_buses(){
-        MyMap.bh.refresh(map_reference.getMap());
+        MyMap.bh.refresh(map_reference.getMap(), "");
     }
 
     @Override

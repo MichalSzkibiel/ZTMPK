@@ -39,14 +39,21 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
     private static BitmapDescriptor bitmapUnder;
     private static BitmapDescriptor bitmapBus;
     private static BitmapDescriptor bitmapTram;
+    private static BitmapDescriptor activeBitmapSuper;
+    private static BitmapDescriptor activeBitmapUnder;
+    private static BitmapDescriptor activeBitmapBus;
+    private static BitmapDescriptor activeBitmapTram;
     public static BusHandler bh;
-    private static Integer widenStop;
+    private Integer widenStop;
     private String tribe;
     private StopsHandler sh1;
     private Marker lineNumber;
     private String currentBus;
     private static ArrayList<Marker> busMarkers;
     public final static int MARKER_REQUEST_CODE = 2132;
+    private int superId;
+    private int underId;
+    public static String BusId;
 
     private class busRefresher extends TimerTask {
 
@@ -61,7 +68,7 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
                 @Override
                 protected void onPostExecute(Void voids){
                     detachBusMarkers();
-                    bh.refresh(mMap);
+                    bh.refresh(mMap, BusId);
                 }
             }).execute();
         }
@@ -74,27 +81,38 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
         zoom = 10;
         current_activity = act;
         currentBus = "";
-        bitmapUnder = getMarkerBitmapFromView(R.drawable.ic_bus_stop, act);
-        bitmapSuper = getMarkerBitmapFromView(R.drawable.ic_complex_stop, act);
+        bitmapUnder = getMarkerBitmapFromView(R.drawable.bus_stop, act);
+        bitmapSuper = getMarkerBitmapFromView(R.drawable.complex_stop, act);
         bitmapBus = getMarkerBitmapFromView(R.drawable.ic_bus, act);
         bitmapTram = getMarkerBitmapFromView(R.drawable.ic_tram, act);
+        activeBitmapBus = getMarkerBitmapFromView(R.drawable.active_bus, act);
+        activeBitmapSuper = getMarkerBitmapFromView(R.drawable.active_complex, act);
+        activeBitmapTram = getMarkerBitmapFromView(R.drawable.active_tram, act);
+        activeBitmapUnder = getMarkerBitmapFromView(R.drawable.active_stop, act);
         busMarkers = new ArrayList<>();
     }
 
-    public MyMap(Activity act, Bus bus){
+    public MyMap(Activity act, String key){
         tribe = "bus";
-        position = bus.position;
+        if (bh.buses.containsKey(key)) {
+            Bus bus = bh.buses.get(key);
+            position = bus.position;
+            BusId = key;
+        }
         zoom = 15;
         current_activity = act;
         currentBus = "";
     }
 
-    public MyMap(Activity act, UnderStop underStop){
+    public MyMap(Activity act, int superId, int underId){
         tribe = "stop";
-        position = underStop.position;
+        position = sh.stops.get(superId).underStops.get(underId).position;
         zoom = 15;
         current_activity = act;
         currentBus = "";
+        this.superId = superId;
+        this.underId = underId;
+        widenStop = superId;
     }
 
     public GoogleMap getMap() {
@@ -115,12 +133,13 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
         }
         else {
             sh1 = new StopsHandler(sh);
-            Log.d("Place", sh.toString() + " " + sh1.toString());
             sh1.draw(mMap);
-            if ( widenStop != null){
+            if ( tribe.equals("stop")){
                 sh1.stops.get(widenStop).drawUnderStops(mMap, widenStop);
-                }
-            bh.refresh(mMap);
+                sh1.stops.get(widenStop).underStops.get(underId).detach();
+                sh1.stops.get(widenStop).underStops.get(underId).drawActive(mMap);
+            }
+            bh.refresh(mMap, BusId);
             if (lineNumber != null) {
                 lineNumber.remove();
                 if (bh.buses.containsKey(currentBus)){
@@ -158,9 +177,16 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
         else if (title.contains("stop")){
             if (widenStop != null){
                 sh1.stops.get(widenStop).detachUnderStops(mMap, widenStop);
+                if (widenStop == superId){
+                    sh1.stops.get(widenStop).setActiveMarker(mMap, widenStop);
+                }
             }
             widenStop = Integer.valueOf(title.replace("stop", ""));
             sh1.stops.get(widenStop).drawUnderStops(mMap, widenStop);
+            if (widenStop == superId){
+                sh1.stops.get(widenStop).underStops.get(underId).detach();
+                sh1.stops.get(widenStop).underStops.get(underId).drawActive(mMap);
+            }
         }
         else if(title.contains("bus")){
             if (currentBus != title.replace("bus;", "")){
@@ -222,6 +248,19 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
                 return bitmapTram;
             default:
                 return bitmapUnder;
+        }
+    }
+
+    public static BitmapDescriptor getActiveBitmap(String id){
+        switch(id){
+            case "super":
+                return activeBitmapSuper;
+            case "bus":
+                return activeBitmapBus;
+            case "tram":
+                return activeBitmapTram;
+            default:
+                return activeBitmapUnder;
         }
     }
 

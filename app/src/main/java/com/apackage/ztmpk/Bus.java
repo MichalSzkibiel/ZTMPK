@@ -57,6 +57,26 @@ public class Bus {
         MyMap.addBusMarker(marker);
     }
 
+    public void drawActive(GoogleMap mMap){
+        MarkerOptions mo = new MarkerOptions();
+        mo.position(position);
+        mo.title("Wybrany pojazd");
+        mo.draggable(false);
+        if (prevPosition != null){
+            double diffX = position.latitude - prevPosition.latitude;
+            double diffY = position.longitude - prevPosition.longitude;
+            mo.rotation((float)(Math.atan2(diffY, diffX)*180.0/Math.PI));
+        }
+        if (type == 1){
+            mo.icon(MyMap.getActiveBitmap("bus"));
+        }
+        else{
+            mo.icon(MyMap.getActiveBitmap("tram"));
+        }
+        marker = mMap.addMarker(mo);
+        MyMap.addBusMarker(marker);
+    }
+
     public Marker drawText(GoogleMap mMap){
         MarkerOptions label = new MarkerOptions();
         label.position(position);

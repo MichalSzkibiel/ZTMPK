@@ -94,6 +94,15 @@ public class UnderStop {
         stopMarker = mMap.addMarker(underMarker);
     }
 
+    public void drawActive(GoogleMap mMap){
+        MarkerOptions underMarker = new MarkerOptions();
+        underMarker.position(position);
+        underMarker.draggable(false);
+        underMarker.icon(MyMap.getActiveBitmap("under"));
+        underMarker.title("Wybrany przystanek");
+        stopMarker = mMap.addMarker(underMarker);
+    }
+
     public void detach() {
         if (stopMarker != null)
             stopMarker.remove();
