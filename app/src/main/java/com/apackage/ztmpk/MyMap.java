@@ -189,7 +189,7 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
             }
         }
         else if(title.contains("bus")){
-            if (currentBus != title.replace("bus;", "")){
+            if (!currentBus.equals(title.replace("bus;", ""))){
                 if (lineNumber != null){
                     lineNumber.remove();
                     lineNumber = null;
