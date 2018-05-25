@@ -162,6 +162,6 @@ public class SuperStop {
         for (UnderStop stop : underStops){
             lines.addAll(stop.lines);
         }
-        return lines.toString();
+        return lines.toString().replace("[", "").replace("]", "");
     }
 }
