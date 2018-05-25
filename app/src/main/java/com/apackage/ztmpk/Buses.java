@@ -5,8 +5,9 @@ import android.util.Pair;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.concurrent.ConcurrentHashMap;
 
-public class Buses extends HashMap<String, Bus> {
+public class Buses extends ConcurrentHashMap<String, Bus> {
     private static final String TAG = "buseses";
 
     public Buses(){
