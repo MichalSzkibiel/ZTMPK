@@ -97,7 +97,7 @@ public class BusHandler {
             e.printStackTrace();
         }
         Timer time = new Timer();
-        time.schedule(new UpdatePositions(), 30000,30000);
+        time.schedule(new UpdatePositions(), 10000,10000);
     }
 
     public void refresh(final MyMap map_reference, String currentBus){
