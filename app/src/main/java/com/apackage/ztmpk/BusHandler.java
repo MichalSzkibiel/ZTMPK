@@ -86,13 +86,13 @@ public class BusHandler {
         }
     }
 
-    public BusHandler(GoogleMap mMap){
+    public BusHandler(final MyMap map_reference){
         buses = new Buses();
         asyncDownload ad = new asyncDownload();
         ad.start();
         try {
             ad.join();
-            draw(mMap, "");
+            draw(map_reference, "");
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -100,18 +100,18 @@ public class BusHandler {
         time.schedule(new UpdatePositions(), 30000,30000);
     }
 
-    public void refresh(GoogleMap mMap, String currentBus){
-        MyMap.detachBusMarkers();
-        draw(mMap, currentBus);
+    public void refresh(final MyMap map_reference, String currentBus){
+        map_reference.detachBusMarkers();
+        draw(map_reference, currentBus);
     }
 
-    private void draw(GoogleMap mMap, String currentBus){
+    private void draw(final MyMap map_reference, String currentBus){
         for (String key : buses.keySet()){
             if (currentBus != null && key.equals(currentBus)){
-                buses.get(key).drawActive(mMap);
+                buses.get(key).drawActive(map_reference);
             }
             else{
-                buses.get(key).draw(mMap);
+                buses.get(key).draw(map_reference);
             }
         }
     }

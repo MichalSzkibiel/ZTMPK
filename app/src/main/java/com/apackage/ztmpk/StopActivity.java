@@ -111,7 +111,7 @@ public class StopActivity extends Activity implements StopFragment.OnFragmentInt
                 getFragmentManager().beginTransaction().replace(R.id.notification_fragment, notification).commit();
                 break;
             case MyMap.MARKER_REQUEST_CODE:
-                MyMap.bh.refresh(map_reference.getMap(), "");
+                MyMap.bh.refresh(map_reference, "");
         }
     }
 }

@@ -37,7 +37,8 @@ public class Bus {
         }
     }
 
-    public void draw(GoogleMap mMap){
+    public void draw(final MyMap map_reference){
+        GoogleMap mMap = map_reference.getMap();
         MarkerOptions mo = new MarkerOptions();
         mo.position(position);
         mo.title("bus;" + line + ";" + brigade);
@@ -54,10 +55,11 @@ public class Bus {
             mo.icon(MyMap.getBitmap("tram"));
         }
         marker = mMap.addMarker(mo);
-        MyMap.addBusMarker(marker);
+        map_reference.addBusMarker(marker);
     }
 
-    public void drawActive(GoogleMap mMap){
+    public void drawActive(MyMap map_reference){
+        GoogleMap mMap = map_reference.getMap();
         MarkerOptions mo = new MarkerOptions();
         mo.position(position);
         mo.title("Wybrany pojazd");
@@ -74,7 +76,7 @@ public class Bus {
             mo.icon(MyMap.getActiveBitmap("tram"));
         }
         marker = mMap.addMarker(mo);
-        MyMap.addBusMarker(marker);
+        map_reference.addBusMarker(marker);
     }
 
     public Marker drawText(GoogleMap mMap){

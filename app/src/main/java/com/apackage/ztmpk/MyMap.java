@@ -49,11 +49,11 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
     private StopsHandler sh1;
     private Marker lineNumber;
     private String currentBus;
-    private static ArrayList<Marker> busMarkers;
+    private ArrayList<Marker> busMarkers;
     public final static int MARKER_REQUEST_CODE = 2132;
     private int superId;
     private int underId;
-    public static String BusId;
+    public String BusId;
 
     private class busRefresher extends TimerTask {
 
@@ -68,7 +68,7 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
                 @Override
                 protected void onPostExecute(Void voids){
                     detachBusMarkers();
-                    bh.refresh(mMap, BusId);
+                    bh.refresh(MyMap.this, BusId);
                     if (tribe.equals("bus")){
                         if (bh.buses.containsKey(BusId)){
                             move(bh.buses.get(BusId).position, zoom);
@@ -107,6 +107,7 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
         zoom = 15;
         current_activity = act;
         currentBus = "";
+        busMarkers = new ArrayList<>();
     }
 
     public MyMap(Activity act, int superId, int underId){
@@ -118,6 +119,7 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
         this.superId = superId;
         this.underId = underId;
         widenStop = superId;
+        busMarkers = new ArrayList<>();
     }
 
     public GoogleMap getMap() {
@@ -132,7 +134,7 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(position, zoom));
         if (first_start){
             sh = new StopsHandler(this);
-            bh = new BusHandler(mMap);
+            bh = new BusHandler(this);
             first_start = false;
             sh1 = sh;
         }
@@ -144,7 +146,7 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
                 sh1.stops.get(widenStop).underStops.get(underId).detach();
                 sh1.stops.get(widenStop).underStops.get(underId).drawActive(mMap);
             }
-            bh.refresh(mMap, BusId);
+            bh.refresh(this, BusId);
             if (lineNumber != null) {
                 lineNumber.remove();
                 if (bh.buses.containsKey(currentBus)){
@@ -275,11 +277,11 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(position, zoom));
     }
 
-    public static void addBusMarker(Marker marker){
+    public void addBusMarker(Marker marker){
         busMarkers.add(marker);
     }
 
-    public static void detachBusMarkers(){
+    public void detachBusMarkers(){
         for (Marker marker : busMarkers){
             marker.remove();
         }
