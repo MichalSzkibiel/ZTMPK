@@ -11,6 +11,8 @@ import com.google.android.gms.maps.model.LatLng;
 
 import java.util.AbstractMap;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -34,15 +36,43 @@ class SuperStopAdapter extends RecyclerView.Adapter {
         }
     }
 
+    public static double distance(double lat_a, double lng_a, double lat_b, double lng_b)
+    {
+        //Funkcja licząca odległość pomiędzy punktami na sferze
+        double earthRadius = 3958.75;
+        double latDiff = Math.toRadians(lat_b-lat_a);
+        double lngDiff = Math.toRadians(lng_b-lng_a);
+        double a = Math.sin(latDiff /2) * Math.sin(latDiff /2) +
+                Math.cos(Math.toRadians(lat_a)) * Math.cos(Math.toRadians(lat_b)) *
+                        Math.sin(lngDiff /2) * Math.sin(lngDiff /2);
+        double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+        double distance = earthRadius * c;
+
+        double meterConversion = 1609.0;
+
+        return distance * meterConversion;
+    }
+
 
     public SuperStopAdapter(RecyclerView mRecyclerView, LatLng position) {
         this.mRecyclerView = mRecyclerView;
         data = new ArrayList<>();
         for (SuperStop stop : MyMap.sh.stops) {
-            double distance = Math.sqrt(Math.pow(stop.position.latitude - position.latitude, 2) + Math.pow(stop.position.longitude - position.longitude, 2));
+            double distance = distance(position.latitude, position.longitude, stop.position.latitude, stop.position.longitude);
             data.add(new Pair<>(stop, distance));
         }
-
+        Collections.sort(data, new Comparator<Pair<SuperStop, Double>>() {
+            @Override
+            public int compare(Pair<SuperStop, Double> o1, Pair<SuperStop, Double> o2) {
+                if (o1.second > o2.second){
+                    return 1;
+                }
+                else if(o1.second < o2.second){
+                    return -1;
+                }
+                return 0;
+            }
+        });
     }
 
     @Override
@@ -63,7 +93,8 @@ class SuperStopAdapter extends RecyclerView.Adapter {
     public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, final int i) {
         ((MyViewHolder) viewHolder).name.setText(data.get(i).first.toString());
         ((MyViewHolder) viewHolder).lines.setText(data.get(i).first.getLines());
-        ((MyViewHolder) viewHolder).distance.setText(String.valueOf(data.get(i).second));
+        String distText = String.valueOf(Math.round(data.get(i).second)) + " m";
+        ((MyViewHolder) viewHolder).distance.setText(distText);
 
     }
 
