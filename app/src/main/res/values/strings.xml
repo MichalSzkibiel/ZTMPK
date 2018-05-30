@@ -33,6 +33,8 @@
     <string name="nr_line"><b>nr linii</b></string>
     <string name="direct"><b>kierunek</b></string>
     <string name="arrival"><b>odjazd</b></string>
+    <string name="HowToGo">Wyznacz Dojście</string>
+    <string name="PageZTM"> Pokaż na stronie ztm.waw.pl</string>
     <string name="have_account">Mam już konto</string>
     <string-array name="stop_problems">
         <item>brak tabliczki przystankowej</item>

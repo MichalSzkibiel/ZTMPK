@@ -45,6 +45,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:text="@string/ret_but" />
+        android:text="@string/ret_but"
+        android:background="@color/back"
+        android:textColor="@color/textProfile"/>
 
 </RelativeLayout>
