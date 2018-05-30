@@ -16,7 +16,6 @@ import com.google.android.gms.maps.MapFragment;
 
 public class BusActivity extends Activity implements BusFragment.OnFragmentInteractionListener, NotificationFragment.OnFragmentInteractionListener {
 
-    private static final String TAG = "autobus";
     public Bus bus;
     public String line;
     public String brigade;

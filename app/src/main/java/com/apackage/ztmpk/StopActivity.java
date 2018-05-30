@@ -40,7 +40,6 @@ public class StopActivity extends Activity implements StopFragment.OnFragmentInt
 
     public SuperStop superStop;
     public UnderStop underStop;
-    private static String TAG = "przyst";
     public static List<Activity> allStops = new ArrayList<>();
     public int superId;
     public int underId;

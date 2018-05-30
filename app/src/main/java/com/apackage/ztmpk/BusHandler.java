@@ -17,9 +17,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class BusHandler {
-    private static String link_base = "https://api.um.warszawa.pl/api/action/busestrams_get/?resource_id=f2e5503e-927d-4ad3-9500-4ab9e55deb59&apikey=41877efd-2c98-432e-bbad-0c93fb56caff&type=";
     public Buses buses;
-    private static String TAG = "tram";
 
     class UpdatePositions extends TimerTask {
         @Override
@@ -28,7 +26,6 @@ public class BusHandler {
 
                 @Override
                 public void run() {
-                    Log.d(TAG, "wątek");
                     asyncDownload ad = new asyncDownload();
                     ad.start();
                     try {
@@ -43,8 +40,7 @@ public class BusHandler {
 
     private class asyncDownload extends Thread {
 
-        public asyncDownload(){
-        }
+        public asyncDownload(){}
 
         @Override
         public void run() {
@@ -53,8 +49,8 @@ public class BusHandler {
                     try {
                         boolean is_good;
                         do {
+                            String link_base = "https://api.um.warszawa.pl/api/action/busestrams_get/?resource_id=f2e5503e-927d-4ad3-9500-4ab9e55deb59&apikey=41877efd-2c98-432e-bbad-0c93fb56caff&type=";
                             URL line_url = new URL(link_base + String.valueOf(i));
-                            Log.d(TAG, link_base + String.valueOf(i));
                             HttpURLConnection connection = (HttpURLConnection) line_url.openConnection();
                             connection.setRequestMethod("GET");
                             connection.connect();

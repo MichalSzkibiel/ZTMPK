@@ -9,15 +9,9 @@ import android.widget.TextView;
 
 import com.google.android.gms.maps.model.LatLng;
 
-import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
-
-import static java.lang.Math.min;
 
 class SuperStopAdapter extends RecyclerView.Adapter {
 

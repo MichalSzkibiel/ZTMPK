@@ -17,7 +17,6 @@ public class MainActivity extends AppCompatActivity {
 
     public static boolean first_run = true;
     private MyMap map_reference;
-    private static String TAG = "Mejn";
     public static FirebaseUser login;
     public static MainActivity current;
 
