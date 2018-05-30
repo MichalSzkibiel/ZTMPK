@@ -30,9 +30,7 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
     private GoogleMap mMap;
     private LatLng position;
     public int zoom;
-    private Locator locator;
     private Activity current_activity;
-    private static String TAG = "MyMap";
     public static StopsHandler sh;
     private static boolean first_start;
     private static BitmapDescriptor bitmapSuper;
@@ -158,7 +156,7 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
                 }
             }
         }
-        locator = new Locator(mMap, current_activity, getMarkerBitmapFromView(R.drawable.ic_gps_location_symbol, current_activity));
+        new Locator(mMap, current_activity, getMarkerBitmapFromView(R.drawable.ic_gps_location_symbol, current_activity));
         mMap.setOnMarkerClickListener(this);
         Timer timer = new Timer();
         timer.schedule(new busRefresher(), 5000, 5000);
@@ -177,7 +175,6 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
 
     @Override
     public boolean onMarkerClick(Marker marker) {
-        Log.d(TAG, "MarkerClick");
         String title = marker.getTitle();
         if (title == null)
             return false;
@@ -209,7 +206,6 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
             Intent intent = new Intent(current_activity, BusActivity.class);
             intent.putExtra("line", split[0]);
             intent.putExtra("brigade", split[1]);
-            Log.d(TAG, split[0] + "DDW" + split[1]);
             current_activity.startActivityForResult(intent, MARKER_REQUEST_CODE);
         }
         else if (title.contains(";")){
