@@ -1,6 +1,7 @@
 package com.apackage.ztmpk;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
@@ -8,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 
@@ -50,19 +52,36 @@ public class StopFragment extends Fragment {
         TextView lines = view.findViewById(R.id.stop_lines);
 
         String fullStop = "";
+        Button ztm = view.findViewById(R.id.ztm_waw);
+        Button route = view.findViewById(R.id.How_to_go);
         try {
             fullStop = ((StopActivity)getActivity()).superStop.name + " " + ((StopActivity)getActivity()).underStop.id;
             if (!((StopActivity)getActivity()).superStop.borough.equals("WARSZAWA")){
                 fullStop += " (" + ((StopActivity)getActivity()).superStop.borough + ")";
             }
             lines.setText(((StopActivity)getActivity()).underStop.lines.toString().replace("[", "").replace("]", ""));
-
+            ztm.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String url = "http://www.ztm.waw.pl/rozklad_nowy.php?c=182&l=1&n=" + ((StopActivity)getActivity()).superStop.id + "&o=" + ((StopActivity)getActivity()).underStop.id;
+                    Intent ztm_intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                    startActivity(ztm_intent);
+                }
+            });
         } catch(Exception e){
             fullStop = ((NotificationActivityStop)getActivity()).superStop.name + " " + ((NotificationActivityStop)getActivity()).underStop.id;
             if (!((NotificationActivityStop)getActivity()).superStop.borough.equals("WARSZAWA")){
                 fullStop += " (" + ((NotificationActivityStop)getActivity()).superStop.borough + ")";
             }
             lines.setText(((NotificationActivityStop)getActivity()).underStop.lines.toString().replace("[", "").replace("]", ""));
+            ztm.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String url = "http://www.ztm.waw.pl/rozklad_nowy.php?c=182&l=1&n=" + ((NotificationActivityStop)getActivity()).superStop.id + "&o=" + ((NotificationActivityStop)getActivity()).underStop.id;
+                    Intent ztm_intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                    startActivity(ztm_intent);
+                }
+            });
         }
         name.setText(fullStop);
 
