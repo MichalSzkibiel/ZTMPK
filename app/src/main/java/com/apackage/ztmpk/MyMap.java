@@ -159,7 +159,7 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
         new Locator(mMap, current_activity, getMarkerBitmapFromView(R.drawable.ic_gps_location_symbol, current_activity));
         mMap.setOnMarkerClickListener(this);
         Timer timer = new Timer();
-        timer.schedule(new busRefresher(), 5000, 5000);
+        timer.schedule(new busRefresher(), 15000, 15000);
     }
 
 
