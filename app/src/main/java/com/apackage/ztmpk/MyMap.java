@@ -16,6 +16,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.Marker;
 
@@ -107,6 +108,22 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
         currentBus = "";
         busMarkers = new ArrayList<>();
     }
+    public MyMap(Activity act, String key, int superId, int underId){
+        tribe = "busFromStop";
+        if (bh.buses.containsKey(key)) {
+            Bus bus = bh.buses.get(key);
+            position = bus.position;
+            BusId = key;
+        }
+        zoom = 15;
+        current_activity = act;
+        currentBus = "";
+        busMarkers = new ArrayList<>();
+        this.superId = superId;
+        this.underId = underId;
+        widenStop = superId;
+    }
+
 
     public MyMap(Activity act, int superId, int underId){
         tribe = "stop";
@@ -139,7 +156,7 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
         else {
             sh1 = new StopsHandler(sh);
             sh1.draw(mMap);
-            if ( tribe.equals("stop")){
+            if ( tribe.equals("stop") || tribe.equals("busFromStop")){
                 sh1.stops.get(widenStop).drawUnderStops(mMap, widenStop);
                 sh1.stops.get(widenStop).underStops.get(underId).detach();
                 sh1.stops.get(widenStop).underStops.get(underId).drawActive(mMap);
@@ -154,6 +171,25 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
                     lineNumber = null;
                     currentBus = "";
                 }
+            }
+        }
+        if (tribe.equals("busFromStop")){
+            double lat1 = position.latitude;
+            double lon1 = position.longitude;
+            double lat2 = sh.stops.get(superId).underStops.get(underId).position.latitude;
+            double lon2 = sh.stops.get(superId).underStops.get(underId).position.longitude;
+            Log.d("Wsp", String.valueOf(lat1));
+            Log.d("Wsp", String.valueOf(lon1));
+            Log.d("Wsp", String.valueOf(lat2));
+            Log.d("Wsp", String.valueOf(lon2));
+            Log.d("Wsp", new LatLng(Math.min(lat1, lat2), Math.min(lon1, lon2)).toString() );
+            Log.d("Wsp", new LatLng(Math.max(lat1, lat2), Math.max(lon1, lon2)).toString() );
+            LatLngBounds bounds = new LatLngBounds(new LatLng(Math.min(lat1, lat2), Math.min(lon1, lon2)), new LatLng(Math.max(lat1, lat2), Math.max(lon1, lon2)));
+            try {
+                mMap.moveCamera(CameraUpdateFactory.newLatLngBounds(bounds, 300, 200,20));
+            } catch(Exception e){
+                Log.d("Wsp", "Krzaczy się");
+                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(position, zoom));
             }
         }
         new Locator(mMap, current_activity, getMarkerBitmapFromView(R.drawable.ic_gps_location_symbol, current_activity));

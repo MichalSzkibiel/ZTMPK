@@ -27,6 +27,8 @@ public class BusActivity extends Activity implements BusFragment.OnFragmentInter
         Intent intent = getIntent();
         line = intent.getStringExtra("line");
         brigade = intent.getStringExtra("brigade");
+        int superId = intent.getIntExtra("super", -1);
+        int underId = intent.getIntExtra("under", -1);
         if (!MyMap.bh.buses.containsKey(line + ";" + brigade)){
             Toast.makeText(this, "Nie znaleziono autobusu", Toast.LENGTH_SHORT).show();
             finish();
@@ -42,7 +44,12 @@ public class BusActivity extends Activity implements BusFragment.OnFragmentInter
         StopActivity.allStops.add(this);
         setContentView(R.layout.activity_bus);
         MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.bus_map);
-        map_reference = new MyMap(this, line + ";" + brigade);
+        if (superId != -1){
+            map_reference = new MyMap(this, line + ";" + brigade, superId, underId);
+        }
+        else {
+            map_reference = new MyMap(this, line + ";" + brigade);
+        }
         mapFragment.getMapAsync(map_reference);
 
         Button exit = findViewById(R.id.return_bus);

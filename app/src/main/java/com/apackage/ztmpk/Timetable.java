@@ -137,6 +137,8 @@ public class Timetable extends RecyclerView.Adapter {
                 Intent intent = new Intent(act, BusActivity.class);
                 intent.putExtra("line", line);
                 intent.putExtra("brigade", brigade);
+                intent.putExtra("super", act.superId);
+                intent.putExtra("under", act.underId);
                 act.startActivity(intent);
             }
         });
@@ -154,6 +156,6 @@ public class Timetable extends RecyclerView.Adapter {
 
     @Override
     public int getItemCount() {
-        return min(6, departures.size());
+        return min(10, departures.size());
     }
 }
