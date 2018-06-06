@@ -101,6 +101,11 @@ public class BusHandler {
         draw(map_reference, currentBus);
     }
 
+    public void refreshActive(final MyMap map_reference, String currentBus){
+        map_reference.detachBusMarkers();
+        buses.get(currentBus).drawActive(map_reference);
+    }
+
     private void draw(final MyMap map_reference, String currentBus){
         for (String key : buses.keySet()){
             if (currentBus != null && key.equals(currentBus)){

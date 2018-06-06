@@ -153,10 +153,10 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
             first_start = false;
             sh1 = sh;
         }
-        else {
+        else if (!tribe.equals("busFromStop")) {
             sh1 = new StopsHandler(sh);
             sh1.draw(mMap);
-            if ( tribe.equals("stop") || tribe.equals("busFromStop")){
+            if ( tribe.equals("stop")){
                 sh1.stops.get(widenStop).drawUnderStops(mMap, widenStop);
                 sh1.stops.get(widenStop).underStops.get(underId).detach();
                 sh1.stops.get(widenStop).underStops.get(underId).drawActive(mMap);
@@ -173,17 +173,14 @@ public class MyMap implements OnMapReadyCallback, GoogleMap.OnMarkerClickListene
                 }
             }
         }
-        if (tribe.equals("busFromStop")){
+        else{
+            sh1 = new StopsHandler(sh);
+            sh1.stops.get(widenStop).underStops.get(underId).drawActive(mMap);
+            bh.refreshActive(this, BusId);
             double lat1 = position.latitude;
             double lon1 = position.longitude;
             double lat2 = sh.stops.get(superId).underStops.get(underId).position.latitude;
             double lon2 = sh.stops.get(superId).underStops.get(underId).position.longitude;
-            Log.d("Wsp", String.valueOf(lat1));
-            Log.d("Wsp", String.valueOf(lon1));
-            Log.d("Wsp", String.valueOf(lat2));
-            Log.d("Wsp", String.valueOf(lon2));
-            Log.d("Wsp", new LatLng(Math.min(lat1, lat2), Math.min(lon1, lon2)).toString() );
-            Log.d("Wsp", new LatLng(Math.max(lat1, lat2), Math.max(lon1, lon2)).toString() );
             LatLngBounds bounds = new LatLngBounds(new LatLng(Math.min(lat1, lat2), Math.min(lon1, lon2)), new LatLng(Math.max(lat1, lat2), Math.max(lon1, lon2)));
             try {
                 mMap.moveCamera(CameraUpdateFactory.newLatLngBounds(bounds, 300, 200,20));
